@@ -1086,8 +1086,10 @@ select {
 }
 
 @media (max-width: 340px) {
-  .category-grid, .product-grid { grid-template-columns: 1fr; }
-  .hero-buttons { grid-template-columns: 1fr; }
+  .category-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 860px) {
   .header-search {
@@ -1103,5 +1105,118 @@ select {
     padding: 0;
     margin: 0;
     pointer-events: none;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .category-card {
+    min-height: 96px;
+    border-radius: 11px;
+  }
+
+  .category-card .icon {
+    width: 32px;
+    height: 32px;
+    font-size: .95rem;
+    margin: 8px 8px 6px;
+    border-radius: 9px;
+  }
+
+  .category-card h3 {
+    margin: 0 8px 3px;
+    font-size: .70rem;
+    line-height: 1.1;
+  }
+
+  .category-card p {
+    margin: 0 8px 10px;
+    font-size: .62rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .product-card {
+    border-radius: 11px;
+  }
+
+  .product-image {
+    aspect-ratio: 1 / .78;
+  }
+
+  .fallback-product {
+    padding: 6px;
+  }
+
+  .fallback-product strong {
+    font-size: .64rem;
+  }
+
+  .fallback-product span {
+    font-size: .55rem;
+  }
+
+  .product-info {
+    padding: 7px;
+  }
+
+  .product-brand {
+    font-size: .55rem;
+    margin-bottom: 4px;
+  }
+
+  .product-title {
+    font-size: .66rem;
+    line-height: 1.12;
+    min-height: 34px;
+    margin-bottom: 5px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-detail {
+    display: none;
+  }
+
+  .price {
+    padding-top: 6px;
+  }
+
+  .price span {
+    font-size: .55rem;
+  }
+
+  .price strong {
+    font-size: .68rem;
+    line-height: 1.1;
+  }
+
+  .product-actions {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .qty-input {
+    min-height: 28px;
+    font-size: .66rem;
+    border-radius: 7px;
+  }
+
+  .add-btn {
+    min-height: 29px;
+    font-size: .62rem;
+    border-radius: 7px;
+    padding: 0 4px;
   }
 }
