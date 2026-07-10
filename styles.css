@@ -358,11 +358,11 @@ select {
 .category-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  gap: 10px;
 }
 
 .category-card {
-  min-height: 148px;
+  min-height: 110px;
   background: var(--paper);
   color: #111;
   border-radius: 16px;
@@ -1088,4 +1088,20 @@ select {
 @media (max-width: 340px) {
   .category-grid, .product-grid { grid-template-columns: 1fr; }
   .hero-buttons { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .header-search {
+    max-height: 56px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height .25s ease, opacity .2s ease, padding .25s ease, margin .25s ease;
+  }
+
+  body.hide-mobile-search .header-search {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+  }
 }

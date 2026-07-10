@@ -702,4 +702,27 @@ function init() {
   initWhatsappLinks();
 }
 
+let lastScrollY = window.scrollY;
+
+function handleMobileSearchVisibility() {
+  const isMobile = window.innerWidth <= 860;
+  const currentScrollY = window.scrollY;
+
+  if (!isMobile) {
+    document.body.classList.remove("hide-mobile-search");
+    return;
+  }
+
+  if (currentScrollY > 120 && currentScrollY > lastScrollY) {
+    document.body.classList.add("hide-mobile-search");
+  } else {
+    document.body.classList.remove("hide-mobile-search");
+  }
+
+  lastScrollY = currentScrollY;
+}
+
+window.addEventListener("scroll", handleMobileSearchVisibility);
+window.addEventListener("resize", handleMobileSearchVisibility);
+
 init();
