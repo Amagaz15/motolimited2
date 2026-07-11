@@ -59,6 +59,8 @@ select {
   background: var(--red);
   color: var(--white);
   overflow: hidden;
+  max-height: 60px;
+  transition: max-height .25s ease, opacity .2s ease;
 }
 
 .promo-track {
@@ -83,6 +85,7 @@ select {
   grid-template-columns: 210px 1fr auto;
   gap: 22px;
   align-items: center;
+  transition: min-height .25s ease;
 }
 
 .brand {
@@ -183,6 +186,40 @@ select {
   align-items: center;
   overflow-x: auto;
   scrollbar-width: thin;
+  max-height: 60px;
+  transition: max-height .25s ease, opacity .2s ease, padding .25s ease;
+}
+
+/* Header compacto al hacer scroll.
+   script.js agrega la clase "is-compact" al .site-header cuando
+   se bajó más de 40px, y la saca cuando se vuelve arriba.
+   Queda solo el logo visible. */
+.site-header.is-compact .promo-strip {
+  max-height: 0;
+  opacity: 0;
+}
+
+.site-header.is-compact .category-nav {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-header.is-compact .header-main {
+  min-height: 72px;
+  grid-template-columns: auto;
+  justify-content: start;
+}
+
+.site-header.is-compact .header-search,
+.site-header.is-compact .cart-link,
+.site-header.is-compact .menu-button {
+  display: none;
+}
+
+.site-header.is-compact .brand {
+  width: 150px;
 }
 
 .category-nav a {

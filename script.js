@@ -692,6 +692,24 @@ function initWhatsappLinks() {
   sendOrder.href = whatsappUrl(message);
 }
 
+// Header compacto: pasados 40px de scroll agrega la clase
+// "is-compact" al header (las reglas están en styles.css), que
+// oculta la franja roja, el buscador, el carrito y el menú, y
+// deja solo el logo. Al volver arriba, se muestra todo de nuevo.
+function bindHeaderScroll() {
+  const header = $(".site-header");
+  if (!header) return;
+
+  const scrollThreshold = 40;
+
+  function updateHeader() {
+    header.classList.toggle("is-compact", window.scrollY > scrollThreshold);
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+}
+
 function init() {
   fillFilters();
   renderCategoryCards();
@@ -700,6 +718,7 @@ function init() {
   renderCart();
   bindEvents();
   initWhatsappLinks();
+  bindHeaderScroll();
 }
 
 
