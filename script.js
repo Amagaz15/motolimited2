@@ -440,15 +440,17 @@ function renderCategoryCards() {
 }
 
 function renderSidebar() {
-  const items = ["Todas", ...categories.map(category => category.name)];
+  if (sidebarCategories) {
+    const items = ["Todas", ...categories.map(category => category.name)];
 
-  sidebarCategories.innerHTML = items.map(item => `
-    <button type="button" data-sidebar-category="${item}">${item}</button>
-  `).join("");
+    sidebarCategories.innerHTML = items.map(item => `
+      <button type="button" data-sidebar-category="${item}">${item}</button>
+    `).join("");
 
-  document.querySelectorAll("[data-sidebar-category]").forEach(button => {
-    button.addEventListener("click", () => setCategory(button.dataset.sidebarCategory));
-  });
+    document.querySelectorAll("[data-sidebar-category]").forEach(button => {
+      button.addEventListener("click", () => setCategory(button.dataset.sidebarCategory));
+    });
+  }
 
   quickTagsBox.innerHTML = quickTags.map(tag => `
     <button type="button" data-quick-tag="${tag}">${tag}</button>
