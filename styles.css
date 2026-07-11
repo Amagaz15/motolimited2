@@ -1485,4 +1485,10 @@ select {
   .hero-buttons {
     grid-template-columns: 1fr;
   }
+
+  .logo {
+    width: 10px;
+    height: 10px;
+    text-align: center;
+  }
 }
