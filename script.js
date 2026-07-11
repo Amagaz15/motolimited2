@@ -39,14 +39,14 @@ const quickTags = [
 ];
 
 const products = [
-  {
+   {
     id: "prod-001",
     name: "CÁMARA 3,00 - 14 TR 4",
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.315",
+    image: "assets/articulos/001.jpg",
     tags: ["camara", "suspension", "ruedas", "hao"]
   },
   {
@@ -55,8 +55,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.315",
+    image: "assets/articulos/002.jpg",
     tags: ["camara", "suspension", "ruedas", "hao"]
   },
   {
@@ -65,8 +65,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.558",
+    image: "assets/articulos/003.jpg",
     tags: ["camara", "suspension", "ruedas", "hao"]
   },
   {
@@ -75,8 +75,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.000",
+    image: "assets/articulos/004.jpg",
     tags: ["cable", "embrague", "zanella", "rx150", "comandos", "cables", "hao"]
   },
   {
@@ -85,8 +85,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.720",
+    image: "assets/articulos/005.jpg",
     tags: ["corona", "pinon", "motomel", "skua", "150", "16t", "transmision", "hao"]
   },
   {
@@ -95,8 +95,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.025",
+    image: "assets/articulos/006.jpg",
     tags: ["estator", "zanella", "rx150", "electricidad", "mago"]
   },
   {
@@ -105,8 +105,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.350",
+    image: "assets/articulos/007.jpg",
     tags: ["set", "llaves", "contacto", "baul", "gilera", "smash", "electricidad", "hao"]
   },
   {
@@ -115,8 +115,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$750",
+    image: "assets/articulos/008.jpg",
     tags: ["tensor", "cadena", "gilera", "smash", "110", "12mm", "17mm", "transmision", "hao"]
   },
   {
@@ -125,8 +125,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.500",
+    image: "assets/articulos/009.jpg",
     tags: ["tensor", "cadena", "yamaha", "ybr", "125", "transmision", "hao"]
   },
   {
@@ -135,8 +135,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$750",
+    image: "assets/articulos/010.jpg",
     tags: ["tensor", "cadena", "titan", "150", "otras", "redondo", "18mm", "transmision", "hao"]
   },
   {
@@ -145,8 +145,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.500",
+    image:  "assets/articulos/011.jpg",
     tags: ["kit", "retenes", "motor", "zanella", "rx150", "hao"]
   },
   {
@@ -155,8 +155,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.200",
+    image: "assets/articulos/012.jpg",
     tags: ["juntas", "motor", "honda", "titan", "150", "mago"]
   },
   {
@@ -165,8 +165,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.055",
+    image: "assets/articulos/013.jpg",
     tags: ["juntas", "motor", "gilera", "smash", "110", "mago"]
   },
   {
@@ -175,8 +175,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.382",
+    image: "assets/articulos/014.jpg",
     tags: ["juntas", "motor", "zanella", "rx150", "mago"]
   },
   {
@@ -185,8 +185,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.500",
+    image: "assets/articulos/015.jpg",
     tags: ["bendix", "motomel", "dakar", "corona", "transmision", "mago"]
   },
   {
@@ -195,8 +195,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.450",
+    image: "assets/articulos/016.jpg",
     tags: ["guia", "valvulas", "gilera", "smash", "110", "motor", "hao"]
   },
   {
@@ -205,8 +205,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.242",
+    image: "assets/articulos/017.jpg",
     tags: ["cdi", "honda", "dax", "c90", "c100", "biz", "electricidad", "mago"]
   },
   {
@@ -215,8 +215,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.335",
+    image: "assets/articulos/018.jpg",
     tags: ["plaqueta", "carbon", "honda", "tornado", "250", "frenos", "hao"]
   },
   {
@@ -225,8 +225,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.010",
+    image: "assets/articulos/019.jpg",
     tags: ["plaqueta", "carbon", "honda", "titan", "150", "frenos", "hao"]
   },
   {
@@ -235,8 +235,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.382",
+    image: "assets/articulos/020.jpg",
     tags: ["plaqueta", "carbon", "zanella", "rx150", "frenos", "hao"]
   },
   {
@@ -245,8 +245,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.175",
+    image: "assets/articulos/021.jpg",
     tags: ["aros", "piston", "zanella", "62mm", "150", "motor", "hao"]
   },
   {
@@ -255,8 +255,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.568",
+    image: "assets/articulos/022.jpg",
     tags: ["disco", "embrague", "honda", "wave", "comandos", "cables", "hao"]
   },
   {
@@ -265,8 +265,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.875",
+    image: "assets/articulos/023.jpg",
     tags: ["disco", "embrague", "honda", "cg125", "comandos", "cables", "hao"]
   },
   {
@@ -275,8 +275,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.400",
+    image: "assets/articulos/024.jpg",
     tags: ["kit", "distribucion", "gilera", "smash", "dentado", "transmision", "hao"]
   },
   {
@@ -285,8 +285,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.680",
+    image: "assets/articulos/025.jpg",
     tags: ["valvulas", "gilera", "smash", "110", "motor", "hao"]
   },
   {
@@ -295,8 +295,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.010",
+    image: "assets/articulos/026.jpg",
     tags: ["valvulas", "zanella", "rx150", "motor", "hao"]
   },
   {
@@ -305,8 +305,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.156",
+    image: "assets/articulos/027.jpg",
     tags: ["patada", "arranque", "gilera", "smash", "110", "electricidad", "hao"]
   },
   {
@@ -315,8 +315,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.625",
+    image: "assets/articulos/028.jpg",
     tags: ["farol", "delantero", "gilera", "smash", "giro", "ambar", "iluminacion", "hao"]
   },
   {
@@ -325,8 +325,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$26.380",
+    image: "assets/articulos/029.jpg",
     tags: ["kit", "cilindro", "gilera", "smash", "motor", "hao"]
   },
   {
@@ -335,8 +335,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$700",
+    image: "assets/articulos/030.jpg",
     tags: ["capuchon", "bujia", "smash", "titan", "electricidad", "hao"]
   },
   {
@@ -345,8 +345,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.910",
+    image: "assets/articulos/031.jpg",
     tags: ["zapatas", "freno", "gilera", "smash", "110", "cruzado", "frenos", "hao"]
   },
   {
@@ -355,8 +355,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.530",
+    image: "assets/articulos/032.jpg",
     tags: ["zapatas", "freno", "honda", "titan", "2000", "130mm", "frenos", "hao"]
   },
   {
@@ -365,8 +365,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.060",
+    image: "assets/articulos/033.jpg",
     tags: ["varilla", "freno", "gilera", "smash", "110", "frenos", "hao"]
   },
   {
@@ -375,8 +375,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$980",
+    image: "assets/articulos/034.jpg",
     tags: ["bujia", "d8ea", "rx150", "espejos", "accesorios", "hao"]
   },
   {
@@ -385,8 +385,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.030",
+    image: "assets/articulos/035.jpg",
     tags: ["bujia", "c7hsa", "110", "espejos", "accesorios", "hao"]
   },
   {
@@ -395,8 +395,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$7.425",
+    image: "assets/articulos/036.jpg",
     tags: ["cadena", "reforzada", "428h", "110", "transmision", "mago"]
   },
   {
@@ -405,8 +405,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.010",
+    image: "assets/articulos/037.jpg",
     tags: ["cable", "freno", "delantero", "honda", "storm", "frenos", "hao"]
   },
   {
@@ -415,8 +415,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.915",
+    image: "assets/articulos/038.jpg",
     tags: ["cable", "embrague", "honda", "storm", "125", "108cm", "comandos", "cables", "hao"]
   },
   {
@@ -425,8 +425,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.681",
+    image: "assets/articulos/039.jpg",
     tags: ["cable", "embrague", "honda", "125", "titan", "comandos", "cables", "hao"]
   },
   {
@@ -435,8 +435,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.681",
+    image: "assets/articulos/040.jpg",
     tags: ["cable", "embrague", "honda", "150", "titan", "comandos", "cables", "hao"]
   },
   {
@@ -445,8 +445,8 @@ const products = [
     category: "Comandos y cables",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.868",
+    image: "assets/articulos/041.jpg",
     tags: ["cable", "velocimetro", "motomel", "skua", "150", "comandos", "cables", "mago"]
   },
   {
@@ -456,7 +456,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "",
-    image: "",
+    image: "assets/articulos/042.jpg",
     tags: ["cable", "acelerador", "honda", "wave", "comandos", "cables", "hao"]
   },
   {
@@ -465,8 +465,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.220",
+    image: "assets/articulos/043.jpg",
     tags: ["cadena", "reforzada", "428h", "118", "transmision", "mago"]
   },
   {
@@ -475,8 +475,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.635",
+    image: "assets/articulos/044.jpg",
     tags: ["cadena", "distribucion", "25h", "84l", "transmision", "mago"]
   },
   {
@@ -485,8 +485,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.821",
+    image: "assets/articulos/045.jpg",
     tags: ["cadena", "distribucion", "25h", "90l", "transmision", "mago"]
   },
   {
@@ -495,8 +495,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.202",
+    image: "assets/articulos/046.jpg",
     tags: ["corona", "pinon", "zanella", "rx150", "15t", "dorada", "transmision", "hao"]
   },
   {
@@ -505,8 +505,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$22.365",
+    image: "assets/articulos/047.jpg",
     tags: ["set", "llaves", "contacto", "baul", "zanella", "rx150", "electricidad", "hao"]
   },
   {
@@ -515,8 +515,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.140",
+    image: "assets/articulos/048.jpg",
     tags: ["relay", "arranque", "fusible", "electricidad", "mago"]
   },
   {
@@ -525,8 +525,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$9.105",
+    image: "assets/articulos/049.jpg",
     tags: ["biela", "honda", "cd100", "corta", "motor", "hao"]
   },
   {
@@ -535,8 +535,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.440",
+    image: "assets/articulos/050.jpg",
     tags: ["biela", "zanella", "rx150", "motor", "hao"]
   },
   {
@@ -545,8 +545,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.370",
+    image: "assets/articulos/051.jpg",
     tags: ["patada", "arranque", "honda", "titan150", "electricidad", "hao"]
   },
   {
@@ -555,8 +555,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.323",
+    image: "assets/articulos/052.jpg",
     tags: ["patada", "arranque", "motomel", "custom", "150", "electricidad", "hao"]
   },
   {
@@ -565,8 +565,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.550",
+    image: "assets/articulos/053.jpg",
     tags: ["palanca", "cambio", "zanella", "150", "espejos", "accesorios", "hao"]
   },
   {
@@ -575,8 +575,8 @@ const products = [
     category: "Iluminación",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$9.480",
+    image: "assets/articulos/054.jpg",
     tags: ["farol", "trasero", "gilera", "smash", "biz", "rojo", "ambar", "iluminacion"]
   },
   {
@@ -585,8 +585,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$10.505",
+    image: "assets/articulos/055.jpg",
     tags: ["farol", "delantero", "honda", "cg125", "titan", "iluminacion", "hao"]
   },
   {
@@ -595,8 +595,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$10.930",
+    image: "assets/articulos/056.jpg",
     tags: ["cadena", "reforzada", "428h", "136", "transmision", "hao"]
   },
   {
@@ -605,8 +605,8 @@ const products = [
     category: "Carburación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.035",
+    image: "assets/articulos/057.jpg",
     tags: ["kit", "reparacion", "carburador", "gilera", "smash", "carburacion", "hao"]
   },
   {
@@ -615,8 +615,8 @@ const products = [
     category: "Carburación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.035",
+    image: "assets/articulos/058.jpg",
     tags: ["kit", "reparacion", "carburador", "zanella", "rx150", "carburacion", "hao"]
   },
   {
@@ -625,8 +625,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.202",
+    image: "assets/articulos/059.jpg",
     tags: ["cdi", "gilera", "12v", "smash", "electricidad", "mago"]
   },
   {
@@ -635,8 +635,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.710",
+    image: "assets/articulos/060.jpg",
     tags: ["cdi", "honda", "wave", "electricidad", "mago"]
   },
   {
@@ -645,8 +645,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.568",
+    image: "assets/articulos/061.jpg",
     tags: ["disco", "embrague", "gilera", "smash", "110", "comandos", "cables", "hao"]
   },
   {
@@ -655,8 +655,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$7.705",
+    image: "assets/articulos/062.jpg",
     tags: ["arbol", "levas", "gilera", "smash", "110", "corto", "espejos", "accesorios", "hao"]
   },
   {
@@ -665,8 +665,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.640",
+    image: "assets/articulos/063.jpg",
     tags: ["arbol", "levas", "gilera", "smash", "110", "largo", "espejos", "accesorios", "hao"]
   },
   {
@@ -675,8 +675,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$12.513",
+    image: "assets/articulos/064.jpg",
     tags: ["arbol", "levas", "zanella", "rx150", "skua150", "espejos", "accesorios", "hao"]
   },
   {
@@ -685,8 +685,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.755",
+    image: "assets/articulos/065.jpg",
     tags: ["juntas", "motor", "honda", "wave", "hao"]
   },
   {
@@ -695,8 +695,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.200",
+    image: "assets/articulos/066.jpg",
     tags: ["juntas", "motor", "honda", "wave", "mago"]
   },
   {
@@ -705,8 +705,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.635",
+    image: "assets/articulos/067.jpg",
     tags: ["kit", "retenes", "motor", "gilera", "smash", "110", "hao"]
   },
   {
@@ -715,8 +715,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.430",
+    image: "assets/articulos/068.jpg",
     tags: ["boca", "admision", "zanella", "150", "espejos", "accesorios", "hao"]
   },
   {
@@ -725,8 +725,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.000",
+    image: "assets/articulos/069.jpg",
     tags: ["boca", "admision", "honda", "titan", "cg150", "espejos", "accesorios", "hao"]
   },
   {
@@ -735,8 +735,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.710",
+    image: "assets/articulos/070.jpg",
     tags: ["boca", "admision", "motomel", "dakar", "200", "espejos", "accesorios", "hao"]
   },
   {
@@ -745,8 +745,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.710",
+    image: "assets/articulos/071.jpg",
     tags: ["boca", "admision", "motomel", "custom", "150", "espejos", "accesorios", "hao"]
   },
   {
@@ -755,8 +755,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.568",
+    image: "assets/articulos/072.jpg",
     tags: ["boca", "admision", "honda", "titan", "2000", "espejos", "accesorios", "hao"]
   },
   {
@@ -765,8 +765,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.074",
+    image: "assets/articulos/073.jpg",
     tags: ["reten", "suspension", "gilera", "smash", "26x37x10", "ruedas", "hao"]
   },
   {
@@ -775,8 +775,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.168",
+    image: "assets/articulos/074.jpg",
     tags: ["reten", "suspension", "zanella", "150", "31x43x10", "ruedas", "hao"]
   },
   {
@@ -785,8 +785,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$934",
+    image: "assets/articulos/075.jpg",
     tags: ["set", "bulones", "corona", "zanella", "rx150", "storm", "transmision", "hao"]
   },
   {
@@ -795,8 +795,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.315",
+    image: "assets/articulos/076.jpg",
     tags: ["bobina", "ignicion", "gilera", "smash", "110", "electricidad", "hao"]
   },
   {
@@ -805,8 +805,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.915",
+    image: "assets/articulos/077.jpg",
     tags: ["valvulas", "yamaha", "crypton", "t105", "motor", "hao"]
   },
   {
@@ -815,8 +815,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$9.105",
+    image: "assets/articulos/078.jpg",
     tags: ["biela", "gilera", "smash", "larga", "motor", "hao"]
   },
   {
@@ -825,8 +825,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.130",
+    image: "assets/articulos/079.jpg",
     tags: ["kit", "teclas", "gilera", "smash", "5pcs", "espejos", "accesorios", "hao"]
   },
   {
@@ -835,8 +835,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.335",
+    image: "assets/articulos/080.jpg",
     tags: ["kit", "teclas", "gilera", "futura", "espejos", "accesorios", "hao"]
   },
   {
@@ -846,7 +846,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "",
-    image: "",
+    image: "assets/articulos/081.jpg",
     tags: ["boca", "admision", "motomel", "skua", "150", "espejos", "accesorios", "hao"]
   },
   {
@@ -855,8 +855,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.160",
+    image: "assets/articulos/082.jpg",
     tags: ["espejo", "honda", "cbt125", "espejos", "accesorios", "hao"]
   },
   {
@@ -865,8 +865,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.440",
+    image: "assets/articulos/083.jpg",
     tags: ["biela", "yamaha", "color", "dorado", "crypton", "t105", "motor", "hao"]
   },
   {
@@ -875,8 +875,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$7.000",
+    image: "assets/articulos/084.jpg",
     tags: ["cadena", "reforzada", "420h", "112", "transmision", "mago"]
   },
   {
@@ -885,8 +885,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$14.850",
+    image: "assets/articulos/085.jpg",
     tags: ["cadena", "reforzada", "520h", "118", "transmision", "mago"]
   },
   {
@@ -895,8 +895,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$45.000",
+    image: "assets/articulos/086.jpg",
     tags: ["maza", "trasera", "zanella", "rx150", "ruleman", "bujes", "suspension", "ruedas", "hao"]
   },
   {
@@ -905,8 +905,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$36.185",
+    image: "assets/articulos/087.jpg",
     tags: ["maza", "trasera", "honda", "biz", "100", "105", "sola", "suspension", "ruedas", "hao"]
   },
   {
@@ -915,8 +915,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$25.220",
+    image: "assets/articulos/088.jpg",
     tags: ["maza", "trasera", "honda", "wave", "100", "ruleman", "suspension", "ruedas", "hao"]
   },
   {
@@ -925,8 +925,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$36.185",
+    image: "assets/articulos/089.jpg",
     tags: ["maza", "trasera", "motomel", "skua", "150", "200", "suspension", "ruedas", "hao"]
   },
   {
@@ -935,8 +935,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$25.220",
+    image: "assets/articulos/090.jpg",
     tags: ["maza", "trasera", "yamaha", "ybr125", "suspension", "ruedas", "hao"]
   },
   {
@@ -945,8 +945,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$25.220",
+    image: "assets/articulos/091.jpg",
     tags: ["maza", "trasera", "yamaha", "crypton", "105", "110", "suspension", "ruedas", "hao"]
   },
   {
@@ -955,8 +955,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.730",
+    image: "assets/articulos/092.jpg",
     tags: ["tapa", "tanque", "gilera", "smash", "110", "espejos", "accesorios", "hao"]
   },
   {
@@ -965,8 +965,8 @@ const products = [
     category: "Motor",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/093.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor"]
   },
   {
@@ -975,8 +975,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/094.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -985,8 +985,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/095.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -995,8 +995,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/096.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -1005,8 +1005,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/097.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -1015,8 +1015,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/098.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -1025,8 +1025,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/099.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -1035,8 +1035,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.410",
+    image: "assets/articulos/100.jpg",
     tags: ["kit", "piston", "gilera", "smash", "110", "pin", "motor", "hao"]
   },
   {
@@ -1045,8 +1045,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/101.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1055,8 +1055,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/102.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "mago"]
   },
   {
@@ -1065,8 +1065,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/103.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1075,8 +1075,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/104.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1085,8 +1085,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/105.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1095,8 +1095,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/106.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1105,8 +1105,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/107.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1115,8 +1115,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/108.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1125,8 +1125,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.800",
+    image: "assets/articulos/109.jpg",
     tags: ["kit", "piston", "zanella", "150", "pin", "motor", "hao"]
   },
   {
@@ -1135,8 +1135,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$610",
+    image: "assets/articulos/110.jpg",
     tags: ["lampara", "bosch", "ba20d", "b35", "tk55", "12v", "35w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1145,8 +1145,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$900",
+    image: "assets/articulos/111.jpg",
     tags: ["lampara", "halogena", "p43t", "12v", "35w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1155,8 +1155,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$560",
+    image: "assets/articulos/112.jpg",
     tags: ["lampara", "halogena", "delantera", "smash", "p15d", "12v", "18w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1165,8 +1165,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$560",
+    image: "assets/articulos/113.jpg",
     tags: ["lampara", "halogena", "delantera", "smash", "p15d", "12v", "35w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1175,8 +1175,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$250",
+    image: "assets/articulos/114.jpg",
     tags: ["lampara", "trasera", "smash", "bay15d", "s25", "tk38", "12v", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1185,8 +1185,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$300",
+    image: "assets/articulos/115.jpg",
     tags: ["lampara", "trasera", "smash", "bay15d", "s25", "tk38", "12v", "roja", "iluminacion", "hao"]
   },
   {
@@ -1195,8 +1195,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$9.480",
+    image: "assets/articulos/116.jpg",
     tags: ["farol", "trasero", "gilera", "smash", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1205,8 +1205,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$13.000",
+    image: "assets/articulos/117.jpg",
     tags: ["farol", "delantero", "zanella", "150", "iluminacion", "hao"]
   },
   {
@@ -1215,8 +1215,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.115",
+    image: "assets/articulos/118.jpg",
     tags: ["biela", "honda", "150", "titan", "150l", "96x14x28mm", "motor", "hao"]
   },
   {
@@ -1225,8 +1225,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$15.645",
+    image: "assets/articulos/119.jpg",
     tags: ["biela", "honda", "250", "tornado", "twister", "motor", "hao"]
   },
   {
@@ -1235,8 +1235,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$12.750",
+    image: "assets/articulos/120.jpg",
     tags: ["biela", "motomel", "dakar", "200", "cadenera", "103", "5x17x30", "motor", "hao"]
   },
   {
@@ -1245,8 +1245,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$12.750",
+    image: "assets/articulos/121.jpg",
     tags: ["biela", "motomel", "dakar", "200", "varillera", "105", "5x15x32", "motor", "hao"]
   },
   {
@@ -1255,8 +1255,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$13.500",
+    image: "assets/articulos/122.jpg",
     tags: ["biela", "motomel", "skua", "200", "motard", "103", "5x16x30", "motor", "hao"]
   },
   {
@@ -1265,8 +1265,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.440",
+    image: "assets/articulos/123.jpg",
     tags: ["boca", "admision", "honda", "storm", "125", "espejos", "accesorios", "hao"]
   },
   {
@@ -1275,8 +1275,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.168",
+    image: "assets/articulos/124.jpg",
     tags: ["bujia", "cpr8ea9", "espejos", "accesorios", "hao"]
   },
   {
@@ -1285,8 +1285,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.500",
+    image: "assets/articulos/125.jpg",
     tags: ["cable", "acelerador", "honda", "storm", "comandos", "cables", "hao"]
   },
   {
@@ -1295,8 +1295,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.820",
+    image: "assets/articulos/126.jpg",
     tags: ["cable", "embrague", "motomel", "dakar", "200", "comandos", "cables", "hao"]
   },
   {
@@ -1305,8 +1305,8 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.665",
+    image: "assets/articulos/127.jpg",
     tags: ["cable", "embrague", "yamaha", "fz16", "comandos", "cables", "hao"]
   },
   {
@@ -1315,8 +1315,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$27.454",
+    image: "assets/articulos/128.jpg",
     tags: ["maza", "trasera", "gilera", "smash", "110", "sola", "suspension", "ruedas", "hao"]
   },
   {
@@ -1325,8 +1325,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.502",
+    image: "assets/articulos/129.jpg",
     tags: ["corona", "pinon", "yamaha", "crypton", "new", "15t", "transmision", "mago"]
   },
   {
@@ -1335,8 +1335,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/130.jpg",
     tags: ["corona", "pinon", "honda", "wave", "new", "dorada", "14t", "transmision", "hao"]
   },
   {
@@ -1345,8 +1345,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.510",
+    image: "assets/articulos/131.jpg",
     tags: ["corona", "pinon", "honda", "125", "14t", "transmision", "mago"]
   },
   {
@@ -1355,8 +1355,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.382",
+    image: "assets/articulos/132.jpg",
     tags: ["juntas", "motor", "motomel", "skua", "150", "mago"]
   },
   {
@@ -1365,8 +1365,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$140",
+    image: "assets/articulos/133.jpg",
     tags: ["lampara", "muelita", "12v", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1375,8 +1375,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$190",
+    image: "assets/articulos/134.jpg",
     tags: ["lampara", "muelita", "12v", "ambar", "iluminacion", "hao"]
   },
   {
@@ -1385,8 +1385,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$140",
+    image: "assets/articulos/135.jpg",
     tags: ["lampara", "muelita", "t13", "1x9", "12v", "10w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1395,8 +1395,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$190",
+    image: "assets/articulos/136.jpg",
     tags: ["lampara", "muelita", "t13", "1x9", "12v", "10w", "ambar", "iluminacion", "hao"]
   },
   {
@@ -1405,8 +1405,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$235",
+    image: "assets/articulos/137.jpg",
     tags: ["lampara", "giro", "polo", "ba15s", "g18", "tk21", "12v", "10w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -1415,8 +1415,8 @@ const products = [
     category: "Iluminación",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$235",
+    image: "assets/articulos/138.jpg",
     tags: ["lampara", "giro", "polo", "ba15s", "g18", "tk21", "12v", "10w", "ambar", "iluminacion", "hao"]
   },
   {
@@ -1425,8 +1425,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$100",
+    image: "assets/articulos/139.jpg",
     tags: ["junta", "escape", "honda", "cg125", "dorada", "motor", "hao"]
   },
   {
@@ -1435,8 +1435,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.535",
+    image: "assets/articulos/140.jpg",
     tags: ["relay", "arranque", "sin", "fusible", "electricidad", "mago"]
   },
   {
@@ -1445,8 +1445,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.200",
+    image: "assets/articulos/141.jpg",
     tags: ["pastilla", "freno", "delantera", "gilera", "smash", "110", "gancho", "frenos", "hao"]
   },
   {
@@ -1455,8 +1455,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.195",
+    image: "assets/articulos/142.jpg",
     tags: ["pastilla", "freno", "delantera", "gilera", "smash", "110", "sin", "gancho", "frenos", "hao"]
   },
   {
@@ -1465,8 +1465,8 @@ const products = [
     category: "Frenos",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.430",
+    image: "assets/articulos/143.jpg",
     tags: ["pastilla", "freno", "delantera", "motomel", "skua", "150", "frenos"]
   },
   {
@@ -1475,8 +1475,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.455",
+    image: "assets/articulos/144.jpg",
     tags: ["zapatas", "freno", "yamaha", "crypton", "105", "frenos", "hao"]
   },
   {
@@ -1485,8 +1485,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.575",
+    image: "assets/articulos/145.jpg",
     tags: ["zapatas", "freno", "yamaha", "ybr", "125", "frenos", "hao"]
   },
   {
@@ -1495,8 +1495,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.763",
+    image: "assets/articulos/146.jpg",
     tags: ["zapatas", "freno", "zanella", "150", "punta", "redonda", "frenos", "hao"]
   },
   {
@@ -1505,8 +1505,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/147.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "mago"]
   },
   {
@@ -1515,8 +1515,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/148.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "mago"]
   },
   {
@@ -1525,8 +1525,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/149.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "hao"]
   },
   {
@@ -1535,8 +1535,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/150.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "hao"]
   },
   {
@@ -1545,8 +1545,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/151.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "hao"]
   },
   {
@@ -1555,8 +1555,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/152.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "hao"]
   },
   {
@@ -1565,8 +1565,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/153.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "mago"]
   },
   {
@@ -1575,8 +1575,8 @@ const products = [
     category: "Motor",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/154.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "hao"]
   },
   {
@@ -1585,8 +1585,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.310",
+    image: "assets/articulos/155.jpg",
     tags: ["kit", "piston", "honda", "c100", "biz", "wave", "pin", "motor", "mago"]
   },
   {
@@ -1595,8 +1595,8 @@ const products = [
     category: "Suspensión / ruedas",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.260",
+    image: "assets/articulos/156.jpg",
     tags: ["reten", "suspension", "honda", "cbx250", "ns200", "37x50x11", "ruedas", "hao"]
   },
   {
@@ -1605,8 +1605,8 @@ const products = [
     category: "Electricidad",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.050",
+    image: "assets/articulos/157.jpg",
     tags: ["cdi", "zanella", "rx150", "ficha", "cuadrada", "pin", "electricidad", "hao"]
   },
   {
@@ -1615,8 +1615,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.755",
+    image: "assets/articulos/158.jpg",
     tags: ["puno", "tipo", "croos", "unicolor", "125mm", "rojo", "espejos", "accesorios", "hao"]
   },
   {
@@ -1625,8 +1625,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.755",
+    image: "assets/articulos/159.jpg",
     tags: ["puno", "tipo", "croos", "unicolor", "125mm", "azul", "espejos", "accesorios", "hao"]
   },
   {
@@ -1635,8 +1635,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.755",
+    image: "assets/articulos/160.jpg",
     tags: ["puno", "tipo", "croos", "unicolor", "125mm", "negro", "espejos", "accesorios", "hao"]
   },
   {
@@ -1645,8 +1645,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.082",
+    image: "assets/articulos/161.jpg",
     tags: ["puno", "tipo", "pro", "taper", "rojo", "espejos", "accesorios", "hao"]
   },
   {
@@ -1655,8 +1655,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.082",
+    image: "assets/articulos/162.jpg",
     tags: ["puno", "tipo", "pro", "taper", "azul", "espejos", "accesorios", "hao"]
   },
   {
@@ -1665,8 +1665,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.240",
+    image: "assets/articulos/163.jpg",
     tags: ["corona", "pinon", "motomel", "skua", "150", "17t", "dorada", "transmision", "hao"]
   },
   {
@@ -1675,8 +1675,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.540",
+    image: "assets/articulos/164.jpg",
     tags: ["corona", "pinon", "yamaha", "ybr", "125", "14t", "dorada", "transmision", "hao"]
   },
   {
@@ -1685,8 +1685,8 @@ const products = [
     category: "Baterías",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$16.300",
+    image: "assets/articulos/165.jpg",
     tags: ["bateria", "12n5", "gel", "sellada", "baterias", "hao"]
   },
   {
@@ -1695,8 +1695,8 @@ const products = [
     category: "Baterías",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$21.600",
+    image: "assets/articulos/166.jpg",
     tags: ["bateria", "12n7a", "gel", "sellada", "baterias", "hao"]
   },
   {
@@ -1705,8 +1705,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.760",
+    image: "assets/articulos/167.jpg",
     tags: ["puno", "tipo", "pro", "taper", "fucsia", "espejos", "accesorios", "hao"]
   },
   {
@@ -1715,8 +1715,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.760",
+    image: "assets/articulos/168.jpg",
     tags: ["puno", "tipo", "pro", "taper", "verde", "espejos", "accesorios", "hao"]
   },
   {
@@ -1725,8 +1725,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.760",
+    image: "assets/articulos/169.jpg",
     tags: ["puno", "tipo", "pro", "taper", "naranja", "espejos", "accesorios", "hao"]
   },
   {
@@ -1735,8 +1735,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/170.jpg",
     tags: ["kit", "piston", "honda", "wave", "110", "pin", "motor", "mago"]
   },
   {
@@ -1745,8 +1745,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/171.jpg",
     tags: ["kit", "piston", "honda", "wave", "110", "pin", "motor", "mago"]
   },
   {
@@ -1755,8 +1755,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/172.jpg",
     tags: ["kit", "piston", "honda", "wave", "110", "pin", "motor", "mago"]
   },
   {
@@ -1765,8 +1765,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/173.jpg",
     tags: ["kit", "piston", "yamaha", "ybr125", "pin", "motor", "mago"]
   },
   {
@@ -1775,8 +1775,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/174.jpg",
     tags: ["kit", "piston", "yamaha", "ybr125", "pin", "motor", "mago"]
   },
   {
@@ -1785,8 +1785,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.142",
+    image: "assets/articulos/175.jpg",
     tags: ["kit", "piston", "yamaha", "ybr125", "pin", "motor", "mago"]
   },
   {
@@ -1795,8 +1795,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.710",
+    image: "assets/articulos/176.jpg",
     tags: ["kit", "piston", "bajaj", "rouser", "ns200", "pin", "motor", "mago"]
   },
   {
@@ -1805,8 +1805,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.710",
+    image: "assets/articulos/177.jpg",
     tags: ["kit", "piston", "bajaj", "rouser", "ns200", "pin", "motor", "mago"]
   },
   {
@@ -1815,8 +1815,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.415",
+    image: "assets/articulos/178.jpg",
     tags: ["kit", "piston", "honda", "cg150", "titan", "pin", "motor", "mago"]
   },
   {
@@ -1825,8 +1825,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$3.900",
+    image: "assets/articulos/179.jpg",
     tags: ["kit", "piston", "yamaha", "crypton", "105", "pin", "motor", "mago"]
   },
   {
@@ -1835,8 +1835,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.110",
+    image: "assets/articulos/180.jpg",
     tags: ["kit", "piston", "yamaha", "new", "crypton", "110", "pin", "motor", "mago"]
   },
   {
@@ -1845,8 +1845,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.355",
+    image: "assets/articulos/181.jpg",
     tags: ["kit", "piston", "yamaha", "fz16", "pin", "motor", "mago"]
   },
   {
@@ -1855,8 +1855,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.355",
+    image: "assets/articulos/182.jpg",
     tags: ["kit", "piston", "yamaha", "fz16", "pin", "motor", "mago"]
   },
   {
@@ -1865,8 +1865,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.355",
+    image: "assets/articulos/183.jpg",
     tags: ["kit", "piston", "yamaha", "fz16", "pin", "motor", "mago"]
   },
   {
@@ -1875,8 +1875,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$7.186",
+    image: "assets/articulos/184.jpg",
     tags: ["kit", "piston", "honda", "cbx250", "xr250", "tornado", "pin", "motor", "mago"]
   },
   {
@@ -1885,8 +1885,8 @@ const products = [
     category: "Motor",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$7.186",
+    image: "assets/articulos/185.jpg",
     tags: ["kit", "piston", "honda", "cbx250", "xr250", "tornado", "pin", "motor", "mago"]
   },
   {
@@ -1895,8 +1895,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$6.242",
+    image: "assets/articulos/186.jpg",
     tags: ["corona", "pinon", "bajaj", "rouser", "ns200", "14t", "dorada", "transmision", "hao"]
   },
   {
@@ -1905,8 +1905,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.300",
+    image: "assets/articulos/187.jpg",
     tags: ["espejo", "honda", "cg150", "espejos", "accesorios", "hao"]
   },
   {
@@ -1915,8 +1915,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.630",
+    image: "assets/articulos/188.jpg",
     tags: ["espejo", "honda", "xr250", "tornado", "redondo", "espejos", "accesorios", "hao"]
   },
   {
@@ -1925,8 +1925,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$4.110",
+    image: "assets/articulos/189.jpg",
     tags: ["zapatas", "freno", "honda", "xr250", "tornado", "frenos", "hao"]
   },
   {
@@ -1935,8 +1935,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.100",
+    image: "assets/articulos/190.jpg",
     tags: ["pastilla", "freno", "delantera", "honda", "xr250", "tornado", "frenos", "hao"]
   },
   {
@@ -1945,8 +1945,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.100",
+    image: "assets/articulos/191.jpg",
     tags: ["pastilla", "freno", "delantera", "bajaj", "rouser", "ns200", "frenos", "hao"]
   },
   {
@@ -1955,8 +1955,8 @@ const products = [
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.100",
+    image: "assets/articulos/192.jpg",
     tags: ["pastilla", "freno", "trasera", "bajaj", "rouser", "ns200", "frenos", "hao"]
   },
   {
@@ -1965,8 +1965,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$1.730",
+    image: "assets/articulos/193.jpg",
     tags: ["cadena", "distribucion", "25h", "86l", "transmision", "mago"]
   },
   {
@@ -1975,8 +1975,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.335",
+    image: "assets/articulos/194.jpg",
     tags: ["cadena", "distribucion", "404h", "86l", "transmision", "mago"]
   },
   {
@@ -1985,8 +1985,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.475",
+    image: "assets/articulos/195.jpg",
     tags: ["cadena", "distribucion", "404h", "90l", "transmision", "mago"]
   },
   {
@@ -1995,8 +1995,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.615",
+    image: "assets/articulos/196.jpg",
     tags: ["cadena", "distribucion", "404h", "92l", "transmision", "mago"]
   },
   {
@@ -2005,8 +2005,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.755",
+    image: "assets/articulos/197.jpg",
     tags: ["cadena", "distribucion", "404h", "94l", "transmision", "mago"]
   },
   {
@@ -2015,8 +2015,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$2.900",
+    image: "assets/articulos/198.jpg",
     tags: ["cadena", "distribucion", "404h", "96l", "transmision", "mago"]
   },
   {
@@ -2025,8 +2025,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.000",
+    image: "assets/articulos/199.jpg",
     tags: ["cadena", "distribucion", "409h", "126l", "transmision", "mago"]
   },
   {
@@ -2035,8 +2035,8 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$5.000",
+    image: "assets/articulos/200.jpg",
     tags: ["cadena", "distribucion", "409h", "94l", "transmision", "hao"]
   },
   {
@@ -2045,8 +2045,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$6.388",
+    image: "assets/articulos/201.jpg",
     tags: ["estator", "zanella", "rx150", "2017", "campos", "luces", "encendidas", "electricidad", "mago"]
   },
   {
@@ -2055,8 +2055,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$10.352",
+    image: "assets/articulos/202.jpg",
     tags: ["estator", "honda", "wave", "110", "campos", "luces", "encendidas", "electricidad", "mago"]
   },
   {
@@ -2065,8 +2065,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$11.265",
+    image: "assets/articulos/203.jpg",
     tags: ["estator", "yamaha", "new", "crypton", "110", "campos", "luces", "encendidas", "electricidad", "mago"]
   },
   {
@@ -2075,8 +2075,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$10.352",
+    image: "assets/articulos/204.jpg",
     tags: ["estator", "yamaha", "fz16", "campos", "electricidad", "mago"]
   },
   {
@@ -2085,8 +2085,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$9.224",
+    image: "assets/articulos/205.jpg",
     tags: ["estator", "yamaha", "crypton", "105", "campos", "electricidad", "mago"]
   },
   {
@@ -2095,8 +2095,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.118",
+    image: "assets/articulos/206.jpg",
     tags: ["estator", "honda", "new", "cg150", "titan", "2017", "electricidad", "mago"]
   },
   {
@@ -2105,8 +2105,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$13.467",
+    image: "assets/articulos/207.jpg",
     tags: ["estator", "honda", "xr250", "tornado", "twister", "campos", "electricidad", "mago"]
   },
   {
@@ -2115,8 +2115,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$15.000",
+    image: "assets/articulos/208.jpg",
     tags: ["estator", "honda", "cb190r", "campos", "electricidad", "mago"]
   },
   {
@@ -2125,8 +2125,8 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$10.855",
+    image: "assets/articulos/209.jpg",
     tags: ["estator", "yamaha", "ybr", "125", "china", "campos", "electricidad", "mago"]
   },
   {
@@ -2135,8 +2135,8 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$6.760",
+    image: "assets/articulos/210.jpg",
     tags: ["corona", "pinon", "honda", "nxr125", "bross", "54t", "17t", "transmision", "mago"]
   },
   {
@@ -2145,8 +2145,8 @@ const products = [
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$8.545",
+    image: "assets/articulos/211.jpg",
     tags: ["rgulador", "voltaje", "trifasico", "gilera", "smash", "luzencendida", "espejos", "accesorios", "hao"]
   },
   {
@@ -2155,8 +2155,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$18.222",
+    image: "assets/articulos/212.jpg",
     tags: ["bateria", "gel", "sellada", "ytx5", "baterias"]
   },
   {
@@ -2165,8 +2165,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$21.700",
+    image: "assets/articulos/213.jpg",
     tags: ["bateria", "gel", "sellada", "ytx7l", "baterias"]
   },
   {
@@ -2175,8 +2175,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$22.022",
+    image: "assets/articulos/214.jpg",
     tags: ["bateria", "gel", "sellada", "ytx7a", "baterias"]
   },
   {
@@ -2185,8 +2185,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$19.780",
+    image: "assets/articulos/215.jpg",
     tags: ["bateria", "gel", "sellada", "ybl6", "baterias"]
   },
   {
@@ -2195,8 +2195,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$24.847",
+    image: "assets/articulos/216.jpg",
     tags: ["bateria", "gel", "sellada", "ytx9l", "baterias"]
   },
   {
@@ -2205,8 +2205,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$24.847",
+    image: "assets/articulos/217.jpg",
     tags: ["bateria", "gel", "sellada", "12n9", "baterias"]
   },
   {
@@ -2215,8 +2215,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$24.847",
+    image: "assets/articulos/218.jpg",
     tags: ["bateria", "gel", "sellada", "12n9", "baterias"]
   },
   {
@@ -2225,8 +2225,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$21.700",
+    image: "assets/articulos/219.jpg",
     tags: ["bateria", "gel", "sellada", "12n7", "baterias"]
   },
   {
@@ -2235,8 +2235,8 @@ const products = [
     category: "Baterías",
     brand: "",
     detail: "Consultar compatibilidad y disponibilidad.",
-    price: "",
-    image: "",
+    price: "$14.422",
+    image: "assets/articulos/220.jpg",
     tags: ["bateria", "gel", "sellada", "ytx4l", "baterias"]
   },
 ];
