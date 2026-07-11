@@ -12,16 +12,16 @@ const WHATSAPP_NUMBER = "5492233033185";
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
 const categories = [
-  { name: "Baterías", icon: "🔋" },
-  { name: "Motor", icon: "🏍️" },
-  { name: "Transmisión", icon: "⚙️" },
-  { name: "Frenos", icon: "🛞" },
-  { name: "Electricidad", icon: "⚡" },
-  { name: "Iluminación", icon: "💡" },
-  { name: "Espejos y accesorios", icon: "🔧" },
-  { name: "Comandos y cables", icon: "〽️" },
-  { name: "Carburación", icon: "⛽" },
-  { name: "Suspensión / ruedas", icon: "🧰" }
+  { name: "Baterías", icon: "🔋", image: "" },
+  { name: "Motor", icon: "🏍️", image: "" },
+  { name: "Transmisión", icon: "⚙️", image: "" },
+  { name: "Frenos", icon: "🛞", image: "" },
+  { name: "Electricidad", icon: "⚡", image: "" },
+  { name: "Iluminación", icon: "💡", image: "" },
+  { name: "Espejos y accesorios", icon: "🔧", image: "" },
+  { name: "Comandos y cables", icon: "〽️", image: "" },
+  { name: "Carburación", icon: "⛽", image: "" },
+  { name: "Suspensión / ruedas", icon: "🧰", image: "" }
 ];
 
 const quickTags = [
@@ -2301,12 +2301,17 @@ function setSearch(value) {
 function renderCategoryCards() {
   categoryGrid.innerHTML = categories.map(category => {
     const count = products.filter(product => product.category === category.name).length;
+    const imageHtml = category.image 
+      ? `<img src="${category.image}" alt="${category.name}" class="category-image">`
+      : `<div class="category-icon-box">${category.icon}</div>`;
 
     return `
       <article class="category-card" data-category-card="${category.name}">
-        <div class="icon">${category.icon}</div>
-        <h3>${category.name}</h3>
-        <p>${count} productos</p>
+        ${imageHtml}
+        <div class="category-card-content">
+          <h3>${category.name}</h3>
+          <p>${count} productos</p>
+        </div>
       </article>
     `;
   }).join("");

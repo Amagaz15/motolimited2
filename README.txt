@@ -7,7 +7,7 @@ Esta versión se parece más a una tienda online/catálogo tipo ecommerce:
 - Header con logo, buscador grande, acceso a consulta y carrito.
 - Menú horizontal de categorías.
 - Hero tipo banner comercial.
-- Categorías destacadas.
+- Categorías destacadas CON IMÁGENES.
 - Catálogo con sidebar de categorías.
 - Buscador por repuesto, moto, medida o marca.
 - Carrito cotizador por WhatsApp.
@@ -27,6 +27,22 @@ const WHATSAPP_NUMBER = "5492233033185";
 Usar formato internacional sin espacios ni guiones.
 Ejemplo Argentina:
 5492231234567
+
+AGREGAR IMÁGENES A CATEGORÍAS
+------------------------------
+En script.js buscar:
+
+const categories = [
+
+Cada categoría tiene un campo "image". Para agregar imagen:
+
+image: "assets/nombre-foto.jpg"
+
+Si image está vacío "", aparece solo el emoji/ícono.
+La imagen recubrirá todo el cuadrado (object-fit: cover).
+
+Ejemplo:
+{ name: "Baterías", icon: "🔋", image: "assets/baterias.jpg" }
 
 AGREGAR PRODUCTOS
 -----------------
@@ -74,6 +90,11 @@ Guardar la foto en assets y completar:
 image: "assets/nombre-foto.jpg"
 
 Si image queda vacío, aparece "Imagen ilustrativa".
+
+FOTOS RECOMENDADAS
+-------------------
+Para las categorías: 600x400px o más (landscape)
+Para los productos: 400x400px (cuadrada)
 
 SUBIR A GITHUB
 --------------
