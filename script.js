@@ -701,9 +701,28 @@ function bindHeaderScroll() {
   if (!header) return;
 
   const scrollThreshold = 40;
+  let lastScrollY = window.scrollY;
+
+  function closeMobileMenu() {
+    if (!categoryNav || !menuButton) return;
+
+    categoryNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menú";
+  }
 
   function updateHeader() {
-    header.classList.toggle("is-compact", window.scrollY > scrollThreshold);
+    const currentScrollY = Math.max(window.scrollY, 0);
+    const scrollingDown = currentScrollY > lastScrollY;
+    const shouldHide = currentScrollY > scrollThreshold && scrollingDown;
+
+    header.classList.toggle("is-hidden", shouldHide);
+
+    if (shouldHide) {
+      closeMobileMenu();
+    }
+
+    lastScrollY = currentScrollY;
   }
 
   window.addEventListener("scroll", updateHeader, { passive: true });
