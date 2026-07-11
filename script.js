@@ -11,17 +11,18 @@ const WHATSAPP_NUMBER = "5492233033185";
 // Cambiar por el WhatsApp definitivo de Moto Limited.
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
+// Guardá las fotos con estos nombres dentro de assets/categorias/.
 const categories = [
-  { name: "Baterías", icon: "🔋" },
-  { name: "Motor", icon: "🏍️" },
-  { name: "Transmisión", icon: "⚙️" },
-  { name: "Frenos", icon: "🛞" },
-  { name: "Electricidad", icon: "⚡" },
-  { name: "Iluminación", icon: "💡" },
-  { name: "Espejos y accesorios", icon: "🔧" },
-  { name: "Comandos y cables", icon: "〽️" },
-  { name: "Carburación", icon: "⛽" },
-  { name: "Suspensión / ruedas", icon: "🧰" }
+  { name: "Baterías", image: "assets/categorias/baterias.png" },
+  { name: "Motor", image: "assets/categorias/motor.jpg" },
+  { name: "Transmisión", image: "assets/categorias/transmision.jpg" },
+  { name: "Frenos", image: "assets/categorias/frenos.jpg" },
+  { name: "Electricidad", image: "assets/categorias/electricidad.jpg" },
+  { name: "Iluminación", image: "assets/categorias/iluminacion.jpg" },
+  { name: "Espejos y accesorios", image: "assets/categorias/espejos.jpg" },
+  { name: "Comandos y cables", image: "assets/categorias/cables.jpg" },
+  { name: "Carburación", image: "assets/categorias/carburacion.jpg" },
+  { name: "Suspensión / ruedas", image: "assets/categorias/suspension.png" }
 ];
 
 const quickTags = [
@@ -2304,9 +2305,11 @@ function renderCategoryCards() {
 
     return `
       <article class="category-card" data-category-card="${category.name}">
-        <div class="icon">${category.icon}</div>
-        <h3>${category.name}</h3>
-        <p>${count} productos</p>
+        <img class="category-image" src="${category.image}" alt="${category.name}" loading="lazy">
+        <div class="category-info">
+          <h3>${category.name}</h3>
+          <p>${count} productos</p>
+        </div>
       </article>
     `;
   }).join("");
