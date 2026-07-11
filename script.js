@@ -697,32 +697,11 @@ function initWhatsappLinks() {
 // oculta la franja roja, el buscador, el carrito y el menú, y
 // deja solo el logo. Al volver arriba, se muestra todo de nuevo.
 function bindHeaderScroll() {
-  const header = $(".site-header");
+  const header = document.querySelector(".site-header");
   if (!header) return;
 
-  const scrollThreshold = 40;
-  let lastScrollY = window.scrollY;
-
-  function closeMobileMenu() {
-    if (!categoryNav || !menuButton) return;
-
-    categoryNav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "Menú";
-  }
-
   function updateHeader() {
-    const currentScrollY = Math.max(window.scrollY, 0);
-    const scrollingDown = currentScrollY > lastScrollY;
-    const shouldHide = currentScrollY > scrollThreshold && scrollingDown;
-
-    header.classList.toggle("is-hidden", shouldHide);
-
-    if (shouldHide) {
-      closeMobileMenu();
-    }
-
-    lastScrollY = currentScrollY;
+    header.classList.toggle("is-compact", window.scrollY > 40);
   }
 
   window.addEventListener("scroll", updateHeader, { passive: true });
