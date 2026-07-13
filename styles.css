@@ -84,14 +84,28 @@ select {
   min-height: 96px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 210px 1fr auto;
+  grid-template-columns: 210px minmax(0, 1fr) auto;
   gap: 22px;
   align-items: center;
   transition: min-height .25s ease;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 14px;
+}
+
 .brand {
   width: 200px;
+}
+
+.brand img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .header-search {
@@ -121,12 +135,6 @@ select {
   padding: 0 22px;
   font-weight: 900;
   cursor: pointer;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
 .account-link {
@@ -849,9 +857,19 @@ select {
   background: #18a957;
   color: var(--white);
   border-radius: 999px;
-  padding: 14px 18px;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 0;
   font-weight: 900;
   box-shadow: var(--shadow);
+}
+
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .footer {
@@ -1507,11 +1525,6 @@ select {
     grid-template-columns: 1fr;
   }
 
-  .logo {
-    width: 5px;
-    height: 5px;
-    text-align: center;
-  }
 }
 
 .site-header {
@@ -1525,3 +1538,34 @@ select {
   opacity: 0;
   pointer-events: none;
 }
+
+/* Debug override: forzar visibilidad del botón WhatsApp (temporal) */
+#floatingWhatsapp, .floating-whatsapp {
+  display: grid !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 99999 !important;
+  bottom: 18px !important;
+  right: 18px !important;
+  left: auto !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+}
+
+/* Regla final limpia para el botón reconstruido */
+.floating-whatsapp {
+  position: fixed !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  width: 56px !important;
+  height: 56px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
+  text-decoration: none !important;
+}
+
+.floating-whatsapp svg { width: 28px !important; height: 28px !important; display: block !important; }

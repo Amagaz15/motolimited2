@@ -29,8 +29,7 @@
         <button type="submit">Buscar</button>
       </form>
 
-
-
+      <div class="header-actions">
         <a class="cart-link" href="#pedido" aria-label="Ver pedido">
           <span class="cart-icon">🛒</span>
           <span class="cart-count" id="cartCount">0</span>
@@ -40,6 +39,7 @@
           Menú
         </button>
       </div>
+    </div>
 
     <nav class="category-nav" id="categoryNav">
       <a href="#catalogo" data-nav-category="Todas">Todos</a>
@@ -158,8 +158,13 @@
     </section>
   </main>
 
-  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" target="_blank" rel="noopener"> Whats App
-  
+  <!-- Botón flotante WhatsApp (reconstruido desde cero) -->
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title="Enviar mensaje por WhatsApp">
+    <!-- SVG sencillo y contrastado -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img">
+      <circle cx="12" cy="12" r="10" fill="#18a957" />
+      <path d="M17.2 14.6c-.3-.1-1.7-.8-2-.9-.3-.1-.4-.1-.6.1s-.7.9-.9 1.1c-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.2-1.4-.8-.8-1.3-1.7-1.4-2-.1-.3 0-.5.1-.7.1-.1.2-.3.3-.4.1-.1.1-.2.2-.4.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.5l-.5-.1c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2 0 1.2.9 2.6 1 2.8.1.2 1.6 2.5 3.8 3.4 2.1.9 2.1.6 2.4.6.3 0 1-.4 1.2-1 .2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z" fill="#ffffff"/>
+    </svg>
   </a>
 
   <footer class="footer">

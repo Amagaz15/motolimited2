@@ -111,33 +111,33 @@ const products = [
   },
   {
     id: "prod-008",
-    name: "TENSOR CADENA GILERA SMASH 110 (Ø12mm & Ø17mm)",
+    name: "GUIA CADENA GILERA SMASH 110 (Ø12mm & Ø17mm)",
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$750",
     image: "assets/articulos/008.jpg",
-    tags: ["tensor", "cadena", "gilera", "smash", "110", "12mm", "17mm", "transmision", "hao"]
+    tags: ["guia", "cadena", "gilera", "smash", "110", "12mm", "17mm", "transmision", "hao"]
   },
   {
     id: "prod-009",
-    name: "TENSOR CADENA YAMAHA YBR 125",
+    name: "GUIA CADENA YAMAHA YBR 125",
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$1.500",
     image: "assets/articulos/009.jpg",
-    tags: ["tensor", "cadena", "yamaha", "ybr", "125", "transmision", "hao"]
+    tags: ["guia", "cadena", "yamaha", "ybr", "125", "transmision", "hao"]
   },
   {
     id: "prod-010",
-    name: "TENSOR CADENA CG TITAN 150 Y OTRAS REDONDO (Ø18mm)",
+    name: "GUIA CADENA CG TITAN 150 Y OTRAS REDONDO (Ø18mm)",
     category: "Transmisión",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$750",
     image: "assets/articulos/010.jpg",
-    tags: ["tensor", "cadena", "titan", "150", "otras", "redondo", "18mm", "transmision", "hao"]
+    tags: ["guia", "cadena", "titan", "150", "otras", "redondo", "18mm", "transmision", "hao"]
   },
   {
     id: "prod-011",
@@ -146,7 +146,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$1.500",
-    image:  "assets/articulos/011.jpg",
+    image:  "assets/articulos/011.png",
     tags: ["kit", "retenes", "motor", "zanella", "rx150", "hao"]
   },
   {
@@ -351,7 +351,7 @@ const products = [
   },
   {
     id: "prod-032",
-    name: "ZAPATAS DE FRENO HONDA TITAN 2000 (130mm)",
+    name: "PASTILLAS DE FRENO HONDA TITAN 2000 (130mm)",
     category: "Frenos",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
