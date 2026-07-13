@@ -114,7 +114,7 @@ select {
   background: #fff;
   border-radius: 999px;
   padding: 5px;
-  border: 1px solid rgba(0,0,0,.08);
+  border: 2px solid rgba(0,0,0,.08);
 }
 
 .header-search input {
@@ -128,7 +128,7 @@ select {
 }
 
 .header-search input::placeholder {
-  color: #777;
+  color: #000000;
 }
 
 .header-search button {
@@ -397,7 +397,7 @@ select {
 }
 
 .benefit-cards span {
-  color: var(--muted);
+  color: black;
   font-size: .92rem;
 }
 
@@ -407,6 +407,7 @@ select {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
+  color:#000000;
 }
 
 .section-title h2,
@@ -418,8 +419,8 @@ select {
 }
 
 .section-title a {
-  color: rgb(255, 255, 255);
-  border: 3px solid red;
+  color: rgb(0, 0, 0);
+  border: 2px solid red;
   border-radius: 999px;
   padding: 8px 14px;
   font-weight: 900;
@@ -436,7 +437,7 @@ select {
   background: white;
   color: rgb(255, 255, 255);
   border-radius: 20px;
-  border: 3px solid white;
+  border: 3px solid rgb(0, 0, 0);
   overflow: hidden;
   cursor: pointer;
   position: relative;
