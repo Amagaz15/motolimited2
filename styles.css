@@ -51,9 +51,9 @@ select {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--black);
+  background: rgb(154, 154, 154);
   border-bottom: 1px solid var(--line);
-  box-shadow: 0 12px 28px rgba(0,0,0,.26);
+  box-shadow: 0 12px 28px rgb(0, 0, 0);
 }
 
 .promo-strip {
@@ -121,7 +121,7 @@ select {
   min-width: 0;
   border: 0;
   outline: 0;
-  color: #111;
+  color: #ffffff;
   padding: 0 18px;
   min-height: 48px;
   background: transparent;
