@@ -1641,7 +1641,7 @@ const products = [
   },
   {
     id: "prod-161",
-    name: "PUÑO TIPO PRO TAPER ROJO",
+    name: "PUÑO NEGRO Y ROJO",
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
@@ -1651,7 +1651,7 @@ const products = [
   },
   {
     id: "prod-162",
-    name: "PUÑO TIPO PRO TAPER AZUL",
+    name: "PUÑO NEGRO Y AZUL",
     category: "Espejos y accesorios",
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
@@ -1686,7 +1686,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$16.300",
-    image: "assets/articulos/165.jpg",
+    image: "assets/articulos/165.PNG",
     tags: ["bateria", "12n5", "gel", "sellada", "baterias", "hao"]
   },
   {
@@ -1696,7 +1696,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$21.600",
-    image: "assets/articulos/166.jpg",
+    image: "assets/articulos/166.png",
     tags: ["bateria", "12n7a", "gel", "sellada", "baterias", "hao"]
   },
   {
@@ -2186,7 +2186,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$19.780",
-    image: "assets/articulos/215.jpg",
+    image: "assets/articulos/215.png",
     tags: ["bateria", "gel", "sellada", "ybl6", "baterias"]
   },
   {
@@ -2196,7 +2196,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$24.847",
-    image: "assets/articulos/216.jpg",
+    image: "assets/articulos/216.png",
     tags: ["bateria", "gel", "sellada", "ytx9l", "baterias"]
   },
   {
@@ -2236,7 +2236,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$14.422",
-    image: "assets/articulos/220.jpg",
+    image: "assets/articulos/220.png",
     tags: ["bateria", "gel", "sellada", "ytx4l", "baterias"]
   },
 ];
