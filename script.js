@@ -2156,7 +2156,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$18.222",
-    image: "assets/articulos/212.jpg",
+    image: "assets/articulos/212.png",
     tags: ["bateria", "gel", "sellada", "ytx5", "baterias"]
   },
   {
@@ -2176,7 +2176,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$22.022",
-    image: "assets/articulos/214.jpg",
+    image: "assets/articulos/214.png",
     tags: ["bateria", "gel", "sellada", "ytx7a", "baterias"]
   },
   {
@@ -2206,7 +2206,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$24.847",
-    image: "assets/articulos/217.jpg",
+    image: "assets/articulos/217.png",
     tags: ["bateria", "gel", "sellada", "12n9", "baterias"]
   },
   {
@@ -2216,7 +2216,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$24.847",
-    image: "assets/articulos/218.jpg",
+    image: "assets/articulos/218.png",
     tags: ["bateria", "gel", "sellada", "12n9", "baterias"]
   },
   {
@@ -2226,7 +2226,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$21.700",
-    image: "assets/articulos/219.jpg",
+    image: "assets/articulos/219.png",
     tags: ["bateria", "gel", "sellada", "12n7", "baterias"]
   },
   {
