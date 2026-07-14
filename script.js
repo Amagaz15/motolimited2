@@ -1686,7 +1686,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$16.300",
-    image: "assets/articulos/165.PNG",
+    image: "assets/articulos/165.png",
     tags: ["bateria", "12n5", "gel", "sellada", "baterias", "hao"]
   },
   {
