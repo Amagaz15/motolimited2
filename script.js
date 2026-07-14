@@ -2239,6 +2239,106 @@ const products = [
     image: "assets/articulos/220.png",
     tags: ["bateria", "gel", "sellada", "ytx4l", "baterias"]
   },
+  {
+  id: "prod-221",
+  name: "CUBIERTA 2.50-17 DJ-340 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 2.50-17 · Modelo DJ-340 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/221.jpg",
+  tags: ["cubierta", "rueda", "2.50-17", "dj-340", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-222",
+  name: "CUBIERTA 2.75-14 DJ-14 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 2.75-14 · Modelo DJ-14 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/222.jpg",
+  tags: ["cubierta", "rueda", "2.75-14", "dj-14", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-223",
+  name: "CUBIERTA 80/100-14 DJ-801 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 80/100-14 · Modelo DJ-801 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/223.jpg",
+  tags: ["cubierta", "rueda", "80/100-14", "dj-801", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-224",
+  name: "CUBIERTA 3.00-18 DJ-340 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 3.00-18 · Modelo DJ-340 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/224.jpg",
+  tags: ["cubierta", "rueda", "3.00-18", "dj-340", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-225",
+  name: "CUBIERTA 110/70-17 HD-582 TL 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 110/70-17 · Modelo HD-582 · TL · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/225.jpg",
+  tags: ["cubierta", "rueda", "110/70-17", "hd-582", "tl", "6pr", "horse runner"]
+},
+{
+  id: "prod-226",
+  name: "CUBIERTA 110/90-17 DJ-706 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 110/90-17 · Modelo DJ-706 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/226.jpg",
+  tags: ["cubierta", "rueda", "110/90-17", "dj-706", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-227",
+  name: "CUBIERTA 120/70-17 HD-608 TL 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 120/70-17 · Modelo HD-608 · TL · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/227.jpg",
+  tags: ["cubierta", "rueda", "120/70-17", "hd-608", "tl", "6pr", "horse runner"]
+},
+{
+  id: "prod-228",
+  name: "CUBIERTA 130/70-17 RUNSTONE",
+  category: "Suspensión / ruedas",
+  brand: "RUNSTONE",
+  detail: "Medida 130/70-17. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/228.jpg",
+  tags: ["cubierta", "rueda", "130/70-17", "runstone"]
+},
+{
+  id: "prod-229",
+  name: "CUBIERTA 4.60-18 DJ-722 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 4.60-18 · Modelo DJ-722 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/229.jpg",
+  tags: ["cubierta", "rueda", "4.60-18", "dj-722", "tt", "6pr", "horse runner"]
+},
+{
+  id: "prod-230",
+  name: "CUBIERTA 90/90-19 HD-576 TT 6PR HORSE RUNNER",
+  category: "Suspensión / ruedas",
+  brand: "HORSE RUNNER",
+  detail: "Medida 90/90-19 · Modelo HD-576 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
+  price: "$",
+  image: "assets/articulos/230.jpg",
+  tags: ["cubierta", "rueda", "90/90-19", "hd-576", "tt", "6pr", "horse runner"]
+},
 ];
 
 const state = {
