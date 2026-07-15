@@ -2245,7 +2245,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 2.50-17 · Modelo DJ-340 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$17.960",
   image: "assets/articulos/221.jpg",
   tags: ["cubierta", "rueda", "2.50-17", "dj-340", "tt", "6pr", "horse runner"]
 },
@@ -2255,7 +2255,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 2.75-14 · Modelo DJ-14 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$21.505",
   image: "assets/articulos/222.jpg",
   tags: ["cubierta", "rueda", "2.75-14", "dj-14", "tt", "6pr", "horse runner"]
 },
@@ -2265,7 +2265,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 80/100-14 · Modelo DJ-801 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$20.773",
   image: "assets/articulos/223.jpg",
   tags: ["cubierta", "rueda", "80/100-14", "dj-801", "tt", "6pr", "horse runner"]
 },
@@ -2275,7 +2275,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 3.00-18 · Modelo DJ-340 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$23.440",
   image: "assets/articulos/224.jpg",
   tags: ["cubierta", "rueda", "3.00-18", "dj-340", "tt", "6pr", "horse runner"]
 },
@@ -2285,7 +2285,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 110/70-17 · Modelo HD-582 · TL · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$35.650",
   image: "assets/articulos/225.jpg",
   tags: ["cubierta", "rueda", "110/70-17", "hd-582", "tl", "6pr", "horse runner"]
 },
@@ -2295,7 +2295,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 110/90-17 · Modelo DJ-706 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$49.445",
   image: "assets/articulos/226.jpg",
   tags: ["cubierta", "rueda", "110/90-17", "dj-706", "tt", "6pr", "horse runner"]
 },
@@ -2305,7 +2305,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 120/70-17 · Modelo HD-608 · TL · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$47.364",
   image: "assets/articulos/227.jpg",
   tags: ["cubierta", "rueda", "120/70-17", "hd-608", "tl", "6pr", "horse runner"]
 },
@@ -2315,7 +2315,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "RUNSTONE",
   detail: "Medida 130/70-17. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$56.266",
   image: "assets/articulos/228.jpg",
   tags: ["cubierta", "rueda", "130/70-17", "runstone"]
 },
@@ -2325,7 +2325,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 4.60-18 · Modelo DJ-722 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$51.064",
   image: "assets/articulos/229.jpg",
   tags: ["cubierta", "rueda", "4.60-18", "dj-722", "tt", "6pr", "horse runner"]
 },
@@ -2335,7 +2335,7 @@ const products = [
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
   detail: "Medida 90/90-19 · Modelo HD-576 · TT · 6PR. Consultar compatibilidad y disponibilidad.",
-  price: "$",
+  price: "$37.113",
   image: "assets/articulos/230.jpg",
   tags: ["cubierta", "rueda", "90/90-19", "hd-576", "tt", "6pr", "horse runner"]
 },
