@@ -1573,36 +1573,12 @@ select {
   pointer-events: none;
 }
 
-/* Debug override: forzar visibilidad del botón WhatsApp (temporal) */
-#floatingWhatsapp, .floating-whatsapp {
-  display: grid !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 99999 !important;
-  bottom: 18px !important;
-  right: 18px !important;
-  left: auto !important;
-  transform: none !important;
-  pointer-events: auto !important;
-  background: transparent !important;
-}
-
-/* Regla final limpia para el botón reconstruido */
-.floating-whatsapp {
-  position: fixed !important;
-  right: 18px !important;
-  bottom: 18px !important;
-  width: 56px !important;
-  height: 56px !important;
-  display: grid !important;
-  place-items: center !important;
-  padding: 0 !important;
-  border-radius: 999px !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,.28) !important;
-  text-decoration: none !important;
-}
-
-.floating-whatsapp svg { width: 28px !important; height: 28px !important; display: block !important; }
+/* =====================================================
+   CARRITO Y BOTONES FLOTANTES - VERSION FINAL
+   - Elimina desalineaciones entre WhatsApp y carrito.
+   - Fuerza mismo tamaño, mismo eje y separación pareja.
+   - Mantiene total del pedido visible.
+===================================================== */
 
 .cart-total-box {
   margin-top: 14px;
@@ -1634,88 +1610,104 @@ select {
   line-height: 1.35;
 }
 
-.floating-cart {
-  position: fixed;
-  right: 14px;
-  bottom: 78px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #e60000;
-  color: #fff;
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  font-size: 1.35rem;
-  font-weight: 900;
-  z-index: 80;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
-}
-
-.floating-cart span {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-size: .72rem;
-  border: 2px solid #fff;
-}
-
-@media (max-width: 520px) {
-  .floating-cart {
-    right: 12px;
-    bottom: 70px;
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
-  }
-}
-
-/* Botones flotantes alineados */
+/* Base compartida: ambos botones usan exactamente el mismo eje y tamaño */
 .floating-cart,
 .floating-whatsapp {
-  position: fixed;
-  right: 14px;          /* mismo eje */
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  z-index: 90;
-  box-sizing: border-box;
+  position: fixed !important;
+  right: 18px !important;
+  left: auto !important;
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .28) !important;
 }
 
 /* Carrito arriba */
 .floating-cart {
-  bottom: 78px;
+  bottom: 86px !important;
+  z-index: 99998 !important;
+  background: var(--red) !important;
+  color: #fff !important;
+  font-size: 1.35rem !important;
+  font-weight: 900 !important;
 }
 
 /* WhatsApp abajo */
 .floating-whatsapp {
-  bottom: 14px;
+  bottom: 18px !important;
+  z-index: 99999 !important;
+  background: #18a957 !important;
+  color: #fff !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
-/* Mobile */
+/* Icono WhatsApp */
+.floating-whatsapp svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+  fill: currentColor !important;
+}
+
+/* Contador del carrito */
+.floating-cart span {
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  min-width: 22px !important;
+  height: 22px !important;
+  padding: 0 6px !important;
+  border-radius: 999px !important;
+  background: #111 !important;
+  color: #fff !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: .72rem !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  border: 2px solid #fff !important;
+}
+
+/* Mobile: mantiene alineación vertical */
 @media (max-width: 520px) {
   .floating-cart,
   .floating-whatsapp {
-    right: 12px;
-    width: 50px;
-    height: 50px;
+    right: 12px !important;
+    left: auto !important;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
   }
 
   .floating-cart {
-    bottom: 72px;
+    bottom: 74px !important;
+    font-size: 1.18rem !important;
   }
 
   .floating-whatsapp {
-    bottom: 14px;
+    bottom: 14px !important;
+  }
+
+  .floating-whatsapp svg {
+    width: 26px !important;
+    height: 26px !important;
   }
 }
