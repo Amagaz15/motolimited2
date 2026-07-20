@@ -86,7 +86,7 @@ const products = [
     brand: "HAO",
     detail: "Consultar compatibilidad y disponibilidad.",
     price: "$4.720",
-    image: "assets/articulos/005.jpg",
+    image: "assets/articulos/005.png",
     tags: ["corona", "pinon", "motomel", "skua", "150", "16t", "transmision", "hao"]
   },
   {
