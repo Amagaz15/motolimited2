@@ -1677,3 +1677,45 @@ select {
     font-size: 1.2rem;
   }
 }
+
+/* Botones flotantes alineados */
+.floating-cart,
+.floating-whatsapp {
+  position: fixed;
+  right: 14px;          /* mismo eje */
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 90;
+  box-sizing: border-box;
+}
+
+/* Carrito arriba */
+.floating-cart {
+  bottom: 78px;
+}
+
+/* WhatsApp abajo */
+.floating-whatsapp {
+  bottom: 14px;
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .floating-cart,
+  .floating-whatsapp {
+    right: 12px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-cart {
+    bottom: 72px;
+  }
+
+  .floating-whatsapp {
+    bottom: 14px;
+  }
+}
