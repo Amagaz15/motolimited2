@@ -151,6 +151,15 @@
             <p class="muted">Todavía no agregaste productos.</p>
           </div>
 
+          <div class="cart-total-box">
+  <span>Total del pedido</span>
+  <strong id="cartTotal">$0</strong>
+</div>
+
+<p class="cart-total-note">
+  El total es estimado. Los productos sin precio cargado se confirman por WhatsApp.
+</p>
+
           <a class="btn btn-primary full" id="sendOrder" href="#" target="_blank" rel="noopener">
             Enviar pedido por WhatsApp
           </a>
@@ -158,6 +167,11 @@
       </div>
     </section>
   </main>
+
+  <a class="floating-cart" href="#pedido" aria-label="Ver carrito">
+  🛒
+  <span id="floatingCartCount" hidden>0</span>
+</a>
 
   <!-- Botón flotante WhatsApp (reconstruido desde cero) -->
   <a class="floating-whatsapp" id="floatingWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title="Enviar mensaje por WhatsApp">

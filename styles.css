@@ -1603,3 +1603,77 @@ select {
 }
 
 .floating-whatsapp svg { width: 28px !important; height: 28px !important; display: block !important; }
+
+.cart-total-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cart-total-box span {
+  font-size: .9rem;
+  font-weight: 700;
+  opacity: .85;
+}
+
+.cart-total-box strong {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.cart-total-note {
+  margin: 8px 0 14px;
+  font-size: .78rem;
+  color: #777;
+  line-height: 1.35;
+}
+
+.floating-cart {
+  position: fixed;
+  right: 14px;
+  bottom: 78px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e60000;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 900;
+  z-index: 80;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+}
+
+.floating-cart span {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: .72rem;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 520px) {
+  .floating-cart {
+    right: 12px;
+    bottom: 70px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}

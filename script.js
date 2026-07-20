@@ -7,7 +7,7 @@
    - No hace falta tocar HTML ni CSS.
 ========================================================== */
 
-const WHATSAPP_NUMBER = "5492233033185";
+const WHATSAPP_NUMBER = "5492236685699";
 // Cambiar por el WhatsApp definitivo de Moto Limited.
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
@@ -2341,11 +2341,61 @@ const products = [
 },
 ];
 
+const CART_STORAGE_KEY = "motolimited-cart";
+
+function loadCart() {
+  try {
+    const savedCart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY));
+    return Array.isArray(savedCart) ? savedCart : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCart() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(state.cart));
+}
+
+function parsePrice(price) {
+  const cleanPrice = String(price || "")
+    .replace(/\s/g, "")
+    .replace("$", "")
+    .replace(/\./g, "")
+    .replace(",", ".")
+    .replace(/[^\d.-]/g, "");
+
+  const value = Number(cleanPrice);
+  return Number.isFinite(value) ? value : 0;
+}
+
+function formatMoney(value) {
+  return `$${value.toLocaleString("es-AR")}`;
+}
+
+function getCartProduct(item) {
+  return products.find(product => product.id === item.id) || item;
+}
+
+function getItemPrice(item) {
+  const product = getCartProduct(item);
+  return parsePrice(product.price || item.price);
+}
+
+function getCartTotal() {
+  return state.cart.reduce((total, item) => {
+    return total + getItemPrice(item) * item.qty;
+  }, 0);
+}
+
+function getCartItemsWithoutPrice() {
+  return state.cart.filter(item => getItemPrice(item) <= 0).length;
+}
+
 const state = {
   search: "",
   category: "Todas",
   brand: "Todas",
-  cart: []
+  cart: loadCart()
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -2366,6 +2416,8 @@ const cartItems = $("#cartItems");
 const cartCount = $("#cartCount");
 const clearCart = $("#clearCart");
 const sendOrder = $("#sendOrder");
+const cartTotal = $("#cartTotal");
+const floatingCartCount = $("#floatingCartCount");
 const heroWhatsapp = $("#heroWhatsapp");
 const floatingWhatsapp = $("#floatingWhatsapp");
 const menuButton = $("#menuButton");
@@ -2576,14 +2628,88 @@ function removeFromCart(productId) {
 }
 
 function renderCart() {
+  saveCart();
+
   const totalItems = state.cart.reduce((total, item) => total + item.qty, 0);
+  const totalPedido = getCartTotal();
+  const itemsSinPrecio = getCartItemsWithoutPrice();
+
   cartCount.textContent = totalItems;
+
+  if (floatingCartCount) {
+    floatingCartCount.textContent = totalItems;
+    floatingCartCount.hidden = totalItems === 0;
+  }
+
+  if (cartTotal) {
+    cartTotal.textContent = totalPedido > 0 ? formatMoney(totalPedido) : "$0";
+  }
 
   if (state.cart.length === 0) {
     cartItems.innerHTML = `<p class="muted">Todavía no agregaste productos.</p>`;
     sendOrder.href = whatsappUrl("Hola Moto Limited, quiero consultar por repuestos.");
+
+    if (cartTotal) {
+      cartTotal.textContent = "$0";
+    }
+
     return;
   }
+
+  cartItems.innerHTML = state.cart.map(item => {
+    const product = getCartProduct(item);
+    const unitPrice = getItemPrice(item);
+    const subtotal = unitPrice * item.qty;
+
+    const priceLine = unitPrice > 0
+      ? `Precio unitario: ${formatMoney(unitPrice)} · Subtotal: ${formatMoney(subtotal)}`
+      : "Precio: consultar";
+
+    return `
+      <div class="cart-item">
+        <div>
+          <h4>${product.name || item.name}</h4>
+          <p>${product.category || item.category} · ${product.brand || item.brand || "Marca a confirmar"} · Cantidad: ${item.qty}</p>
+          <p>${priceLine}</p>
+        </div>
+        <button type="button" data-remove="${item.id}">Quitar</button>
+      </div>
+    `;
+  }).join("");
+
+  document.querySelectorAll("[data-remove]").forEach(button => {
+    button.addEventListener("click", () => removeFromCart(button.dataset.remove));
+  });
+
+  const orderLines = state.cart.map((item, index) => {
+    const product = getCartProduct(item);
+    const unitPrice = getItemPrice(item);
+    const subtotal = unitPrice * item.qty;
+
+    const priceText = unitPrice > 0
+      ? `Precio unitario: ${formatMoney(unitPrice)} | Subtotal: ${formatMoney(subtotal)}`
+      : "Precio a consultar";
+
+    return `${index + 1}. ${product.name || item.name} | Cantidad: ${item.qty} | ${priceText}`;
+  });
+
+  const totalText = totalPedido > 0
+    ? `Total estimado del pedido: ${formatMoney(totalPedido)}`
+    : "Total estimado del pedido: a confirmar";
+
+  const message = [
+    "Hola Moto Limited, quiero consultar por estos repuestos:",
+    "",
+    ...orderLines,
+    "",
+    totalText,
+    itemsSinPrecio > 0 ? `Productos sin precio cargado: ${itemsSinPrecio}. El total puede variar.` : "",
+    "",
+    "También quiero confirmar compatibilidad, stock y precio final."
+  ].filter(Boolean).join("\n");
+
+  sendOrder.href = whatsappUrl(message);
+}
 
   cartItems.innerHTML = state.cart.map(item => `
     <div class="cart-item">
@@ -2612,8 +2738,6 @@ function renderCart() {
     "También quiero confirmar compatibilidad, stock y precio final."
   ].join("\n");
 
-  sendOrder.href = whatsappUrl(message);
-}
 
 function resetFilters() {
   state.search = "";
@@ -2698,9 +2822,9 @@ function init() {
   renderCategoryCards();
   renderSidebar();
   renderProducts();
-  renderCart();
   bindEvents();
   initWhatsappLinks();
+  renderCart();
   bindHeaderScroll();
 }
 
