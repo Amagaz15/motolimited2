@@ -41,6 +41,7 @@ const quickTags = [
 const products = [
    {
     id: "prod-001",
+    code: "CCO-4",
     name: "CÁMARA 3,00 - 14 TR 4",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -51,6 +52,7 @@ const products = [
   },
   {
     id: "prod-002",
+    code: "CCO-5",
     name: "CÁMARA 2,50 - 17 TR 4",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -61,6 +63,7 @@ const products = [
   },
   {
     id: "prod-003",
+    code: "CCO-7",
     name: "CÁMARA 3,00 - 18 TR 4",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -71,6 +74,7 @@ const products = [
   },
   {
     id: "prod-004",
+    code: "GL-0002",
     name: "CABLE EMBRAGUE ZANELLA RX150",
     category: "Comandos y cables",
     brand: "HAO",
@@ -81,6 +85,7 @@ const products = [
   },
   {
     id: "prod-005",
+    code: "GL-0007",
     name: "CORONA Y PIÑON MOTOMEL SKUA 150 43/16T",
     category: "Transmisión",
     brand: "HAO",
@@ -91,6 +96,7 @@ const products = [
   },
   {
     id: "prod-006",
+    code: "GL-0010MG",
     name: "ESTATOR ZANELLA RX150",
     category: "Electricidad",
     brand: "MAGO",
@@ -101,6 +107,7 @@ const products = [
   },
   {
     id: "prod-007",
+    code: "GL-0011",
     name: "SET LLAVES (CONTACTO Y BAÚL) GILERA SMASH",
     category: "Electricidad",
     brand: "HAO",
@@ -111,6 +118,7 @@ const products = [
   },
   {
     id: "prod-008",
+    code: "GL-0016",
     name: "GUIA CADENA GILERA SMASH 110 (Ø12mm & Ø17mm)",
     category: "Transmisión",
     brand: "HAO",
@@ -121,6 +129,7 @@ const products = [
   },
   {
     id: "prod-009",
+    code: "GL-0017",
     name: "GUIA CADENA YAMAHA YBR 125",
     category: "Transmisión",
     brand: "HAO",
@@ -131,6 +140,7 @@ const products = [
   },
   {
     id: "prod-010",
+    code: "GL-0018",
     name: "GUIA CADENA CG TITAN 150 Y OTRAS REDONDO (Ø18mm)",
     category: "Transmisión",
     brand: "HAO",
@@ -141,6 +151,7 @@ const products = [
   },
   {
     id: "prod-011",
+    code: "GL-0022",
     name: "KIT RETENES DE MOTOR ZANELLA RX150",
     category: "Motor",
     brand: "HAO",
@@ -151,6 +162,7 @@ const products = [
   },
   {
     id: "prod-012",
+    code: "GL-0023MG",
     name: "JUNTAS DE MOTOR HONDA CG TITAN 150",
     category: "Motor",
     brand: "MAGO",
@@ -161,6 +173,7 @@ const products = [
   },
   {
     id: "prod-013",
+    code: "GL-0025MG",
     name: "JUNTAS DE MOTOR GILERA SMASH 110",
     category: "Motor",
     brand: "MAGO",
@@ -171,6 +184,7 @@ const products = [
   },
   {
     id: "prod-014",
+    code: "GL-0026MG",
     name: "JUNTAS DE MOTOR ZANELLA RX150",
     category: "Motor",
     brand: "MAGO",
@@ -181,6 +195,7 @@ const products = [
   },
   {
     id: "prod-015",
+    code: "GL-0033MG",
     name: "BENDIX MOTOMEL DAKAR (S/CORONA)",
     category: "Transmisión",
     brand: "MAGO",
@@ -191,6 +206,7 @@ const products = [
   },
   {
     id: "prod-016",
+    code: "GL-0037",
     name: "GUÍA DE VALVULAS GILERA SMASH 110 (2 PCS)",
     category: "Motor",
     brand: "HAO",
@@ -201,6 +217,7 @@ const products = [
   },
   {
     id: "prod-017",
+    code: "GL-0039MG",
     name: "CDI HONDA (5T) DAX 70/C90/C100 BIZ",
     category: "Electricidad",
     brand: "MAGO",
@@ -211,6 +228,7 @@ const products = [
   },
   {
     id: "prod-018",
+    code: "GL-0042",
     name: "PLAQUETA CON CARBON HONDA TORNADO 250",
     category: "Frenos",
     brand: "HAO",
@@ -221,6 +239,7 @@ const products = [
   },
   {
     id: "prod-019",
+    code: "GL-0043",
     name: "PLAQUETA CON CARBON HONDA TITAN 150",
     category: "Frenos",
     brand: "HAO",
@@ -231,6 +250,7 @@ const products = [
   },
   {
     id: "prod-020",
+    code: "GL-0044",
     name: "PLAQUETA CON CARBON ZANELLA RX150",
     category: "Frenos",
     brand: "HAO",
@@ -241,6 +261,7 @@ const products = [
   },
   {
     id: "prod-021",
+    code: "GL-0047",
     name: "AROS DE PISTÓN ZANELLA (62mm) RX 150",
     category: "Motor",
     brand: "HAO",
@@ -251,6 +272,7 @@ const products = [
   },
   {
     id: "prod-022",
+    code: "GL-0049",
     name: "DISCO EMBRAGUE HONDA WAVE (4 PCS)",
     category: "Comandos y cables",
     brand: "HAO",
@@ -261,6 +283,7 @@ const products = [
   },
   {
     id: "prod-023",
+    code: "GL-0051",
     name: "DISCO EMBRAGUE HONDA CG125 (5 PCS)",
     category: "Comandos y cables",
     brand: "HAO",
@@ -271,6 +294,7 @@ const products = [
   },
   {
     id: "prod-024",
+    code: "GL-0056",
     name: "KIT DISTRIBUCION GILERA SMASH (3 PCS DENTADO)",
     category: "Transmisión",
     brand: "HAO",
@@ -281,6 +305,7 @@ const products = [
   },
   {
     id: "prod-025",
+    code: "GL-0058",
     name: "VÁLVULAS GILERA SMASH 110",
     category: "Motor",
     brand: "HAO",
@@ -291,6 +316,7 @@ const products = [
   },
   {
     id: "prod-026",
+    code: "GL-0059",
     name: "VÁLVULAS ZANELLA RX150",
     category: "Motor",
     brand: "HAO",
@@ -301,6 +327,7 @@ const products = [
   },
   {
     id: "prod-027",
+    code: "GL-0064",
     name: "PATADA DE ARRANQUE GILERA SMASH 110",
     category: "Electricidad",
     brand: "HAO",
@@ -311,6 +338,7 @@ const products = [
   },
   {
     id: "prod-028",
+    code: "GL-0067",
     name: "FAROL DELANTERO GILERA SMASH (GIRO AMBAR)",
     category: "Iluminación",
     brand: "HAO",
@@ -321,6 +349,7 @@ const products = [
   },
   {
     id: "prod-029",
+    code: "GL-0070",
     name: "KIT CILINDRO COMPLETO GILERA SMASH",
     category: "Motor",
     brand: "HAO",
@@ -331,6 +360,7 @@ const products = [
   },
   {
     id: "prod-030",
+    code: "GL-0074",
     name: "CAPUCHÓN DE BUJÍA SMASH \\TITAN",
     category: "Electricidad",
     brand: "HAO",
@@ -341,6 +371,7 @@ const products = [
   },
   {
     id: "prod-031",
+    code: "GL-0075",
     name: "ZAPATAS DE FRENO GILERA SMASH 110 (CRUZADO)",
     category: "Frenos",
     brand: "HAO",
@@ -351,6 +382,7 @@ const products = [
   },
   {
     id: "prod-032",
+    code: "GL-0076",
     name: "PASTILLAS DE FRENO HONDA TITAN 2000 (130mm)",
     category: "Frenos",
     brand: "HAO",
@@ -361,6 +393,7 @@ const products = [
   },
   {
     id: "prod-033",
+    code: "GL-0077",
     name: "VARILLA DE FRENO GILERA SMASH 110",
     category: "Frenos",
     brand: "HAO",
@@ -371,6 +404,7 @@ const products = [
   },
   {
     id: "prod-034",
+    code: "GL-0079",
     name: "BUJÍA D8EA (RX150)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -381,6 +415,7 @@ const products = [
   },
   {
     id: "prod-035",
+    code: "GL-0080",
     name: "BUJÍA C7HSA (110)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -391,6 +426,7 @@ const products = [
   },
   {
     id: "prod-036",
+    code: "GL-0084MG",
     name: "CADENA REFORZADA 428H-110",
     category: "Transmisión",
     brand: "MAGO",
@@ -401,6 +437,7 @@ const products = [
   },
   {
     id: "prod-037",
+    code: "GL-0100",
     name: "CABLE FRENO DELANTERO HONDA STORM",
     category: "Frenos",
     brand: "HAO",
@@ -411,6 +448,7 @@ const products = [
   },
   {
     id: "prod-038",
+    code: "GL-0102",
     name: "CABLE EMBRAGUE HONDA STORM 125 (108cm)",
     category: "Comandos y cables",
     brand: "HAO",
@@ -421,6 +459,7 @@ const products = [
   },
   {
     id: "prod-039",
+    code: "GL-0103",
     name: "CABLE EMBRAGUE HONDA CG 125 TITAN",
     category: "Comandos y cables",
     brand: "HAO",
@@ -431,6 +470,7 @@ const products = [
   },
   {
     id: "prod-040",
+    code: "GL-0106",
     name: "CABLE EMBRAGUE HONDA CG 150 TITAN",
     category: "Comandos y cables",
     brand: "HAO",
@@ -441,6 +481,7 @@ const products = [
   },
   {
     id: "prod-041",
+    code: "GL-0107",
     name: "CABLE VELOCIMETRO MOTOMEL SKUA 150",
     category: "Comandos y cables",
     brand: "MAGO",
@@ -451,6 +492,7 @@ const products = [
   },
   {
     id: "prod-042",
+    code: "GL-0110",
     name: "CABLE ACELERADOR HONDA WAVE",
     category: "Comandos y cables",
     brand: "HAO",
@@ -461,6 +503,7 @@ const products = [
   },
   {
     id: "prod-043",
+    code: "GL-0111MG",
     name: "CADENA REFORZADA 428H-118",
     category: "Transmisión",
     brand: "MAGO",
@@ -471,6 +514,7 @@ const products = [
   },
   {
     id: "prod-044",
+    code: "GL-0112MG",
     name: "CADENA DISTRIBUCION  25H-84L",
     category: "Transmisión",
     brand: "MAGO",
@@ -481,6 +525,7 @@ const products = [
   },
   {
     id: "prod-045",
+    code: "GL-0113MG",
     name: "CADENA DISTRIBUCION  25H-90L",
     category: "Transmisión",
     brand: "MAGO",
@@ -491,6 +536,7 @@ const products = [
   },
   {
     id: "prod-046",
+    code: "GL-0124",
     name: "CORONA Y PIÑÓN ZANELLA RX150 38/15T DORADA",
     category: "Transmisión",
     brand: "HAO",
@@ -501,6 +547,7 @@ const products = [
   },
   {
     id: "prod-047",
+    code: "GL-0129",
     name: "SET LLAVES (CONTACTO Y BAÚL) ZANELLA RX150",
     category: "Electricidad",
     brand: "HAO",
@@ -511,6 +558,7 @@ const products = [
   },
   {
     id: "prod-048",
+    code: "GL-0141MG",
     name: "RELAY ARRANQUE CON FUSIBLE",
     category: "Electricidad",
     brand: "MAGO",
@@ -521,6 +569,7 @@ const products = [
   },
   {
     id: "prod-049",
+    code: "GL-0153",
     name: "BIELA HONDA CD100 CORTA",
     category: "Motor",
     brand: "HAO",
@@ -531,6 +580,7 @@ const products = [
   },
   {
     id: "prod-050",
+    code: "GL-0154",
     name: "BIELA ZANELLA RX150",
     category: "Motor",
     brand: "HAO",
@@ -541,6 +591,7 @@ const products = [
   },
   {
     id: "prod-051",
+    code: "GL-0156",
     name: "PATADA DE ARRANQUE HONDA TITAN150",
     category: "Electricidad",
     brand: "HAO",
@@ -551,6 +602,7 @@ const products = [
   },
   {
     id: "prod-052",
+    code: "GL-0157",
     name: "PATADA DE ARRANQUE MOTOMEL CUSTOM 150",
     category: "Electricidad",
     brand: "HAO",
@@ -561,6 +613,7 @@ const products = [
   },
   {
     id: "prod-053",
+    code: "GL-0158",
     name: "PALANCA DE CAMBIO ZANELLA RX 150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -571,6 +624,7 @@ const products = [
   },
   {
     id: "prod-054",
+    code: "GL-0159",
     name: "FAROL TRASERO GILERA SMASH / BIZ  (ROJO-AMBAR)",
     category: "Iluminación",
     brand: "HAO",
@@ -581,6 +635,7 @@ const products = [
   },
   {
     id: "prod-055",
+    code: "GL-0168",
     name: "FAROL DELANTERO HONDA CG125 TITAN",
     category: "Iluminación",
     brand: "HAO",
@@ -591,6 +646,7 @@ const products = [
   },
   {
     id: "prod-056",
+    code: "GL-0178",
     name: "CADENA REFORZADA 428H-136",
     category: "Transmisión",
     brand: "HAO",
@@ -601,6 +657,7 @@ const products = [
   },
   {
     id: "prod-057",
+    code: "GL-0210",
     name: "KIT REPARACION CARBURADOR GILERA SMASH",
     category: "Carburación",
     brand: "HAO",
@@ -611,6 +668,7 @@ const products = [
   },
   {
     id: "prod-058",
+    code: "GL-0211",
     name: "KIT REPARACION CARBURADOR ZANELLA RX150",
     category: "Carburación",
     brand: "HAO",
@@ -621,6 +679,7 @@ const products = [
   },
   {
     id: "prod-059",
+    code: "GL-0214MG",
     name: "CDI GILERA (4T,12V,DC) SMASH",
     category: "Electricidad",
     brand: "MAGO",
@@ -631,6 +690,7 @@ const products = [
   },
   {
     id: "prod-060",
+    code: "GL-0215MG",
     name: "CDI HONDA WAVE",
     category: "Electricidad",
     brand: "MAGO",
@@ -641,6 +701,7 @@ const products = [
   },
   {
     id: "prod-061",
+    code: "GL-0217",
     name: "DISCO EMBRAGUE GILERA SMASH 110 (3 PCS)",
     category: "Comandos y cables",
     brand: "HAO",
@@ -651,6 +712,7 @@ const products = [
   },
   {
     id: "prod-062",
+    code: "GL-0232",
     name: "ARBOL DE LEVAS GILERA SMASH 110 (CORTO)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -661,6 +723,7 @@ const products = [
   },
   {
     id: "prod-063",
+    code: "GL-0233",
     name: "ARBOL DE LEVAS GILERA SMASH 110 (LARGO)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -671,6 +734,7 @@ const products = [
   },
   {
     id: "prod-064",
+    code: "GL-0237",
     name: "ARBOL DE LEVAS ZANELLA RX150/ SKUA150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -681,6 +745,7 @@ const products = [
   },
   {
     id: "prod-065",
+    code: "GL-0238",
     name: "JUNTAS DE MOTOR HONDA WAVE",
     category: "Motor",
     brand: "HAO",
@@ -691,6 +756,7 @@ const products = [
   },
   {
     id: "prod-066",
+    code: "GL-0238MG",
     name: "JUNTAS DE MOTOR HONDA WAVE",
     category: "Motor",
     brand: "MAGO",
@@ -701,6 +767,7 @@ const products = [
   },
   {
     id: "prod-067",
+    code: "GL-0239",
     name: "KIT RETENES DE MOTOR GILERA SMASH 110",
     category: "Motor",
     brand: "HAO",
@@ -711,6 +778,7 @@ const products = [
   },
   {
     id: "prod-068",
+    code: "GL-0249",
     name: "BOCA DE ADMISIÓN ZANELLA RX 150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -721,6 +789,7 @@ const products = [
   },
   {
     id: "prod-069",
+    code: "GL-0250",
     name: "BOCA DE ADMISIÓN HONDA TITAN CG150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -731,6 +800,7 @@ const products = [
   },
   {
     id: "prod-070",
+    code: "GL-0251",
     name: "BOCA DE ADMISIÓN MOTOMEL DAKAR 200",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -741,6 +811,7 @@ const products = [
   },
   {
     id: "prod-071",
+    code: "GL-0252",
     name: "BOCA DE ADMISIÓN MOTOMEL CUSTOM 150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -751,6 +822,7 @@ const products = [
   },
   {
     id: "prod-072",
+    code: "GL-0261",
     name: "BOCA DE ADMISIÓN HONDA TITAN 2000",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -761,6 +833,7 @@ const products = [
   },
   {
     id: "prod-073",
+    code: "GL-0263",
     name: "RETEN SUSPENSION GILERA SMASH (26x37x10.5)",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -771,6 +844,7 @@ const products = [
   },
   {
     id: "prod-074",
+    code: "GL-0307",
     name: "RETEN SUSPENSION ZANELLA RX 150 (31x43x10.5)",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -781,6 +855,7 @@ const products = [
   },
   {
     id: "prod-075",
+    code: "GL-0332",
     name: "SET BULONES PARA CORONA ZANELLA RX150/STORM",
     category: "Transmisión",
     brand: "HAO",
@@ -791,6 +866,7 @@ const products = [
   },
   {
     id: "prod-076",
+    code: "GL-0335",
     name: "BOBINA DE IGNICIÓN GILERA SMASH 110",
     category: "Electricidad",
     brand: "HAO",
@@ -801,6 +877,7 @@ const products = [
   },
   {
     id: "prod-077",
+    code: "GL-0337",
     name: "VÁLVULAS YAMAHA CRYPTON T105",
     category: "Motor",
     brand: "HAO",
@@ -811,6 +888,7 @@ const products = [
   },
   {
     id: "prod-078",
+    code: "GL-0338",
     name: "BIELA GILERA SMASH LARGA",
     category: "Motor",
     brand: "HAO",
@@ -821,6 +899,7 @@ const products = [
   },
   {
     id: "prod-079",
+    code: "GL-0339",
     name: "KIT TECLAS GILERA  SMASH (5PCS)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -831,6 +910,7 @@ const products = [
   },
   {
     id: "prod-080",
+    code: "GL-0340",
     name: "KIT TECLAS GILERA FUTURA",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -841,6 +921,7 @@ const products = [
   },
   {
     id: "prod-081",
+    code: "GL-0343",
     name: "BOCA DE ADMISIÓN MOTOMEL SKUA 150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -851,6 +932,7 @@ const products = [
   },
   {
     id: "prod-082",
+    code: "GL-0345",
     name: "ESPEJO HONDA CBT125",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -861,6 +943,7 @@ const products = [
   },
   {
     id: "prod-083",
+    code: "GL-0347",
     name: "BIELA YAMAHA (COLOR DORADO) CRYPTON T105",
     category: "Motor",
     brand: "HAO",
@@ -871,6 +954,7 @@ const products = [
   },
   {
     id: "prod-084",
+    code: "GL-0352MG",
     name: "CADENA REFORZADA 420H-112",
     category: "Transmisión",
     brand: "MAGO",
@@ -881,6 +965,7 @@ const products = [
   },
   {
     id: "prod-085",
+    code: "GL-0353MG",
     name: "CADENA REFORZADA 520H-118",
     category: "Transmisión",
     brand: "MAGO",
@@ -891,6 +976,7 @@ const products = [
   },
   {
     id: "prod-086",
+    code: "GL-0358",
     name: "MAZA TRASERA ZANELLA RX150 C/ RULEMAN Y BUJES",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -901,6 +987,7 @@ const products = [
   },
   {
     id: "prod-087",
+    code: "GL-0359",
     name: "MAZA TRASERA HONDA BIZ C-100 / C-105 SOLA",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -911,6 +998,7 @@ const products = [
   },
   {
     id: "prod-088",
+    code: "GL-0360",
     name: "MAZA TRASERA HONDA WAVE NF 100 C/ RULEMAN",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -921,6 +1009,7 @@ const products = [
   },
   {
     id: "prod-089",
+    code: "GL-0361",
     name: "MAZA TRASERA MOTOMEL SKUA 150/200 V6 COMPLETA",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -931,6 +1020,7 @@ const products = [
   },
   {
     id: "prod-090",
+    code: "GL-0364",
     name: "MAZA TRASERA YAMAHA YBR125 COMPLETA",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -941,6 +1031,7 @@ const products = [
   },
   {
     id: "prod-091",
+    code: "GL-0365",
     name: "MAZA TRASERA YAMAHA CRYPTON T-105 / T-110",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -951,6 +1042,7 @@ const products = [
   },
   {
     id: "prod-092",
+    code: "GL-0373",
     name: "TAPA TANQUE GILERA SMASH 110",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -961,6 +1053,7 @@ const products = [
   },
   {
     id: "prod-093",
+    code: "GL-0377",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (0,25  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -971,6 +1064,7 @@ const products = [
   },
   {
     id: "prod-094",
+    code: "GL-0378",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (0,50  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -981,6 +1075,7 @@ const products = [
   },
   {
     id: "prod-095",
+    code: "GL-0379",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (0,75  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -991,6 +1086,7 @@ const products = [
   },
   {
     id: "prod-096",
+    code: "GL-0380",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (1,00  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1001,6 +1097,7 @@ const products = [
   },
   {
     id: "prod-097",
+    code: "GL-0381",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (1,25  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1011,6 +1108,7 @@ const products = [
   },
   {
     id: "prod-098",
+    code: "GL-0382",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (1,50  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1021,6 +1119,7 @@ const products = [
   },
   {
     id: "prod-099",
+    code: "GL-0383",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (1,75  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1031,6 +1130,7 @@ const products = [
   },
   {
     id: "prod-100",
+    code: "GL-0384",
     name: "KIT PISTÓN COMPLETO GILERA SMASH 110 (2,00  DIA 52,4 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1041,6 +1141,7 @@ const products = [
   },
   {
     id: "prod-101",
+    code: "GL-0385",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (0,00 STD  DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1051,6 +1152,7 @@ const products = [
   },
   {
     id: "prod-102",
+    code: "GL-0386MG",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (0,25 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1061,6 +1163,7 @@ const products = [
   },
   {
     id: "prod-103",
+    code: "GL-0387",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (0,50 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1071,6 +1174,7 @@ const products = [
   },
   {
     id: "prod-104",
+    code: "GL-0388",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (0,75 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1081,6 +1185,7 @@ const products = [
   },
   {
     id: "prod-105",
+    code: "GL-0389",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (1,00 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1091,6 +1196,7 @@ const products = [
   },
   {
     id: "prod-106",
+    code: "GL-0390",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (1,25 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1101,6 +1207,7 @@ const products = [
   },
   {
     id: "prod-107",
+    code: "GL-0391",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (1,50 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1111,6 +1218,7 @@ const products = [
   },
   {
     id: "prod-108",
+    code: "GL-0392",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (1,75 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1121,6 +1229,7 @@ const products = [
   },
   {
     id: "prod-109",
+    code: "GL-0393",
     name: "KIT PISTÓN COMPLETO ZANELLA RX 150 (2,00 DIA 62,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1131,6 +1240,7 @@ const products = [
   },
   {
     id: "prod-110",
+    code: "GL-0394",
     name: "LAMPARA BOSCH BA20D (B35)TK55 12V 35/35W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1141,6 +1251,7 @@ const products = [
   },
   {
     id: "prod-111",
+    code: "GL-0395",
     name: "LAMPARA HALÓGENA H4 P43T 12V 35/35W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1151,6 +1262,7 @@ const products = [
   },
   {
     id: "prod-112",
+    code: "GL-0396",
     name: "LAMPARA HALÓGENA DELANTERA SMASH P15D-25-1 H6 12V 18/18W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1161,6 +1273,7 @@ const products = [
   },
   {
     id: "prod-113",
+    code: "GL-0397",
     name: "LAMPARA HALÓGENA DELANTERA SMASH P15D-25-1 H6 12V 35/35W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1171,6 +1284,7 @@ const products = [
   },
   {
     id: "prod-114",
+    code: "GL-0398",
     name: "LAMPARA TRASERA SMASH BAY15D (S25)TK38 12V 21/5W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1181,6 +1295,7 @@ const products = [
   },
   {
     id: "prod-115",
+    code: "GL-0399",
     name: "LAMPARA TRASERA SMASH BAY15D (S25)TK38 12V 21/5W ROJA",
     category: "Iluminación",
     brand: "HAO",
@@ -1191,6 +1306,7 @@ const products = [
   },
   {
     id: "prod-116",
+    code: "GL-0401",
     name: "FAROL TRASERO GILERA SMASH (CRISTAL-CRISTAL)",
     category: "Iluminación",
     brand: "HAO",
@@ -1201,6 +1317,7 @@ const products = [
   },
   {
     id: "prod-117",
+    code: "GL-0403",
     name: "FAROL DELANTERO ZANELLA RX 150",
     category: "Iluminación",
     brand: "HAO",
@@ -1211,6 +1328,7 @@ const products = [
   },
   {
     id: "prod-118",
+    code: "GL-0411",
     name: "BIELA HONDA CG 150 TITAN / XR 150L 96X14X28mm",
     category: "Motor",
     brand: "HAO",
@@ -1221,6 +1339,7 @@ const products = [
   },
   {
     id: "prod-119",
+    code: "GL-0412",
     name: "BIELA HONDA XR 250 TORNADO/ TWISTER",
     category: "Motor",
     brand: "HAO",
@@ -1231,6 +1350,7 @@ const products = [
   },
   {
     id: "prod-120",
+    code: "GL-0413",
     name: "BIELA MOTOMEL DAKAR 200 CADENERA 103.5x17x30",
     category: "Motor",
     brand: "HAO",
@@ -1241,6 +1361,7 @@ const products = [
   },
   {
     id: "prod-121",
+    code: "GL-0414",
     name: "BIELA MOTOMEL DAKAR 200 VARILLERA 105.5x15x32",
     category: "Motor",
     brand: "HAO",
@@ -1251,6 +1372,7 @@ const products = [
   },
   {
     id: "prod-122",
+    code: "GL-0415",
     name: "BIELA MOTOMEL SKUA 200 / MOTARD 103.5x16x30",
     category: "Motor",
     brand: "HAO",
@@ -1261,6 +1383,7 @@ const products = [
   },
   {
     id: "prod-123",
+    code: "GL-0416",
     name: "BOCA DE ADMISIÓN HONDA STORM 125",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1271,6 +1394,7 @@ const products = [
   },
   {
     id: "prod-124",
+    code: "GL-0425",
     name: "BUJÍA CPR8EA9 (10 mm)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1281,6 +1405,7 @@ const products = [
   },
   {
     id: "prod-125",
+    code: "GL-0427",
     name: "CABLE ACELERADOR HONDA STORM",
     category: "Comandos y cables",
     brand: "HAO",
@@ -1291,6 +1416,7 @@ const products = [
   },
   {
     id: "prod-126",
+    code: "GL-0429",
     name: "CABLE EMBRAGUE MOTOMEL DAKAR 200",
     category: "Comandos y cables",
     brand: "HAO",
@@ -1301,6 +1427,7 @@ const products = [
   },
   {
     id: "prod-127",
+    code: "GL-0430",
     name: "CABLE EMBRAGUE YAMAHA FZ16",
     category: "Comandos y cables",
     brand: "HAO",
@@ -1311,6 +1438,7 @@ const products = [
   },
   {
     id: "prod-128",
+    code: "GL-0435",
     name: "MAZA TRASERA GILERA SMASH 110 SOLA",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -1321,6 +1449,7 @@ const products = [
   },
   {
     id: "prod-129",
+    code: "GL-0447MG",
     name: "CORONA Y PIÑÓN YAMAHA CRYPTON NEW 36/15T",
     category: "Transmisión",
     brand: "MAGO",
@@ -1331,6 +1460,7 @@ const products = [
   },
   {
     id: "prod-130",
+    code: "GL-0449",
     name: "CORONA Y PIÑÓN HONDA WAVE NEW DORADA 37/14T",
     category: "Transmisión",
     brand: "HAO",
@@ -1341,6 +1471,7 @@ const products = [
   },
   {
     id: "prod-131",
+    code: "GL-0450MG",
     name: "CORONA Y PIÑÓN HONDA CG 125 43/14T",
     category: "Transmisión",
     brand: "MAGO",
@@ -1351,6 +1482,7 @@ const products = [
   },
   {
     id: "prod-132",
+    code: "GL-0453MG",
     name: "JUNTAS DE MOTOR MOTOMEL SKUA 150",
     category: "Motor",
     brand: "MAGO",
@@ -1361,6 +1493,7 @@ const products = [
   },
   {
     id: "prod-133",
+    code: "GL-0464",
     name: "LAMPARA MUELITA T5 12V 5W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1371,6 +1504,7 @@ const products = [
   },
   {
     id: "prod-134",
+    code: "GL-0465",
     name: "LAMPARA MUELITA T6 12V 5W AMBAR",
     category: "Iluminación",
     brand: "HAO",
@@ -1381,6 +1515,7 @@ const products = [
   },
   {
     id: "prod-135",
+    code: "GL-0466",
     name: "LAMPARA MUELITA T13 W2.1x9.5D 12V 10W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1391,6 +1526,7 @@ const products = [
   },
   {
     id: "prod-136",
+    code: "GL-0467",
     name: "LAMPARA MUELITA T13 W2.1x9.5D 12V 10W AMBAR",
     category: "Iluminación",
     brand: "HAO",
@@ -1401,6 +1537,7 @@ const products = [
   },
   {
     id: "prod-137",
+    code: "GL-0468",
     name: "LAMPARA DE GIRO 1 POLO BA15S (G18)TK21 12V 10W CRISTAL",
     category: "Iluminación",
     brand: "HAO",
@@ -1411,6 +1548,7 @@ const products = [
   },
   {
     id: "prod-138",
+    code: "GL-0469",
     name: "LAMPARA DE GIRO 1 POLO BA15S (G18)TK21 12V 10W AMBAR",
     category: "Iluminación",
     brand: "HAO",
@@ -1421,6 +1559,7 @@ const products = [
   },
   {
     id: "prod-139",
+    code: "GL-0471",
     name: "JUNTA DE ESCAPE HONDA CG125 DORADA",
     category: "Motor",
     brand: "HAO",
@@ -1431,6 +1570,7 @@ const products = [
   },
   {
     id: "prod-140",
+    code: "GL-0472MG",
     name: "RELAY ARRANQUE SIN FUSIBLE",
     category: "Electricidad",
     brand: "MAGO",
@@ -1441,6 +1581,7 @@ const products = [
   },
   {
     id: "prod-141",
+    code: "GL-0475",
     name: "PASTILLA DE FRENO DELANTERA GILERA SMASH 110 CON GANCHO",
     category: "Frenos",
     brand: "HAO",
@@ -1451,6 +1592,7 @@ const products = [
   },
   {
     id: "prod-142",
+    code: "GL-0476",
     name: "PASTILLA DE FRENO DELANTERA GILERA SMASH 110 SIN GANCHO",
     category: "Frenos",
     brand: "HAO",
@@ -1461,6 +1603,7 @@ const products = [
   },
   {
     id: "prod-143",
+    code: "GL-0478",
     name: "PASTILLA DE FRENO DELANTERA MOTOMEL SKUA 150",
     category: "Frenos",
     brand: "HAO",
@@ -1471,6 +1614,7 @@ const products = [
   },
   {
     id: "prod-144",
+    code: "GL-0479",
     name: "ZAPATAS DE FRENO YAMAHA CRYPTON T-105",
     category: "Frenos",
     brand: "HAO",
@@ -1481,6 +1625,7 @@ const products = [
   },
   {
     id: "prod-145",
+    code: "GL-0480",
     name: "ZAPATAS DE FRENO YAMAHA YBR 125",
     category: "Frenos",
     brand: "HAO",
@@ -1491,6 +1636,7 @@ const products = [
   },
   {
     id: "prod-146",
+    code: "GL-0481",
     name: "ZAPATAS DE FRENO ZANELLA RX 150 PUNTA REDONDA",
     category: "Frenos",
     brand: "HAO",
@@ -1501,6 +1647,7 @@ const products = [
   },
   {
     id: "prod-147",
+    code: "GL-0482MG",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (0,00 STD DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1511,6 +1658,7 @@ const products = [
   },
   {
     id: "prod-148",
+    code: "GL-0483MG",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (0,25 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1521,6 +1669,7 @@ const products = [
   },
   {
     id: "prod-149",
+    code: "GL-0484",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (0,50 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1531,6 +1680,7 @@ const products = [
   },
   {
     id: "prod-150",
+    code: "GL-0485",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (0,75 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1541,6 +1691,7 @@ const products = [
   },
   {
     id: "prod-151",
+    code: "GL-0486",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (1,00 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1551,6 +1702,7 @@ const products = [
   },
   {
     id: "prod-152",
+    code: "GL-0487",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (1,25 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1561,6 +1713,7 @@ const products = [
   },
   {
     id: "prod-153",
+    code: "GL-0488MG",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (1,50 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1571,6 +1724,7 @@ const products = [
   },
   {
     id: "prod-154",
+    code: "GL-0489",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (1,75 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "HAO",
@@ -1581,6 +1735,7 @@ const products = [
   },
   {
     id: "prod-155",
+    code: "GL-0490MG",
     name: "KIT PISTÓN COMPLETO HONDA C100 BIZ / WAVE (2,00 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1591,6 +1746,7 @@ const products = [
   },
   {
     id: "prod-156",
+    code: "GL-0493",
     name: "RETEN SUSPENSION HONDA CBX250 / NS200 (37x50x11)",
     category: "Suspensión / ruedas",
     brand: "HAO",
@@ -1601,6 +1757,7 @@ const products = [
   },
   {
     id: "prod-157",
+    code: "GL-0494",
     name: "CDI ZANELLA RX150 FICHA CUADRADA (6 PIN)",
     category: "Electricidad",
     brand: "HAO",
@@ -1611,6 +1768,7 @@ const products = [
   },
   {
     id: "prod-158",
+    code: "GL-0499",
     name: "PUÑO TIPO CROOS UNICOLOR 125mm ROJO",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1621,6 +1779,7 @@ const products = [
   },
   {
     id: "prod-159",
+    code: "GL-0500",
     name: "PUÑO TIPO CROOS UNICOLOR 125mm AZUL",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1631,6 +1790,7 @@ const products = [
   },
   {
     id: "prod-160",
+    code: "GL-0501",
     name: "PUÑO TIPO CROOS UNICOLOR 125mm NEGRO",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1641,6 +1801,7 @@ const products = [
   },
   {
     id: "prod-161",
+    code: "GL-0502",
     name: "PUÑO NEGRO Y ROJO",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1651,6 +1812,7 @@ const products = [
   },
   {
     id: "prod-162",
+    code: "GL-0503",
     name: "PUÑO NEGRO Y AZUL",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1661,6 +1823,7 @@ const products = [
   },
   {
     id: "prod-163",
+    code: "GL-0505",
     name: "CORONA Y PIÑON MOTOMEL SKUA 150 46/17T DORADA",
     category: "Transmisión",
     brand: "HAO",
@@ -1671,6 +1834,7 @@ const products = [
   },
   {
     id: "prod-164",
+    code: "GL-0506",
     name: "CORONA Y PIÑÓN YAMAHA YBR 125 43/14T DORADA",
     category: "Transmisión",
     brand: "HAO",
@@ -1681,6 +1845,7 @@ const products = [
   },
   {
     id: "prod-165",
+    code: "GL-0507",
     name: "BATERÍA 12N5-3B GEL SELLADA",
     category: "Baterías",
     brand: "HAO",
@@ -1691,6 +1856,7 @@ const products = [
   },
   {
     id: "prod-166",
+    code: "GL-0508",
     name: "BATERÍA 12N7A-3A GEL SELLADA",
     category: "Baterías",
     brand: "HAO",
@@ -1701,6 +1867,7 @@ const products = [
   },
   {
     id: "prod-167",
+    code: "GL-0509",
     name: "PUÑO TIPO PRO TAPER FUCSIA",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1711,6 +1878,7 @@ const products = [
   },
   {
     id: "prod-168",
+    code: "GL-0510",
     name: "PUÑO TIPO PRO TAPER VERDE",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1721,6 +1889,7 @@ const products = [
   },
   {
     id: "prod-169",
+    code: "GL-0511",
     name: "PUÑO TIPO PRO TAPER NARANJA",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1731,6 +1900,7 @@ const products = [
   },
   {
     id: "prod-170",
+    code: "GL-0514MG",
     name: "KIT PISTÓN COMPLETO HONDA WAVE S 110 (0,25 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1741,6 +1911,7 @@ const products = [
   },
   {
     id: "prod-171",
+    code: "GL-0515MG",
     name: "KIT PISTÓN COMPLETO HONDA WAVE S 110 (0,50 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1751,6 +1922,7 @@ const products = [
   },
   {
     id: "prod-172",
+    code: "GL-0519MG",
     name: "KIT PISTÓN COMPLETO HONDA WAVE S 110 (1,50 DIA 50,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1761,6 +1933,7 @@ const products = [
   },
   {
     id: "prod-173",
+    code: "GL-0523MG",
     name: "KIT PISTÓN COMPLETO YAMAHA YBR125 (0,25 DIA 54,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1771,6 +1944,7 @@ const products = [
   },
   {
     id: "prod-174",
+    code: "GL-0524MG",
     name: "KIT PISTÓN COMPLETO YAMAHA YBR125 (0,50 DIA 54,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1781,6 +1955,7 @@ const products = [
   },
   {
     id: "prod-175",
+    code: "GL-0526MG",
     name: "KIT PISTÓN COMPLETO YAMAHA YBR125 (1,00 DIA 54,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1791,6 +1966,7 @@ const products = [
   },
   {
     id: "prod-176",
+    code: "GL-0532MG",
     name: "KIT PISTÓN COMPLETO BAJAJ ROUSER NS200 (0,25 DIA 72,0 mm , PIN 17 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1801,6 +1977,7 @@ const products = [
   },
   {
     id: "prod-177",
+    code: "GL-0533MG",
     name: "KIT PISTÓN COMPLETO BAJAJ ROUSER NS200 (0,50 DIA 72,0 mm , PIN 17 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1811,6 +1988,7 @@ const products = [
   },
   {
     id: "prod-178",
+    code: "GL-0540MG",
     name: "KIT PISTÓN COMPLETO HONDA CG150 TITÁN (0,00 STD DIA 57,3 mm , PIN 14 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1821,6 +1999,7 @@ const products = [
   },
   {
     id: "prod-179",
+    code: "GL-0550MG",
     name: "KIT PISTÓN COMPLETO YAMAHA CRYPTON T-105 (0,25 DIA 49,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1831,6 +2010,7 @@ const products = [
   },
   {
     id: "prod-180",
+    code: "GL-0560MG",
     name: "KIT PISTÓN COMPLETO YAMAHA NEW CRYPTON T-110 (0,50 DIA 51,0 mm , PIN 13 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1841,6 +2021,7 @@ const products = [
   },
   {
     id: "prod-181",
+    code: "GL-0585MG",
     name: "KIT PISTÓN COMPLETO YAMAHA FZ16 STD DIA 58,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1851,6 +2032,7 @@ const products = [
   },
   {
     id: "prod-182",
+    code: "GL-0586MG",
     name: "KIT PISTÓN COMPLETO YAMAHA FZ16 (0,25 DIA 58,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1861,6 +2043,7 @@ const products = [
   },
   {
     id: "prod-183",
+    code: "GL-0587MG",
     name: "KIT PISTÓN COMPLETO YAMAHA FZ16 (0,50 DIA 58,0 mm , PIN 15 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1871,6 +2054,7 @@ const products = [
   },
   {
     id: "prod-184",
+    code: "GL-0595MG",
     name: "KIT PISTÓN COMPLETO HONDA CBX250 / XR250 TORNADO (0,25 DIA 73,0 mm , PIN 17 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1881,6 +2065,7 @@ const products = [
   },
   {
     id: "prod-185",
+    code: "GL-0596MG",
     name: "KIT PISTÓN COMPLETO HONDA CBX250 / XR250 TORNADO (0,50 DIA 73,0 mm , PIN 17 mm)",
     category: "Motor",
     brand: "MAGO",
@@ -1891,6 +2076,7 @@ const products = [
   },
   {
     id: "prod-186",
+    code: "GL-0603",
     name: "CORONA Y PIÑÓN BAJAJ ROUSER NS200 39/14T DORADA",
     category: "Transmisión",
     brand: "HAO",
@@ -1901,6 +2087,7 @@ const products = [
   },
   {
     id: "prod-187",
+    code: "GL-0604",
     name: "ESPEJO HONDA CG150",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1911,6 +2098,7 @@ const products = [
   },
   {
     id: "prod-188",
+    code: "GL-0605",
     name: "ESPEJO HONDA XR250 TORNADO (REDONDO)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -1921,6 +2109,7 @@ const products = [
   },
   {
     id: "prod-189",
+    code: "GL-0615",
     name: "ZAPATAS DE FRENO HONDA XR250 TORNADO",
     category: "Frenos",
     brand: "HAO",
@@ -1931,6 +2120,7 @@ const products = [
   },
   {
     id: "prod-190",
+    code: "GL-0616",
     name: "PASTILLA DE FRENO DELANTERA HONDA XR250 TORNADO",
     category: "Frenos",
     brand: "HAO",
@@ -1941,6 +2131,7 @@ const products = [
   },
   {
     id: "prod-191",
+    code: "GL-0617",
     name: "PASTILLA DE FRENO DELANTERA BAJAJ ROUSER NS200",
     category: "Frenos",
     brand: "HAO",
@@ -1951,6 +2142,7 @@ const products = [
   },
   {
     id: "prod-192",
+    code: "GL-0618",
     name: "PASTILLA DE FRENO TRASERA BAJAJ ROUSER NS200",
     category: "Frenos",
     brand: "HAO",
@@ -1961,6 +2153,7 @@ const products = [
   },
   {
     id: "prod-193",
+    code: "GL-0698MG",
     name: "CADENA DISTRIBUCION 25H X 86L",
     category: "Transmisión",
     brand: "MAGO",
@@ -1971,6 +2164,7 @@ const products = [
   },
   {
     id: "prod-194",
+    code: "GL-0700MG",
     name: "CADENA DISTRIBUCION 404H x 86L",
     category: "Transmisión",
     brand: "MAGO",
@@ -1981,6 +2175,7 @@ const products = [
   },
   {
     id: "prod-195",
+    code: "GL-0701MG",
     name: "CADENA DISTRIBUCION 404H x 90L",
     category: "Transmisión",
     brand: "MAGO",
@@ -1991,6 +2186,7 @@ const products = [
   },
   {
     id: "prod-196",
+    code: "GL-0702MG",
     name: "CADENA DISTRIBUCION 404H x 92L",
     category: "Transmisión",
     brand: "MAGO",
@@ -2001,6 +2197,7 @@ const products = [
   },
   {
     id: "prod-197",
+    code: "GL-0703MG",
     name: "CADENA DISTRIBUCION 404H x 94L",
     category: "Transmisión",
     brand: "MAGO",
@@ -2011,6 +2208,7 @@ const products = [
   },
   {
     id: "prod-198",
+    code: "GL-0704MG",
     name: "CADENA DISTRIBUCION 404H x 96L",
     category: "Transmisión",
     brand: "MAGO",
@@ -2021,6 +2219,7 @@ const products = [
   },
   {
     id: "prod-199",
+    code: "GL-0705MG",
     name: "CADENA DISTRIBUCION 409H x 126L",
     category: "Transmisión",
     brand: "MAGO",
@@ -2031,6 +2230,7 @@ const products = [
   },
   {
     id: "prod-200",
+    code: "GL-0706",
     name: "CADENA DISTRIBUCION 409H x 94L",
     category: "Transmisión",
     brand: "HAO",
@@ -2041,6 +2241,7 @@ const products = [
   },
   {
     id: "prod-201",
+    code: "GL-0717MG",
     name: "ESTATOR ZANELLA RX150 2017 8 CAMPOS LUCES ENCENDIDAS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2051,6 +2252,7 @@ const products = [
   },
   {
     id: "prod-202",
+    code: "GL-0718MG",
     name: "ESTATOR HONDA WAVE S 110 12 CAMPOS LUCES ENCENDIDAS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2061,6 +2263,7 @@ const products = [
   },
   {
     id: "prod-203",
+    code: "GL-0719MG",
     name: "ESTATOR YAMAHA NEW CRYPTON T-110 12 CAMPOS LUCES ENCENDIDAS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2071,6 +2274,7 @@ const products = [
   },
   {
     id: "prod-204",
+    code: "GL-0720MG",
     name: "ESTATOR YAMAHA FZ16 12 CAMPOS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2081,6 +2285,7 @@ const products = [
   },
   {
     id: "prod-205",
+    code: "GL-0721MG",
     name: "ESTATOR YAMAHA CRYPTON T-105 7 CAMPOS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2091,6 +2296,7 @@ const products = [
   },
   {
     id: "prod-206",
+    code: "GL-0722MG",
     name: "ESTATOR HONDA NEW CG150 TITAN (2017)",
     category: "Electricidad",
     brand: "MAGO",
@@ -2101,6 +2307,7 @@ const products = [
   },
   {
     id: "prod-207",
+    code: "GL-0723MG",
     name: "ESTATOR HONDA XR250 TORNADO / TWISTER 18 CAMPOS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2111,6 +2318,7 @@ const products = [
   },
   {
     id: "prod-208",
+    code: "GL-0724MG",
     name: "ESTATOR HONDA CB190R 18 CAMPOS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2121,6 +2329,7 @@ const products = [
   },
   {
     id: "prod-209",
+    code: "GL-0725MG",
     name: "ESTATOR YAMAHA YBR 125 CHINA 7 CAMPOS",
     category: "Electricidad",
     brand: "MAGO",
@@ -2131,6 +2340,7 @@ const products = [
   },
   {
     id: "prod-210",
+    code: "GL-0732MG",
     name: "CORONA Y PIÑON HONDA NXR125 BROSS 54T/17T",
     category: "Transmisión",
     brand: "MAGO",
@@ -2141,6 +2351,7 @@ const products = [
   },
   {
     id: "prod-211",
+    code: "GL-0735",
     name: "RGULADOR DE VOLTAJE TRIFÁSICO GILERA SMASH (LUZENCENDIDA)",
     category: "Espejos y accesorios",
     brand: "HAO",
@@ -2151,6 +2362,7 @@ const products = [
   },
   {
     id: "prod-212",
+    code: "GL-0742",
     name: "BATERÍA DE GEL SELLADA YTX5-BS",
     category: "Baterías",
     brand: "HAO",
@@ -2161,6 +2373,7 @@ const products = [
   },
   {
     id: "prod-213",
+    code: "GL-0743",
     name: "BATERÍA DE GEL SELLADA YTX7L-BS",
     category: "Baterías",
     brand: "HAO",
@@ -2171,6 +2384,7 @@ const products = [
   },
   {
     id: "prod-214",
+    code: "GL-0744",
     name: "BATERÍA DE GEL SELLADA YTX7A-BS",
     category: "Baterías",
     brand: "HAO",
@@ -2181,6 +2395,7 @@ const products = [
   },
   {
     id: "prod-215",
+    code: "GL-0745",
     name: "BATERÍA DE GEL SELLADA YBL6,5-LB",
     category: "Baterías",
     brand: "HAO",
@@ -2191,6 +2406,7 @@ const products = [
   },
   {
     id: "prod-216",
+    code: "GL-0746",
     name: "BATERÍA DE GEL SELLADA YTX9L-BS",
     category: "Baterías",
     brand: "HAO",
@@ -2201,6 +2417,7 @@ const products = [
   },
   {
     id: "prod-217",
+    code: "GL-0747",
     name: "BATERÍA DE GEL SELLADA 12N9-3B",
     category: "Baterías",
     brand: "HAO",
@@ -2211,6 +2428,7 @@ const products = [
   },
   {
     id: "prod-218",
+    code: "GL-0748",
     name: "BATERÍA DE GEL SELLADA 12N9-4B",
     category: "Baterías",
     brand: "HAO",
@@ -2221,6 +2439,7 @@ const products = [
   },
   {
     id: "prod-219",
+    code: "GL-0749",
     name: "BATERÍA DE GEL SELLADA 12N7-3B",
     category: "Baterías",
     brand: "HAO",
@@ -2231,6 +2450,7 @@ const products = [
   },
   {
     id: "prod-220",
+    code: "GL-0750",
     name: "BATERÍA DE GEL SELLADA YTX4L-BS",
     category: "Baterías",
     brand: "HAO",
@@ -2241,6 +2461,7 @@ const products = [
   },
   {
   id: "prod-221",
+    code: "HRCUB-25017",
   name: "CUBIERTA 2.50-17 DJ-340 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2251,6 +2472,7 @@ const products = [
 },
 {
   id: "prod-222",
+    code: "HRCUB-27514",
   name: "CUBIERTA 2.75-14 DJ-14 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2261,6 +2483,7 @@ const products = [
 },
 {
   id: "prod-223",
+    code: "HRCUB-8010014",
   name: "CUBIERTA 80/100-14 DJ-801 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2271,6 +2494,7 @@ const products = [
 },
 {
   id: "prod-224",
+    code: "HRCUB-30018",
   name: "CUBIERTA 3.00-18 DJ-340 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2281,6 +2505,7 @@ const products = [
 },
 {
   id: "prod-225",
+    code: "HRCUB-1107017",
   name: "CUBIERTA 110/70-17 HD-582 TL 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2291,6 +2516,7 @@ const products = [
 },
 {
   id: "prod-226",
+    code: "HRCUB-1109017",
   name: "CUBIERTA 110/90-17 DJ-706 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2301,6 +2527,7 @@ const products = [
 },
 {
   id: "prod-227",
+    code: "HRCUB-1207017",
   name: "CUBIERTA 120/70-17 HD-608 TL 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2311,6 +2538,7 @@ const products = [
 },
 {
   id: "prod-228",
+    code: "RUNCUB-130/70-17",
   name: "CUBIERTA 130/70-17 RUNSTONE",
   category: "Suspensión / ruedas",
   brand: "RUNSTONE",
@@ -2321,6 +2549,7 @@ const products = [
 },
 {
   id: "prod-229",
+    code: "HRCUB-46018",
   name: "CUBIERTA 4.60-18 DJ-722 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2331,6 +2560,7 @@ const products = [
 },
 {
   id: "prod-230",
+    code: "HRCUB-909019",
   name: "CUBIERTA 90/90-19 HD-576 TT 6PR HORSE RUNNER",
   category: "Suspensión / ruedas",
   brand: "HORSE RUNNER",
@@ -2374,6 +2604,11 @@ function formatMoney(value) {
 
 function getCartProduct(item) {
   return products.find(product => product.id === item.id) || item;
+}
+
+function getProductCode(item) {
+  const product = getCartProduct(item);
+  return product.code || item.code || product.id || item.id || "SIN-CODIGO";
 }
 
 function getItemPrice(item) {
@@ -2518,6 +2753,7 @@ function fillFilters() {
 function productMatches(product) {
   const searchableText = normalize([
     product.id,
+    product.code,
     product.name,
     product.category,
     product.brand,
@@ -2559,6 +2795,7 @@ function renderProducts() {
 
         <div class="product-info">
           <div class="product-brand">${product.brand || "Marca a confirmar"}</div>
+          <div class="product-code">${product.code || product.id}</div>
           <h3 class="product-title">${product.name}</h3>
           <p class="product-detail">${product.detail}</p>
 
@@ -2611,6 +2848,7 @@ function addToCart(productId, qty) {
   } else {
     state.cart.push({
       id: product.id,
+      code: product.code || product.id,
       name: product.name,
       category: product.category,
       brand: product.brand,
@@ -2658,6 +2896,7 @@ function renderCart() {
 
   cartItems.innerHTML = state.cart.map(item => {
     const product = getCartProduct(item);
+    const productCode = getProductCode(item);
     const unitPrice = getItemPrice(item);
     const subtotal = unitPrice * item.qty;
 
@@ -2668,6 +2907,7 @@ function renderCart() {
     return `
       <div class="cart-item">
         <div>
+          <span class="cart-product-code">Código: ${productCode}</span>
           <h4>${product.name || item.name}</h4>
           <p>${product.category || item.category} · ${product.brand || item.brand || "Marca a confirmar"} · Cantidad: ${item.qty}</p>
           <p>${priceLine}</p>
@@ -2683,6 +2923,7 @@ function renderCart() {
 
   const orderLines = state.cart.map((item, index) => {
     const product = getCartProduct(item);
+    const productCode = getProductCode(item);
     const unitPrice = getItemPrice(item);
     const subtotal = unitPrice * item.qty;
 
@@ -2690,7 +2931,7 @@ function renderCart() {
       ? `Precio unitario: ${formatMoney(unitPrice)} | Subtotal: ${formatMoney(subtotal)}`
       : "Precio a consultar";
 
-    return `${index + 1}. ${product.name || item.name} | Cantidad: ${item.qty} | ${priceText}`;
+    return `${index + 1}. Código: ${productCode} | ${product.name || item.name} | Cantidad: ${item.qty} | ${priceText}`;
   });
 
   const totalText = totalPedido > 0
@@ -2710,34 +2951,6 @@ function renderCart() {
 
   sendOrder.href = whatsappUrl(message);
 }
-
-  cartItems.innerHTML = state.cart.map(item => `
-    <div class="cart-item">
-      <div>
-        <h4>${item.name}</h4>
-        <p>${item.category} · ${item.brand || "Marca a confirmar"} · Cantidad: ${item.qty}</p>
-        <p>${item.price ? `Precio: ${item.price}` : "Precio: consultar"}</p>
-      </div>
-      <button type="button" data-remove="${item.id}">Quitar</button>
-    </div>
-  `).join("");
-
-  document.querySelectorAll("[data-remove]").forEach(button => {
-    button.addEventListener("click", () => removeFromCart(button.dataset.remove));
-  });
-
-  const orderLines = state.cart.map((item, index) => {
-    return `${index + 1}. ${item.name} | Cantidad: ${item.qty} | ${item.price || "Precio a consultar"}`;
-  });
-
-  const message = [
-    "Hola Moto Limited, quiero consultar por estos repuestos:",
-    "",
-    ...orderLines,
-    "",
-    "También quiero confirmar compatibilidad, stock y precio final."
-  ].join("\n");
-
 
 function resetFilters() {
   state.search = "";
