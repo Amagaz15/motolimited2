@@ -773,7 +773,7 @@ const products = [
     brand: "MAGO",
     detail: "",
     price: "$2.242",
-    image: "assets/articulos/017.jpg",
+    image: "assets/articulos/017.png",
     tags: ["cdi", "honda", "dax", "c90", "c100", "biz", "electricidad", "mago"]
   },
   {
@@ -905,7 +905,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$35.650",
-  image: "assets/articulos/225.jpg",
+  image: "assets/articulos/225.png",
   tags: ["cubierta", "rueda", "110/70-17", "hd-582", "tl", "6pr", "horse runner"]
 },
   {
@@ -916,7 +916,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$49.445",
-  image: "assets/articulos/226.jpg",
+  image: "assets/articulos/226.png",
   tags: ["cubierta", "rueda", "110/90-17", "dj-706", "tt", "6pr", "horse runner"]
 },
   {
@@ -938,7 +938,7 @@ const products = [
   brand: "RUNSTONE",
     detail: "",
   price: "$56.266",
-  image: "assets/articulos/228.jpg",
+  image: "assets/articulos/228.png",
   tags: ["cubierta", "rueda", "130/70-17", "runstone"]
 },
   {
@@ -960,7 +960,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$21.505",
-  image: "assets/articulos/222.jpg",
+  image: "assets/articulos/222.png",
   tags: ["cubierta", "rueda", "2.75-14", "dj-14", "tt", "6pr", "horse runner"]
 },
   {
@@ -971,7 +971,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$23.440",
-  image: "assets/articulos/224.jpg",
+  image: "assets/articulos/224.png",
   tags: ["cubierta", "rueda", "3.00-18", "dj-340", "tt", "6pr", "horse runner"]
 },
   {
@@ -993,7 +993,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$20.773",
-  image: "assets/articulos/223.jpg",
+  image: "assets/articulos/223.png",
   tags: ["cubierta", "rueda", "80/100-14", "dj-801", "tt", "6pr", "horse runner"]
 },
   {
@@ -1004,7 +1004,7 @@ const products = [
   brand: "HORSE RUNNER",
     detail: "",
   price: "$37.113",
-  image: "assets/articulos/230.jpg",
+  image: "assets/articulos/230.png",
   tags: ["cubierta", "rueda", "90/90-19", "hd-576", "tt", "6pr", "horse runner"]
 },
   {
@@ -1026,7 +1026,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$3.875",
-    image: "assets/articulos/023.jpg",
+    image: "assets/articulos/023.png",
     tags: ["disco", "embrague", "honda", "cg125", "comandos", "cables", "hao"]
   },
   {
@@ -1983,7 +1983,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$190",
-    image: "assets/articulos/136.jpg",
+    image: "assets/articulos/136.png",
     tags: ["lampara", "muelita", "t13", "1x9", "12v", "10w", "ambar", "iluminacion", "hao"]
   },
   {
@@ -1994,7 +1994,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$140",
-    image: "assets/articulos/135.jpg",
+    image: "assets/articulos/135.png",
     tags: ["lampara", "muelita", "t13", "1x9", "12v", "10w", "cristal", "iluminacion", "hao"]
   },
   {
@@ -2005,7 +2005,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$140",
-    image: "assets/articulos/133.jpg",
+    image: "assets/articulos/133.png",
     tags: ["lampara", "muelita", "12v", "cristal", "iluminacion", "hao"]
   },
   {
@@ -2016,7 +2016,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$190",
-    image: "assets/articulos/134.jpg",
+    image: "assets/articulos/134.png",
     tags: ["lampara", "muelita", "12v", "ambar", "iluminacion", "hao"]
   },
   {
@@ -2082,7 +2082,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$36.185",
-    image: "assets/articulos/089.jpg",
+    image: "assets/articulos/089.png",
     tags: ["maza", "trasera", "motomel", "skua", "150", "200", "suspension", "ruedas", "hao"]
   },
   {
@@ -2104,7 +2104,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$25.220",
-    image: "assets/articulos/090.jpg",
+    image: "assets/articulos/090.png",
     tags: ["maza", "trasera", "yamaha", "ybr125", "suspension", "ruedas", "hao"]
   },
   {
@@ -2115,7 +2115,7 @@ const products = [
     brand: "HAO",
     detail: "",
     price: "$45.000",
-    image: "assets/articulos/086.jpg",
+    image: "assets/articulos/086.png",
     tags: ["maza", "trasera", "zanella", "rx150", "ruleman", "bujes", "suspension", "ruedas", "hao"]
   },
   {
