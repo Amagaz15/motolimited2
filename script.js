@@ -2933,8 +2933,16 @@ function ensureCustomerStyles() {
 function ensureCustomerForm() {
   ensureCustomerStyles();
 
-  if (!document.getElementById("customerData")) {
-    const customerForm = document.createElement("div");
+  // Evita que el formulario aparezca duplicado si ya lo pegaste en el HTML
+  // o si quedó una versión anterior cargada.
+  const existingForms = Array.from(document.querySelectorAll(".customer-data"));
+  let customerForm =
+    document.getElementById("customerData") ||
+    document.getElementById("customerName")?.closest(".customer-data") ||
+    existingForms[0];
+
+  if (!customerForm) {
+    customerForm = document.createElement("div");
     customerForm.className = "customer-data";
     customerForm.id = "customerData";
     customerForm.innerHTML = `
@@ -2970,16 +2978,26 @@ function ensureCustomerForm() {
         <textarea id="customerDescription" rows="3" placeholder="Ej: horario de entrega, aclaraciones del pedido, forma de pago, etc."></textarea>
       </label>
     `;
+  }
 
-    const cartTotalBox = document.querySelector(".cart-total-box");
+  customerForm.id = "customerData";
+  customerForm.classList.add("customer-data");
 
-    if (cartTotalBox) {
-      cartTotalBox.insertAdjacentElement("beforebegin", customerForm);
-    } else if (sendOrder) {
-      sendOrder.insertAdjacentElement("beforebegin", customerForm);
-    } else if (cartItems) {
-      cartItems.insertAdjacentElement("afterend", customerForm);
+  // Si hay más de un formulario, deja uno solo.
+  Array.from(document.querySelectorAll(".customer-data")).forEach(form => {
+    if (form !== customerForm) {
+      form.remove();
     }
+  });
+
+  const cartTotalBox = document.querySelector(".cart-total-box");
+
+  if (cartTotalBox) {
+    cartTotalBox.insertAdjacentElement("beforebegin", customerForm);
+  } else if (sendOrder) {
+    sendOrder.insertAdjacentElement("beforebegin", customerForm);
+  } else if (cartItems) {
+    cartItems.insertAdjacentElement("afterend", customerForm);
   }
 
   customerName = $("#customerName");
