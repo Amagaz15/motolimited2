@@ -2572,6 +2572,7 @@ const products = [
 ];
 
 const CART_STORAGE_KEY = "motolimited-cart";
+const CUSTOMER_STORAGE_KEY = "motolimited-customer-data";
 
 function loadCart() {
   try {
@@ -2651,6 +2652,12 @@ const cartItems = $("#cartItems");
 const cartCount = $("#cartCount");
 const clearCart = $("#clearCart");
 const sendOrder = $("#sendOrder");
+let customerName = $("#customerName");
+let customerPhone = $("#customerPhone");
+let customerAddress = $("#customerAddress");
+let customerStore = $("#customerStore");
+let customerEmail = $("#customerEmail");
+let customerDescription = $("#customerDescription");
 const cartTotal = $("#cartTotal");
 const floatingCartCount = $("#floatingCartCount");
 const heroWhatsapp = $("#heroWhatsapp");
@@ -2865,8 +2872,177 @@ function removeFromCart(productId) {
   renderCart();
 }
 
+
+function ensureCustomerStyles() {
+  if (document.getElementById("customerDataStyles")) return;
+
+  const style = document.createElement("style");
+  style.id = "customerDataStyles";
+  style.textContent = `
+    .customer-data {
+      margin: 14px 0;
+      padding: 14px;
+      border-radius: 14px;
+      background: #f4f4f4;
+      border: 1px solid rgba(0,0,0,.10);
+      display: grid;
+      gap: 10px;
+    }
+
+    .customer-data h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      color: #111;
+    }
+
+    .customer-data label {
+      display: grid;
+      gap: 5px;
+      font-size: .82rem;
+      font-weight: 800;
+      color: #222;
+    }
+
+    .customer-data input,
+    .customer-data textarea {
+      width: 100%;
+      border: 1px solid rgba(0,0,0,.16);
+      border-radius: 10px;
+      padding: 10px 11px;
+      color: #111;
+      background: #fff;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .customer-data input:focus,
+    .customer-data textarea:focus {
+      border-color: var(--red, #e10600);
+      box-shadow: 0 0 0 3px rgba(225, 6, 0, .10);
+    }
+
+    .customer-data textarea {
+      resize: vertical;
+      min-height: 74px;
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+function ensureCustomerForm() {
+  ensureCustomerStyles();
+
+  if (!document.getElementById("customerData")) {
+    const customerForm = document.createElement("div");
+    customerForm.className = "customer-data";
+    customerForm.id = "customerData";
+    customerForm.innerHTML = `
+      <h4>Datos para el pedido</h4>
+
+      <label>
+        Nombre
+        <input type="text" id="customerName" placeholder="Ej: Juan Pérez" autocomplete="name" required>
+      </label>
+
+      <label>
+        Teléfono
+        <input type="tel" id="customerPhone" placeholder="Ej: 2257 123456" autocomplete="tel" required>
+      </label>
+
+      <label>
+        Dirección
+        <input type="text" id="customerAddress" placeholder="Ej: Av. Libertador 123" autocomplete="street-address" required>
+      </label>
+
+      <label>
+        Nombre del local
+        <input type="text" id="customerStore" placeholder="Ej: Repuestos El Rápido" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" id="customerEmail" placeholder="Ej: local@email.com" autocomplete="email" required>
+      </label>
+
+      <label>
+        Descripción / aclaración
+        <textarea id="customerDescription" rows="3" placeholder="Ej: horario de entrega, aclaraciones del pedido, forma de pago, etc."></textarea>
+      </label>
+    `;
+
+    const cartTotalBox = document.querySelector(".cart-total-box");
+
+    if (cartTotalBox) {
+      cartTotalBox.insertAdjacentElement("beforebegin", customerForm);
+    } else if (sendOrder) {
+      sendOrder.insertAdjacentElement("beforebegin", customerForm);
+    } else if (cartItems) {
+      cartItems.insertAdjacentElement("afterend", customerForm);
+    }
+  }
+
+  customerName = $("#customerName");
+  customerPhone = $("#customerPhone");
+  customerAddress = $("#customerAddress");
+  customerStore = $("#customerStore");
+  customerEmail = $("#customerEmail");
+  customerDescription = $("#customerDescription");
+
+  loadCustomerDataIntoForm();
+}
+
+function getCustomerData() {
+  return {
+    name: customerName?.value.trim() || "",
+    phone: customerPhone?.value.trim() || "",
+    address: customerAddress?.value.trim() || "",
+    store: customerStore?.value.trim() || "",
+    email: customerEmail?.value.trim() || "",
+    description: customerDescription?.value.trim() || ""
+  };
+}
+
+function saveCustomerData() {
+  localStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify(getCustomerData()));
+}
+
+function loadCustomerData() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CUSTOMER_STORAGE_KEY));
+    return saved && typeof saved === "object" ? saved : {};
+  } catch {
+    return {};
+  }
+}
+
+function loadCustomerDataIntoForm() {
+  const saved = loadCustomerData();
+
+  if (customerName && !customerName.value) customerName.value = saved.name || "";
+  if (customerPhone && !customerPhone.value) customerPhone.value = saved.phone || "";
+  if (customerAddress && !customerAddress.value) customerAddress.value = saved.address || "";
+  if (customerStore && !customerStore.value) customerStore.value = saved.store || "";
+  if (customerEmail && !customerEmail.value) customerEmail.value = saved.email || "";
+  if (customerDescription && !customerDescription.value) customerDescription.value = saved.description || "";
+}
+
+function getMissingCustomerFields() {
+  const data = getCustomerData();
+  const missing = [];
+
+  if (!data.name) missing.push({ field: customerName, label: "Nombre" });
+  if (!data.phone) missing.push({ field: customerPhone, label: "Teléfono" });
+  if (!data.address) missing.push({ field: customerAddress, label: "Dirección" });
+  if (!data.store) missing.push({ field: customerStore, label: "Nombre del local" });
+  if (!data.email) missing.push({ field: customerEmail, label: "Email" });
+
+  return missing;
+}
+
 function renderCart() {
   saveCart();
+  saveCustomerData();
 
   const totalItems = state.cart.reduce((total, item) => total + item.qty, 0);
   const totalPedido = getCartTotal();
@@ -2934,13 +3110,28 @@ function renderCart() {
     return `${index + 1}. Código: ${productCode} | ${product.name || item.name} | Cantidad: ${item.qty} | ${priceText}`;
   });
 
+  const customer = getCustomerData();
+
+  const customerLines = [
+    `Nombre: ${customer.name || "A completar"}`,
+    `Teléfono: ${customer.phone || "A completar"}`,
+    `Dirección: ${customer.address || "A completar"}`,
+    `Nombre del local: ${customer.store || "A completar"}`,
+    `Email: ${customer.email || "A completar"}`,
+    customer.description ? `Descripción: ${customer.description}` : ""
+  ];
+
   const totalText = totalPedido > 0
     ? `Total estimado del pedido: ${formatMoney(totalPedido)}`
     : "Total estimado del pedido: a confirmar";
 
   const message = [
-    "Hola Moto Limited, quiero consultar por estos repuestos:",
+    "Hola Moto Limited, quiero hacer este pedido:",
     "",
+    "DATOS DEL CLIENTE / LOCAL:",
+    ...customerLines,
+    "",
+    "PRODUCTOS:",
     ...orderLines,
     "",
     totalText,
@@ -3005,6 +3196,36 @@ function bindEvents() {
     menuButton.setAttribute("aria-expanded", String(open));
     menuButton.textContent = open ? "Cerrar" : "Menú";
   });
+
+  [
+    customerName,
+    customerPhone,
+    customerAddress,
+    customerStore,
+    customerEmail,
+    customerDescription
+  ].forEach(input => {
+    if (input) {
+      input.addEventListener("input", renderCart);
+    }
+  });
+
+  sendOrder.addEventListener("click", event => {
+    if (state.cart.length === 0) {
+      event.preventDefault();
+      alert("Primero agregá productos al carrito.");
+      return;
+    }
+
+    const missing = getMissingCustomerFields();
+
+    if (missing.length > 0) {
+      event.preventDefault();
+      alert(`Falta completar: ${missing.map(item => item.label).join(", ")}`);
+      missing[0].field?.focus();
+    }
+  });
+
 }
 
 function initWhatsappLinks() {
@@ -3035,6 +3256,7 @@ function init() {
   renderCategoryCards();
   renderSidebar();
   renderProducts();
+  ensureCustomerForm();
   bindEvents();
   initWhatsappLinks();
   renderCart();
