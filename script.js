@@ -380,17 +380,7 @@ const products = [
     image: "assets/articulos/070.jpg",
     tags: ["boca", "admision", "motomel", "dakar", "200", "espejos", "accesorios", "hao"]
   },
-  {
-    id: "prod-081",
-    code: "GL-0343",
-    name: "BOCA DE ADMISIÓN MOTOMEL SKUA 150",
-    category: "Espejos y accesorios",
-    brand: "HAO",
-    detail: "",
-    price: "",
-    image: "assets/articulos/081.jpg",
-    tags: ["boca", "admision", "motomel", "skua", "150", "espejos", "accesorios", "hao"]
-  },
+  
   {
     id: "prod-068",
     code: "GL-0249",
