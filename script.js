@@ -369,17 +369,7 @@ const products = [
     image: "assets/articulos/071.jpg",
     tags: ["boca", "admision", "motomel", "custom", "150", "espejos", "accesorios", "hao"]
   },
-  {
-    id: "prod-070",
-    code: "GL-0251",
-    name: "BOCA DE ADMISIÓN MOTOMEL DAKAR 200",
-    category: "Espejos y accesorios",
-    brand: "HAO",
-    detail: "",
-    price: "$2.710",
-    image: "assets/articulos/070.jpg",
-    tags: ["boca", "admision", "motomel", "dakar", "200", "espejos", "accesorios", "hao"]
-  },
+  
   
   {
     id: "prod-068",
@@ -2086,17 +2076,7 @@ const products = [
     image: "assets/articulos/091.jpg",
     tags: ["maza", "trasera", "yamaha", "crypton", "105", "110", "suspension", "ruedas", "hao"]
   },
-  {
-    id: "prod-090",
-    code: "GL-0364",
-    name: "MAZA TRASERA YAMAHA YBR125 COMPLETA",
-    category: "Suspensión / ruedas",
-    brand: "HAO",
-    detail: "",
-    price: "$25.220",
-    image: "assets/articulos/090.png",
-    tags: ["maza", "trasera", "yamaha", "ybr125", "suspension", "ruedas", "hao"]
-  },
+  
   {
     id: "prod-086",
     code: "GL-0358",
