@@ -2949,8 +2949,8 @@ function ensureCustomerForm() {
       </label>
 
       <label>
-        Dirección
-        <input type="text" id="customerAddress" placeholder="Ej: Av. Libertador 123" autocomplete="street-address" required>
+        Dirección y Ciudad
+        <input type="text" id="customerAddress" placeholder="Ej: Av. Libertador 123 - La Plata" autocomplete="street-address" required>
       </label>
 
       <label>
