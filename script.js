@@ -675,7 +675,7 @@ const products = [
     category: "Transmisión",
     brand: "HAO",
     detail: "",
-    price: "$10.930",
+    price: "SIN STOCK",
     image: "assets/articulos/056.jpg",
     tags: ["cadena", "reforzada", "428h", "136", "transmision", "hao"]
   },
@@ -1232,7 +1232,7 @@ const products = [
   {
     id: "prod-008",
     code: "GL-0016",
-    name: "GUIA CADENA GILERA SMASH 110 (Ø12mm & Ø17mm)",
+    name: "TENSOR CADENA GILERA SMASH 110 (Ø12mm & Ø17mm)",
     category: "Transmisión",
     brand: "HAO",
     detail: "",
