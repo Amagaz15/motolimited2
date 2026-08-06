@@ -211,7 +211,7 @@ const products = [
     category: "Transmisión",
     brand: "MAGO",
     detail: "",
-    price: "$8.500",
+    price: "SIN STOCK",
     image: "assets/articulos/015.jpg",
     tags: ["bendix", "motomel", "dakar", "corona", "transmision", "mago"]
   },
@@ -433,7 +433,7 @@ const products = [
     category: "Comandos y cables",
     brand: "HAO",
     detail: "",
-    price: "",
+    price: "1660",
     image: "assets/articulos/042.jpg",
     tags: ["cable", "acelerador", "honda", "wave", "comandos", "cables", "hao"]
   },
@@ -1148,7 +1148,7 @@ const products = [
     category: "Electricidad",
     brand: "MAGO",
     detail: "",
-    price: "$8.025",
+    price: "SIN STOCK",
     image: "assets/articulos/006.jpg",
     tags: ["estator", "zanella", "rx150", "electricidad", "mago"]
   },
