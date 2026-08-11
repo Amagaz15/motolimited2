@@ -7,7 +7,7 @@
    - No hace falta tocar HTML ni CSS.
 ========================================================== */
 
-const WHATSAPP_NUMBER = "5492233033185";
+const WHATSAPP_NUMBER = "5492257416049";
 // Cambiar por el WhatsApp definitivo de Moto Limited.
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
