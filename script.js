@@ -11,6 +11,10 @@ const WHATSAPP_NUMBER = "5492257416049";
 // Cambiar por el WhatsApp definitivo de Moto Limited.
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
+// URL de Google Apps Script que registra pedidos y descuenta stock en Google Sheets.
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOc1IJqm-JVK9URn_1hGxhNBdMnneSGee5peQ_nyylCrxlOoDs_FROY6ZtUl7OjofJ/exec";
+
+
 // Guardá las fotos con estos nombres dentro de assets/categorias/.
 const categories = [
   { name: "Baterías", image: "assets/categorias/baterias.png" },
@@ -2895,6 +2899,11 @@ function ensureCustomerStyles() {
       resize: vertical;
       min-height: 74px;
     }
+
+    .full.is-loading {
+      opacity: .75;
+      pointer-events: none;
+    }
   `;
 
   document.head.appendChild(style);
@@ -3026,6 +3035,61 @@ function getMissingCustomerFields() {
   if (!data.email) missing.push({ field: customerEmail, label: "Email" });
 
   return missing;
+}
+
+
+function buildOrderPayload() {
+  const customer = getCustomerData();
+  const total = getCartTotal();
+
+  const items = state.cart.map(item => {
+    const product = getCartProduct(item);
+    const code = getProductCode(item);
+    const qty = Number(item.qty) || 0;
+    const unitPrice = getItemPrice(item);
+
+    return {
+      id: item.id,
+      code,
+      name: product.name || item.name || "",
+      category: product.category || item.category || "",
+      brand: product.brand || item.brand || "",
+      qty,
+      price: product.price || item.price || "",
+      unit_price: unitPrice,
+      subtotal: unitPrice * qty
+    };
+  });
+
+  return {
+    source: "motolimited-web",
+    created_at: new Date().toISOString(),
+    customer,
+    items,
+    total,
+    total_formatted: total > 0 ? formatMoney(total) : "a confirmar"
+  };
+}
+
+async function sendOrderToGoogleSheets() {
+  if (!APPS_SCRIPT_URL) {
+    throw new Error("Falta configurar APPS_SCRIPT_URL.");
+  }
+
+  const payload = buildOrderPayload();
+
+  // Apps Script no siempre permite leer la respuesta desde una web externa por CORS.
+  // Con no-cors el pedido se envía igual y la hoja lo procesa.
+  await fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  return true;
 }
 
 function renderCart() {
@@ -3198,9 +3262,10 @@ function bindEvents() {
     }
   });
 
-  sendOrder.addEventListener("click", event => {
+  sendOrder.addEventListener("click", async event => {
+    event.preventDefault();
+
     if (state.cart.length === 0) {
-      event.preventDefault();
       alert("Primero agregá productos al carrito.");
       return;
     }
@@ -3208,9 +3273,35 @@ function bindEvents() {
     const missing = getMissingCustomerFields();
 
     if (missing.length > 0) {
-      event.preventDefault();
       alert(`Falta completar: ${missing.map(item => item.label).join(", ")}`);
       missing[0].field?.focus();
+      return;
+    }
+
+    const whatsappLink = sendOrder.href;
+    const originalText = sendOrder.textContent;
+
+    sendOrder.textContent = "Guardando pedido...";
+    sendOrder.setAttribute("aria-busy", "true");
+    sendOrder.classList.add("is-loading");
+
+    try {
+      await sendOrderToGoogleSheets();
+      window.location.href = whatsappLink;
+    } catch (error) {
+      console.error("No se pudo registrar el pedido en Google Sheets:", error);
+
+      const openWhatsappAnyway = confirm(
+        "No pude confirmar el registro en Google Sheets. ¿Querés abrir WhatsApp igual?"
+      );
+
+      if (openWhatsappAnyway) {
+        window.location.href = whatsappLink;
+      }
+    } finally {
+      sendOrder.textContent = originalText;
+      sendOrder.removeAttribute("aria-busy");
+      sendOrder.classList.remove("is-loading");
     }
   });
 
