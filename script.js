@@ -2605,7 +2605,10 @@ const state = {
   search: "",
   category: "Todas",
   brand: "Todas",
-  cart: loadCart()
+  cart: loadCart(),
+  stockByCode: {},
+  stockLoaded: false,
+  stockError: ""
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -2749,6 +2752,200 @@ function productMatches(product) {
   return matchesSearch && matchesCategory && matchesBrand;
 }
 
+
+function normalizeCode(code) {
+  return String(code || "").trim().toUpperCase();
+}
+
+function getStockForCode(code) {
+  const normalizedCode = normalizeCode(code);
+
+  if (!normalizedCode) return null;
+  if (!state.stockByCode || !Object.prototype.hasOwnProperty.call(state.stockByCode, normalizedCode)) {
+    return null;
+  }
+
+  const stock = Number(state.stockByCode[normalizedCode]);
+  return Number.isFinite(stock) ? Math.max(0, stock) : null;
+}
+
+function getStockForProduct(product) {
+  return getStockForCode(product?.code || product?.id);
+}
+
+function getStockInfo(stock) {
+  if (!state.stockLoaded && !state.stockError) {
+    return {
+      label: "Consultando stock...",
+      className: "stock-loading",
+      disabled: false,
+      hasNumericStock: false
+    };
+  }
+
+  if (state.stockError) {
+    return {
+      label: "Stock a confirmar",
+      className: "stock-unknown",
+      disabled: false,
+      hasNumericStock: false
+    };
+  }
+
+  if (stock === null || stock === undefined) {
+    return {
+      label: "Stock a confirmar",
+      className: "stock-unknown",
+      disabled: false,
+      hasNumericStock: false
+    };
+  }
+
+  if (stock <= 0) {
+    return {
+      label: "Sin stock",
+      className: "stock-out",
+      disabled: true,
+      hasNumericStock: true
+    };
+  }
+
+  if (stock < 100) {
+    return {
+      label: `Quedan ${stock} unidades`,
+      className: stock <= 5 ? "stock-low" : "stock-exact",
+      disabled: false,
+      hasNumericStock: true
+    };
+  }
+
+  return {
+    label: "100+ disponibles",
+    className: "stock-available",
+    disabled: false,
+    hasNumericStock: false
+  };
+}
+
+function getCartStockProblems() {
+  if (!state.stockLoaded || state.stockError) return [];
+
+  return state.cart.reduce((problems, item) => {
+    const product = getCartProduct(item);
+    const stock = getStockForProduct(product);
+
+    if (stock === null || stock === undefined) return problems;
+
+    const stockInfo = getStockInfo(stock);
+
+    if (stock <= 0) {
+      problems.push(`${product.name || item.name}: sin stock disponible.`);
+      return problems;
+    }
+
+    if (stockInfo.hasNumericStock && item.qty > stock) {
+      problems.push(`${product.name || item.name}: pediste ${item.qty}, pero quedan ${stock}.`);
+    }
+
+    return problems;
+  }, []);
+}
+
+function ensureStockStyles() {
+  if (document.getElementById("stockStyles")) return;
+
+  const style = document.createElement("style");
+  style.id = "stockStyles";
+  style.textContent = `
+    .stock-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 8px 0 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      border: 1px solid rgba(0,0,0,.10);
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    .stock-available {
+      background: #eef8ee;
+      color: #1d6b26;
+      border-color: rgba(29,107,38,.25);
+    }
+
+    .stock-exact {
+      background: #fff7df;
+      color: #8a5a00;
+      border-color: rgba(138,90,0,.28);
+    }
+
+    .stock-low {
+      background: #fff0e6;
+      color: #a34300;
+      border-color: rgba(163,67,0,.30);
+    }
+
+    .stock-out {
+      background: #ffe9e9;
+      color: #a30000;
+      border-color: rgba(163,0,0,.28);
+    }
+
+    .stock-loading,
+    .stock-unknown {
+      background: #eeeeee;
+      color: #555;
+    }
+
+    .add-btn:disabled,
+    .qty-input:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .cart-stock-line {
+      display: block;
+      margin-top: 4px;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+async function cargarStockDesdeSheets() {
+  if (!APPS_SCRIPT_URL) return;
+
+  try {
+    const response = await fetch(`${APPS_SCRIPT_URL}?action=stock&t=${Date.now()}`, {
+      method: "GET",
+      cache: "no-store"
+    });
+
+    const data = await response.json();
+
+    if (!data.ok) {
+      throw new Error(data.error || "No se pudo leer el stock.");
+    }
+
+    state.stockByCode = data.stock || {};
+    state.stockLoaded = true;
+    state.stockError = "";
+  } catch (error) {
+    console.error("No se pudo cargar el stock desde Google Sheets:", error);
+    state.stockError = error.message || "Error al cargar stock";
+  }
+
+  renderProducts();
+  renderCart();
+}
+
 function renderProducts() {
   const filtered = products.filter(productMatches);
 
@@ -2767,6 +2964,10 @@ function renderProducts() {
       `;
 
     const price = product.price || "Consultar precio";
+    const stock = getStockForProduct(product);
+    const stockInfo = getStockInfo(stock);
+    const disabledAttr = stockInfo.disabled ? "disabled" : "";
+    const maxAttr = stockInfo.hasNumericStock && stock > 0 ? `max="${stock}"` : "";
 
     return `
       <article class="product-card">
@@ -2779,6 +2980,7 @@ function renderProducts() {
           <div class="product-code">${product.code || product.id}</div>
           <h3 class="product-title">${product.name}</h3>
           <p class="product-detail">${product.detail}</p>
+          <p class="stock-badge ${stockInfo.className}">${stockInfo.label}</p>
 
           <div class="product-bottom">
             <div class="price">
@@ -2787,8 +2989,8 @@ function renderProducts() {
             </div>
 
             <div class="product-actions">
-              <input class="qty-input" id="qty-${product.id}" type="number" min="1" value="1" aria-label="Cantidad ${product.name}">
-              <button class="add-btn" type="button" data-add="${product.id}">Agregar</button>
+              <input class="qty-input" id="qty-${product.id}" type="number" min="1" ${maxAttr} value="1" aria-label="Cantidad ${product.name}" ${disabledAttr}>
+              <button class="add-btn" type="button" data-add="${product.id}" ${disabledAttr}>${stockInfo.disabled ? "Sin stock" : "Agregar"}</button>
             </div>
           </div>
         </div>
@@ -2822,10 +3024,36 @@ function addToCart(productId, qty) {
   const product = products.find(item => item.id === productId);
   if (!product) return;
 
+  const stock = getStockForProduct(product);
   const existing = state.cart.find(item => item.id === productId);
+  const currentQty = existing ? Number(existing.qty) || 0 : 0;
+  let quantityToAdd = Math.max(1, Number(qty) || 1);
+
+  if (state.stockLoaded && !state.stockError && stock !== null && stock !== undefined) {
+    const stockInfo = getStockInfo(stock);
+
+    if (stock <= 0) {
+      alert("Este producto no tiene stock disponible.");
+      return;
+    }
+
+    if (stockInfo.hasNumericStock) {
+      const availableToAdd = stock - currentQty;
+
+      if (availableToAdd <= 0) {
+        alert(`Ya agregaste todas las unidades disponibles de este producto (${stock}).`);
+        return;
+      }
+
+      if (quantityToAdd > availableToAdd) {
+        quantityToAdd = availableToAdd;
+        alert(`Solo quedan ${stock} unidades disponibles. Agregué ${availableToAdd} al carrito.`);
+      }
+    }
+  }
 
   if (existing) {
-    existing.qty += qty;
+    existing.qty += quantityToAdd;
   } else {
     state.cart.push({
       id: product.id,
@@ -2834,7 +3062,7 @@ function addToCart(productId, qty) {
       category: product.category,
       brand: product.brand,
       price: product.price,
-      qty
+      qty: quantityToAdd
     });
   }
 
@@ -3132,6 +3360,12 @@ function renderCart() {
       ? `Precio unitario: ${formatMoney(unitPrice)} · Subtotal: ${formatMoney(subtotal)}`
       : "Precio: consultar";
 
+    const stock = getStockForProduct(product);
+    const stockInfo = getStockInfo(stock);
+    const stockWarning = stockInfo.hasNumericStock && item.qty > stock
+      ? ` · Pediste ${item.qty}, pero quedan ${stock}`
+      : "";
+
     return `
       <div class="cart-item">
         <div>
@@ -3139,6 +3373,7 @@ function renderCart() {
           <h4>${product.name || item.name}</h4>
           <p>${product.category || item.category} · ${product.brand || item.brand || "Marca a confirmar"} · Cantidad: ${item.qty}</p>
           <p>${priceLine}</p>
+          <span class="cart-stock-line ${stockInfo.className}">${stockInfo.label}${stockWarning}</span>
         </div>
         <button type="button" data-remove="${item.id}">Quitar</button>
       </div>
@@ -3270,6 +3505,13 @@ function bindEvents() {
       return;
     }
 
+    const stockProblems = getCartStockProblems();
+
+    if (stockProblems.length > 0) {
+      alert(`Hay productos sin stock suficiente:\n\n${stockProblems.join("\n")}`);
+      return;
+    }
+
     const missing = getMissingCustomerFields();
 
     if (missing.length > 0) {
@@ -3334,12 +3576,15 @@ function init() {
   fillFilters();
   renderCategoryCards();
   renderSidebar();
+  ensureStockStyles();
   renderProducts();
   ensureCustomerForm();
   bindEvents();
   initWhatsappLinks();
   renderCart();
   bindHeaderScroll();
+  cargarStockDesdeSheets();
+  setInterval(cargarStockDesdeSheets, 60000);
 }
 
 
