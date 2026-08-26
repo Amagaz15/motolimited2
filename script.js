@@ -14,6 +14,13 @@ const WHATSAPP_NUMBER = "5492257416049";
 // URL de Google Apps Script que registra pedidos y descuenta stock en Google Sheets.
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOc1IJqm-JVK9URn_1hGxhNBdMnneSGee5peQ_nyylCrxlOoDs_FROY6ZtUl7OjofJ/exec";
 
+// Acceso simple para ver precios.
+// Importante: al ser una web estática, esto oculta los precios para usuarios comunes,
+// pero no reemplaza un sistema privado con servidor.
+const PRICE_AUTH_USER = "motolimited";
+const PRICE_AUTH_HASH = "afd040408a7a995d4344a54149c578c3c5fdbf5cfbfaed4eafbcaeaa1406b058";
+const PRICE_AUTH_STORAGE_KEY = "motolimited-price-auth-v1";
+
 
 // Guardá las fotos con estos nombres dentro de assets/categorias/.
 const categories = [
@@ -2601,11 +2608,297 @@ function getCartItemsWithoutPrice() {
   return state.cart.filter(item => getItemPrice(item) <= 0).length;
 }
 
+
+function loadPriceAuthSession() {
+  return localStorage.getItem(PRICE_AUTH_STORAGE_KEY) === "ok";
+}
+
+async function sha256Text(text) {
+  if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+    throw new Error("Tu navegador no permite verificar el acceso. Probá desde la web publicada en HTTPS.");
+  }
+
+  const data = new TextEncoder().encode(text);
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
+
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function validatePriceLogin(username, password) {
+  const normalizedUsername = String(username || "").trim().toLowerCase();
+  const rawPassword = String(password || "");
+
+  if (!normalizedUsername || !rawPassword) return false;
+
+  const hash = await sha256Text(`${normalizedUsername}:${rawPassword}`);
+  return normalizedUsername === PRICE_AUTH_USER && hash === PRICE_AUTH_HASH;
+}
+
+function ensurePriceLoginStyles() {
+  if (document.getElementById("priceLoginStyles")) return;
+
+  const style = document.createElement("style");
+  style.id = "priceLoginStyles";
+  style.textContent = `
+    body.price-locked .site-header,
+    body.price-locked main,
+    body.price-locked .floating-cart,
+    body.price-locked .floating-whatsapp {
+      filter: blur(4px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .price-login-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top, rgba(225, 6, 0, .22), transparent 34%),
+        rgba(8, 8, 8, .86);
+      backdrop-filter: blur(10px);
+    }
+
+    .price-login-card {
+      width: min(430px, 100%);
+      padding: 28px;
+      border-radius: 24px;
+      background: #111;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 24px 80px rgba(0,0,0,.45);
+    }
+
+    .price-login-card h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      letter-spacing: -.03em;
+    }
+
+    .price-login-card p {
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.45;
+    }
+
+    .price-login-card label {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 12px;
+      font-size: .86rem;
+      font-weight: 900;
+      color: rgba(255,255,255,.86);
+    }
+
+    .price-login-card input {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 13px;
+      padding: 11px 13px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      outline: none;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .price-login-card input:focus {
+      border-color: #e10600;
+      box-shadow: 0 0 0 4px rgba(225, 6, 0, .18);
+    }
+
+    .price-login-card button {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 4px;
+      border: 0;
+      border-radius: 999px;
+      background: #e10600;
+      color: #fff;
+      font-weight: 950;
+      cursor: pointer;
+      letter-spacing: .02em;
+    }
+
+    .price-login-card button:disabled {
+      opacity: .72;
+      cursor: wait;
+    }
+
+    .price-login-message {
+      min-height: 20px;
+      margin-top: 12px;
+      color: #ffb4b4;
+      font-size: .88rem;
+      font-weight: 800;
+    }
+
+    .price-logout-button {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      z-index: 9990;
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 15px;
+      background: #111;
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 900;
+      box-shadow: 0 10px 34px rgba(0,0,0,.22);
+      cursor: pointer;
+    }
+
+    .price-locked-inline strong {
+      filter: blur(4px);
+    }
+
+    @media (max-width: 520px) {
+      .price-login-card {
+        padding: 22px;
+        border-radius: 20px;
+      }
+
+      .price-logout-button {
+        left: 12px;
+        bottom: 12px;
+        padding: 10px 13px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+function ensureLogoutButton() {
+  let button = document.getElementById("priceLogoutButton");
+
+  if (!state.isAuthenticated) {
+    if (button) button.remove();
+    return;
+  }
+
+  if (!button) {
+    button = document.createElement("button");
+    button.id = "priceLogoutButton";
+    button.className = "price-logout-button";
+    button.type = "button";
+    button.textContent = "Cerrar sesión";
+
+    button.addEventListener("click", () => {
+      localStorage.removeItem(PRICE_AUTH_STORAGE_KEY);
+      state.isAuthenticated = false;
+      renderProducts();
+      renderCart();
+      ensurePriceLoginGate();
+    });
+
+    document.body.appendChild(button);
+  }
+}
+
+function ensurePriceLoginGate() {
+  ensurePriceLoginStyles();
+
+  state.isAuthenticated = loadPriceAuthSession();
+
+  if (state.isAuthenticated) {
+    document.body.classList.remove("price-locked");
+    const overlay = document.getElementById("priceLoginOverlay");
+    if (overlay) overlay.remove();
+    ensureLogoutButton();
+    return;
+  }
+
+  document.body.classList.add("price-locked");
+  ensureLogoutButton();
+
+  if (document.getElementById("priceLoginOverlay")) return;
+
+  const overlay = document.createElement("div");
+  overlay.id = "priceLoginOverlay";
+  overlay.className = "price-login-overlay";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-labelledby", "priceLoginTitle");
+
+  overlay.innerHTML = `
+    <form class="price-login-card" id="priceLoginForm">
+      <h2 id="priceLoginTitle">Acceso a precios</h2>
+      <p>Ingresá con el usuario y contraseña autorizados para ver precios y realizar pedidos.</p>
+
+      <label>
+        Usuario
+        <input type="text" id="priceLoginUser" autocomplete="username" required>
+      </label>
+
+      <label>
+        Contraseña
+        <input type="password" id="priceLoginPassword" autocomplete="current-password" required>
+      </label>
+
+      <button type="submit" id="priceLoginButton">Entrar</button>
+      <div class="price-login-message" id="priceLoginMessage" aria-live="polite"></div>
+    </form>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const form = document.getElementById("priceLoginForm");
+  const userInput = document.getElementById("priceLoginUser");
+  const passwordInput = document.getElementById("priceLoginPassword");
+  const message = document.getElementById("priceLoginMessage");
+  const button = document.getElementById("priceLoginButton");
+
+  userInput.focus();
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Verificando...";
+    message.textContent = "";
+
+    try {
+      const ok = await validatePriceLogin(userInput.value, passwordInput.value);
+
+      if (!ok) {
+        message.textContent = "Usuario o contraseña incorrectos.";
+        passwordInput.select();
+        return;
+      }
+
+      localStorage.setItem(PRICE_AUTH_STORAGE_KEY, "ok");
+      state.isAuthenticated = true;
+      document.body.classList.remove("price-locked");
+      overlay.remove();
+      ensureLogoutButton();
+      renderProducts();
+      renderCart();
+      cargarStockDesdeSheets();
+    } catch (error) {
+      console.error("Error verificando acceso:", error);
+      message.textContent = error.message || "No pude verificar el acceso.";
+    } finally {
+      button.disabled = false;
+      button.textContent = "Entrar";
+    }
+  });
+}
+
+
 const state = {
   search: "",
   category: "Todas",
   brand: "Todas",
   cart: loadCart(),
+  isAuthenticated: loadPriceAuthSession(),
   stockByCode: {},
   stockLoaded: false,
   stockError: ""
@@ -2964,9 +3257,12 @@ function renderProducts() {
       `;
 
     const price = product.price || "Consultar precio";
+    const canSeePrices = state.isAuthenticated;
+    const visiblePrice = canSeePrices ? price : "Ingresá para ver";
     const stock = getStockForProduct(product);
     const stockInfo = getStockInfo(stock);
-    const disabledAttr = stockInfo.disabled ? "disabled" : "";
+    const buttonDisabled = stockInfo.disabled || !canSeePrices;
+    const disabledAttr = buttonDisabled ? "disabled" : "";
     const maxAttr = stockInfo.hasNumericStock && stock > 0 ? `max="${stock}"` : "";
 
     return `
@@ -2983,14 +3279,14 @@ function renderProducts() {
           <p class="stock-badge ${stockInfo.className}">${stockInfo.label}</p>
 
           <div class="product-bottom">
-            <div class="price">
-              <span>Precio</span>
-              <strong>${price}</strong>
+            <div class="price ${canSeePrices ? "" : "price-locked-inline"}">
+              <span>${canSeePrices ? "Precio" : "Precio privado"}</span>
+              <strong>${visiblePrice}</strong>
             </div>
 
             <div class="product-actions">
               <input class="qty-input" id="qty-${product.id}" type="number" min="1" ${maxAttr} value="1" aria-label="Cantidad ${product.name}" ${disabledAttr}>
-              <button class="add-btn" type="button" data-add="${product.id}" ${disabledAttr}>${stockInfo.disabled ? "Sin stock" : "Agregar"}</button>
+              <button class="add-btn" type="button" data-add="${product.id}" ${disabledAttr}>${!canSeePrices ? "Ingresá" : stockInfo.disabled ? "Sin stock" : "Agregar"}</button>
             </div>
           </div>
         </div>
@@ -3021,6 +3317,11 @@ function markActiveCategories() {
 }
 
 function addToCart(productId, qty) {
+  if (!state.isAuthenticated) {
+    ensurePriceLoginGate();
+    return;
+  }
+
   const product = products.find(item => item.id === productId);
   if (!product) return;
 
@@ -3330,6 +3631,27 @@ function renderCart() {
 
   cartCount.textContent = totalItems;
 
+  if (!state.isAuthenticated) {
+    if (floatingCartCount) {
+      floatingCartCount.textContent = totalItems;
+      floatingCartCount.hidden = totalItems === 0;
+    }
+
+    if (cartTotal) {
+      cartTotal.textContent = "Privado";
+    }
+
+    if (cartItems) {
+      cartItems.innerHTML = `<p class="muted">Iniciá sesión para ver precios, carrito y realizar pedidos.</p>`;
+    }
+
+    if (sendOrder) {
+      sendOrder.href = whatsappUrl("Hola Moto Limited, quiero solicitar acceso a precios.");
+    }
+
+    return;
+  }
+
   if (floatingCartCount) {
     floatingCartCount.textContent = totalItems;
     floatingCartCount.hidden = totalItems === 0;
@@ -3500,6 +3822,11 @@ function bindEvents() {
   sendOrder.addEventListener("click", async event => {
     event.preventDefault();
 
+    if (!state.isAuthenticated) {
+      ensurePriceLoginGate();
+      return;
+    }
+
     if (state.cart.length === 0) {
       alert("Primero agregá productos al carrito.");
       return;
@@ -3573,6 +3900,7 @@ function bindHeaderScroll() {
 }
 
 function init() {
+  ensurePriceLoginGate();
   fillFilters();
   renderCategoryCards();
   renderSidebar();
