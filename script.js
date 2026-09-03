@@ -888,6 +888,17 @@ const products = [
     image: "assets/articulos/046.jpg",
     tags: ["corona", "pinon", "zanella", "rx150", "15t", "dorada", "transmision", "hao"]
   },
+    {
+    id: "prod-231",
+    code: "GL-445HS",
+    name: "CORONA Y PIÑON GILERA SMASH 35/15T HAISKY",
+    category: "Transmisión",
+    brand: "HAO",
+    detail: "",
+    price: "$7,1852",
+    image: "assets/articulos/231.jpg",
+    tags: ["corona", "pinon", "zanella", "rx150", "15t", "dorada", "transmision", "hao"]
+  },
   {
   id: "prod-225",
     code: "HRCUB-1107017",
