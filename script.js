@@ -893,7 +893,7 @@ const products = [
     code: "GL-445HS",
     name: "CORONA Y PIÑON GILERA SMASH 35/15T HAISKY",
     category: "Transmisión",
-    brand: "HAO",
+    brand: "HAISKY",
     detail: "",
     price: "$7,1852",
     image: "assets/articulos/231.jpg",
