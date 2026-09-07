@@ -94,17 +94,7 @@ const products = [
     image: "assets/articulos/021.jpg",
     tags: ["aros", "piston", "zanella", "62mm", "150", "motor", "hao"]
   },
-  {
-    id: "prod-165",
-    code: "GL-0507",
-    name: "BATERÍA 12N5-3B GEL SELLADA",
-    category: "Baterías",
-    brand: "HAO",
-    detail: "",
-    price: "$16.300",
-    image: "assets/articulos/165.png",
-    tags: ["bateria", "12n5", "gel", "sellada", "baterias", "hao"]
-  },
+  
   {
     id: "prod-166",
     code: "GL-0508",
