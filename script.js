@@ -11,7 +11,8 @@ const WHATSAPP_NUMBER = "5492257416049";
 // Cambiar por el WhatsApp definitivo de Moto Limited.
 // Formato: 549 + código de área + número, sin espacios ni guiones.
 
-// URL de Google Apps Script que registra pedidos y descuenta stock en Google Sheets.
+// Google Apps Script se conserva SOLO para consultar stock (GET).
+// Los pedidos se envían exclusivamente a n8n mediante integracion-pedidos.js.
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOc1IJqm-JVK9URn_1hGxhNBdMnneSGee5peQ_nyylCrxlOoDs_FROY6ZtUl7OjofJ/exec";
 
 // Acceso simple para ver precios.
@@ -2902,7 +2903,9 @@ const state = {
   isAuthenticated: loadPriceAuthSession(),
   stockByCode: {},
   stockLoaded: false,
-  stockError: ""
+  stockError: "",
+  orderSending: false,
+  orderReceipt: null
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -3262,7 +3265,7 @@ function renderProducts() {
     const visiblePrice = canSeePrices ? price : "Ingresá para ver";
     const stock = getStockForProduct(product);
     const stockInfo = getStockInfo(stock);
-    const buttonDisabled = stockInfo.disabled || !canSeePrices;
+    const buttonDisabled = stockInfo.disabled || !canSeePrices || isOrderLocked();
     const disabledAttr = buttonDisabled ? "disabled" : "";
     const maxAttr = stockInfo.hasNumericStock && stock > 0 ? `max="${stock}"` : "";
 
@@ -3299,7 +3302,7 @@ function renderProducts() {
     button.addEventListener("click", () => {
       const id = button.dataset.add;
       const qtyInput = document.getElementById(`qty-${id}`);
-      const qty = Math.max(1, Number(qtyInput.value || 1));
+      const qty = Math.max(1, Math.floor(Number(qtyInput.value || 1)));
       addToCart(id, qty);
     });
   });
@@ -3318,6 +3321,7 @@ function markActiveCategories() {
 }
 
 function addToCart(productId, qty) {
+  if (isOrderLocked()) return;
   if (!state.isAuthenticated) {
     ensurePriceLoginGate();
     return;
@@ -3329,7 +3333,7 @@ function addToCart(productId, qty) {
   const stock = getStockForProduct(product);
   const existing = state.cart.find(item => item.id === productId);
   const currentQty = existing ? Number(existing.qty) || 0 : 0;
-  let quantityToAdd = Math.max(1, Number(qty) || 1);
+  let quantityToAdd = Math.max(1, Math.floor(Number(qty) || 1));
 
   if (state.stockLoaded && !state.stockError && stock !== null && stock !== undefined) {
     const stockInfo = getStockInfo(stock);
@@ -3372,6 +3376,7 @@ function addToCart(productId, qty) {
 }
 
 function removeFromCart(productId) {
+  if (isOrderLocked()) return;
   state.cart = state.cart.filter(item => item.id !== productId);
   renderCart();
 }
@@ -3430,6 +3435,14 @@ function ensureCustomerStyles() {
       min-height: 74px;
     }
 
+    .order-consent { font-size: .875rem; line-height: 1.5; color: #555; }
+    .order-status { margin: 14px 0; padding: 14px; border-radius: 12px; background: #f1f5f9; color: #17212e; line-height: 1.5; overflow-wrap: anywhere; white-space: pre-line; }
+    .order-status[data-kind="success"] { background: #eaf6ee; color: #174c2a; }
+    .order-status[data-kind="error"] { background: #fff0ef; color: #8a211b; }
+    #sendOrder { cursor: pointer; font: inherit; border: 0; }
+    #sendOrder:disabled { opacity: .65; cursor: default; }
+    #newOrder { margin-top: 10px; cursor: pointer; border: 1px solid #aaa; background: #fff; color: #222; }
+    #orderWhatsapp[hidden], #newOrder[hidden], #orderStatus[hidden] { display: none !important; }
     .full.is-loading {
       opacity: .75;
       pointer-events: none;
@@ -3568,61 +3581,117 @@ function getMissingCustomerFields() {
 }
 
 
-function buildOrderPayload() {
+function hasPendingOrder() {
+  return window.estadoPedidoMotoLimited?.()?.pendiente === true;
+}
+
+function isOrderLocked() {
+  return state.orderSending || Boolean(state.orderReceipt) || hasPendingOrder();
+}
+
+function showOrderStatus(message, kind = "info") {
+  const box = document.getElementById("orderStatus");
+  box.textContent = message;
+  box.dataset.kind = kind;
+  box.hidden = false;
+}
+
+function updateOrderControls() {
+  const locked = isOrderLocked();
+  clearCart.disabled = locked;
+  document.querySelectorAll(".customer-data input, .customer-data textarea").forEach(input => { input.readOnly = locked; });
+  document.querySelectorAll("[data-remove]").forEach(button => { button.disabled = locked; });
+  sendOrder.disabled = state.orderSending || Boolean(state.orderReceipt);
+  sendOrder.textContent = state.orderSending ? "Guardando pedido..." : state.orderReceipt ? "Pedido recibido" : hasPendingOrder() ? "Reintentar confirmación" : "Confirmar pedido";
+  sendOrder.classList.toggle("is-loading", state.orderSending);
+  sendOrder.setAttribute("aria-busy", String(state.orderSending));
+  document.getElementById("newOrder").hidden = !state.orderReceipt;
+}
+
+function buildN8nOrder() {
   const customer = getCustomerData();
-  const total = getCartTotal();
-
-  const items = state.cart.map(item => {
-    const product = getCartProduct(item);
-    const code = getProductCode(item);
-    const qty = Number(item.qty) || 0;
-    const unitPrice = getItemPrice(item);
-
-    return {
-      id: item.id,
-      code,
-      name: product.name || item.name || "",
-      category: product.category || item.category || "",
-      brand: product.brand || item.brand || "",
-      qty,
-      price: product.price || item.price || "",
-      unit_price: unitPrice,
-      subtotal: unitPrice * qty
-    };
-  });
-
   return {
-    source: "motolimited-web",
-    created_at: new Date().toISOString(),
-    customer,
-    items,
-    total,
-    total_formatted: total > 0 ? formatMoney(total) : "a confirmar"
+    nombre: customer.name,
+    negocio: customer.store,
+    telefono: customer.phone,
+    // El flujo original guarda notas: conservar ahí dirección, email y aclaración.
+    notas: [
+      `Dirección y ciudad: ${customer.address}`,
+      `Email: ${customer.email}`,
+      customer.description ? `Aclaración: ${customer.description}` : ""
+    ].filter(Boolean).join(" | "),
+    items: state.cart.map(item => ({ sku: getProductCode(item), cantidad: Number(item.qty) }))
   };
 }
 
-async function sendOrderToGoogleSheets() {
-  if (!APPS_SCRIPT_URL) {
-    throw new Error("Falta configurar APPS_SCRIPT_URL.");
-  }
-
-  const payload = buildOrderPayload();
-
-  // Apps Script no siempre permite leer la respuesta desde una web externa por CORS.
-  // Con no-cors el pedido se envía igual y la hoja lo procesa.
-  await fetch(APPS_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  return true;
+function confirmedOrderWhatsapp(result, snapshot) {
+  const lines = snapshot.items.map((item, i) => `${i + 1}. ${item.code} | ${item.name} | Cantidad: ${item.qty}`);
+  return whatsappUrl([
+    `Hola Moto Limited, confirmé el pedido ${result.pedido_id} en la web.`,
+    `Nombre: ${snapshot.customer.name}`,
+    `Local: ${snapshot.customer.store}`,
+    `Teléfono: ${snapshot.customer.phone}`,
+    `Dirección y ciudad: ${snapshot.customer.address}`,
+    `Email: ${snapshot.customer.email}`,
+    snapshot.customer.description ? `Aclaración: ${snapshot.customer.description}` : "",
+    ...lines,
+    Number.isFinite(result.total) ? `Total registrado: ${formatMoney(result.total)} ARS` : "",
+    "Pendiente de revisión de stock y condiciones comerciales."
+  ].filter(Boolean).join("\n"));
 }
 
+async function submitOrder(event) {
+  event.preventDefault();
+  if (state.orderSending || state.orderReceipt) return;
+  if (!state.isAuthenticated) { ensurePriceLoginGate(); return; }
+  if (!state.cart.length) { showOrderStatus("Primero agregá productos al carrito.", "error"); return; }
+  const missing = getMissingCustomerFields();
+  if (missing.length) {
+    showOrderStatus(`Falta completar: ${missing.map(item => item.label).join(", ")}`, "error");
+    missing[0].field?.focus(); return;
+  }
+  // En reintentos, consultar el resultado anterior aunque el stock haya cambiado.
+  if (!hasPendingOrder()) {
+    for (const input of document.querySelectorAll(".customer-data input, .customer-data textarea")) {
+      if (!input.reportValidity()) return;
+    }
+    const problems = getCartStockProblems();
+    if (problems.length) { showOrderStatus(`Revisá el stock:\n${problems.join("\n")}`, "error"); return; }
+  }
+  const payload = buildN8nOrder();
+  if (payload.notas.length > 1000) {
+    showOrderStatus("La dirección, el email y la aclaración son demasiado largos. Acortalos para continuar.", "error"); return;
+  }
+  const snapshot = {
+    customer: getCustomerData(),
+    items: state.cart.map(item => ({ code: getProductCode(item), name: getCartProduct(item).name || item.name, qty: item.qty }))
+  };
+  state.orderSending = true;
+  showOrderStatus("Estamos registrando tu pedido. Esperá la confirmación.");
+  updateOrderControls();
+  renderProducts();
+  try {
+    if (typeof window.confirmarPedidoMotoLimited !== "function") throw new Error("No se pudo cargar la recepción de pedidos. Recargá la página e intentá otra vez.");
+    const result = await window.confirmarPedidoMotoLimited(payload);
+    state.orderReceipt = result;
+    const total = Number.isFinite(result.total) ? `\nTotal registrado: ${formatMoney(result.total)} ARS.` : "";
+    showOrderStatus(`Pedido recibido.\nNúmero: ${result.pedido_id}.${total}\nQuedó registrado aunque no envíes WhatsApp. Sujeto a revisión de stock y condiciones comerciales.`, "success");
+    const whatsapp = document.getElementById("orderWhatsapp");
+    whatsapp.href = confirmedOrderWhatsapp(result, snapshot);
+    whatsapp.hidden = false;
+    document.getElementById("orderStatus").focus();
+  } catch (error) {
+    showOrderStatus(error.message || "No pudimos confirmar el pedido. Conservá el carrito y reintentá.", "error");
+  } finally {
+    state.orderSending = false;
+    updateOrderControls();
+    renderProducts();
+  }
+}
+
+
 function renderCart() {
+  updateOrderControls();
   saveCart();
   saveCustomerData();
 
@@ -3647,7 +3716,7 @@ function renderCart() {
     }
 
     if (sendOrder) {
-      sendOrder.href = whatsappUrl("Hola Moto Limited, quiero solicitar acceso a precios.");
+      sendOrder.dataset.whatsapp = whatsappUrl("Hola Moto Limited, quiero solicitar acceso a precios.");
     }
 
     return;
@@ -3664,7 +3733,7 @@ function renderCart() {
 
   if (state.cart.length === 0) {
     cartItems.innerHTML = `<p class="muted">Todavía no agregaste productos.</p>`;
-    sendOrder.href = whatsappUrl("Hola Moto Limited, quiero consultar por repuestos.");
+    sendOrder.dataset.whatsapp = whatsappUrl("Hola Moto Limited, quiero consultar por repuestos.");
 
     if (cartTotal) {
       cartTotal.textContent = "$0";
@@ -3750,7 +3819,7 @@ function renderCart() {
     "También quiero confirmar compatibilidad, stock y precio final."
   ].filter(Boolean).join("\n");
 
-  sendOrder.href = whatsappUrl(message);
+  sendOrder.dataset.whatsapp = whatsappUrl(message);
 }
 
 function resetFilters() {
@@ -3788,6 +3857,7 @@ function bindEvents() {
   clearFilters.addEventListener("click", resetFilters);
 
   clearCart.addEventListener("click", () => {
+    if (isOrderLocked()) return;
     state.cart = [];
     renderCart();
   });
@@ -3820,59 +3890,17 @@ function bindEvents() {
     }
   });
 
-  sendOrder.addEventListener("click", async event => {
-    event.preventDefault();
-
-    if (!state.isAuthenticated) {
-      ensurePriceLoginGate();
-      return;
-    }
-
-    if (state.cart.length === 0) {
-      alert("Primero agregá productos al carrito.");
-      return;
-    }
-
-    const stockProblems = getCartStockProblems();
-
-    if (stockProblems.length > 0) {
-      alert(`Hay productos sin stock suficiente:\n\n${stockProblems.join("\n")}`);
-      return;
-    }
-
-    const missing = getMissingCustomerFields();
-
-    if (missing.length > 0) {
-      alert(`Falta completar: ${missing.map(item => item.label).join(", ")}`);
-      missing[0].field?.focus();
-      return;
-    }
-
-    const whatsappLink = sendOrder.href;
-    const originalText = sendOrder.textContent;
-
-    sendOrder.textContent = "Guardando pedido...";
-    sendOrder.setAttribute("aria-busy", "true");
-    sendOrder.classList.add("is-loading");
-
+  sendOrder.addEventListener("click", submitOrder);
+  document.getElementById("newOrder").addEventListener("click", () => {
     try {
-      await sendOrderToGoogleSheets();
-      window.location.href = whatsappLink;
-    } catch (error) {
-      console.error("No se pudo registrar el pedido en Google Sheets:", error);
-
-      const openWhatsappAnyway = confirm(
-        "No pude confirmar el registro en Google Sheets. ¿Querés abrir WhatsApp igual?"
-      );
-
-      if (openWhatsappAnyway) {
-        window.location.href = whatsappLink;
-      }
-    } finally {
-      sendOrder.textContent = originalText;
-      sendOrder.removeAttribute("aria-busy");
-      sendOrder.classList.remove("is-loading");
-    }
+      window.comenzarNuevoPedidoMotoLimited();
+      state.orderReceipt = null;
+      state.cart = [];
+      document.getElementById("orderStatus").hidden = true;
+      document.getElementById("orderWhatsapp").hidden = true;
+      renderCart();
+      renderProducts();
+    } catch (error) { showOrderStatus(error.message, "error"); }
   });
 
 }
@@ -3881,7 +3909,7 @@ function initWhatsappLinks() {
   const message = "Hola Moto Limited, quiero consultar por repuestos de motos.";
   heroWhatsapp.href = whatsappUrl(message);
   floatingWhatsapp.href = whatsappUrl(message);
-  sendOrder.href = whatsappUrl(message);
+  sendOrder.dataset.whatsapp = whatsappUrl(message);
 }
 
 // Header compacto: pasados 40px de scroll agrega la clase

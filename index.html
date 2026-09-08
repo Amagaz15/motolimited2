@@ -16,7 +16,7 @@
     <div class="promo-strip">
       <div class="promo-track">
         <span>Repuestos para locales y revendedores</span>
-        <span>Armá tu pedido por WhatsApp</span>
+        <span>Confirmá tu pedido desde la web</span>
       </div>
     </div>
 
@@ -61,9 +61,9 @@
       <div class="hero-banner">
         <div class="hero-copy">
           <p class="tag">Distribuidora de repuestos de motos</p>
-          <h1>Catálogo para localesy revendedores.</h1>
+          <h1>Catálogo para locales y revendedores.</h1>
           <p>
-            Buscá rápido, agregá productos al pedido y mandá el pedido por WhatsApp.
+            Buscá rápido, agregá productos y confirmá tu pedido desde la web.
           </p>
 
           <div class="hero-buttons">
@@ -89,7 +89,6 @@
 
     <section class="store-layout section" id="catalogo">
       <aside class="sidebar">
-        </div>
 
         <div class="sidebar-box">
           <h3>Buscar por moto</h3>
@@ -98,7 +97,7 @@
 
         <div class="sidebar-box note-box">
           <h3>Venta a locales</h3>
-          <p>Armá el pedido y mandalo por WhatsApp.</p>
+          <p>Armá tu pedido y confirmalo desde la web.</p>
         </div>
       </aside>
 
@@ -136,7 +135,7 @@
       <div class="order-content">
         <div>
           <p class="tag">Cotizador</p>
-          <h2>Pedido por WhatsApp</h2>
+          <h2>Confirmá tu pedido</h2>
         
         </div>
 
@@ -154,44 +153,46 @@
 
   <label>
     Nombre
-    <input type="text" id="customerName" placeholder="Ej: Juan Pérez" required>
+    <input type="text" id="customerName" maxlength="100" placeholder="Ej: Juan Pérez" required>
   </label>
 
   <label>
     Teléfono
-    <input type="tel" id="customerPhone" placeholder="Ej: 2257 123456" required>
+    <input type="tel" id="customerPhone" maxlength="30" placeholder="Ej: 2257 123456" required>
   </label>
 
   <label>
     Dirección y Ciudad
-    <input type="text" id="customerAddress" placeholder="Ej: Av. Libertador 123 - La Plata" required>
+    <input type="text" id="customerAddress" maxlength="250" placeholder="Ej: Av. Libertador 123 - La Plata" required>
   </label>
 
   <label>
     Nombre del local
-    <input type="text" id="customerStore" placeholder="Ej: Repuestos El Rápido" required>
+    <input type="text" id="customerStore" maxlength="150" placeholder="Ej: Repuestos El Rápido" required>
   </label>
 
   <label>
     Email
-    <input type="email" id="customerEmail" placeholder="Ej: local@email.com" required>
+    <input type="email" id="customerEmail" maxlength="254" placeholder="Ej: local@email.com" required>
   </label>
 
   <label>
     Descripción / aclaración
-    <textarea id="customerDescription" rows="3" placeholder="Ej: detalles del local, aclaraciones."></textarea>
+    <textarea id="customerDescription" maxlength="350" rows="3" placeholder="Ej: detalles del local, aclaraciones."></textarea>
   </label>
 </div>
 
           <div class="cart-total-box">
-  <span>Total del pedido</span>
+  <span>Total estimado del pedido</span>
   <strong id="cartTotal">$0</strong>
 </div>
 
 
-          <a class="btn btn-primary full" id="sendOrder" href="#" target="_blank" rel="noopener">
-            Enviar pedido por WhatsApp
-          </a>
+          <p class="order-consent">Al confirmar, enviás tu pedido y tus datos de contacto a Moto Limited. Sujeto a revisión de stock y condiciones comerciales.</p>
+          <button class="btn btn-primary full" id="sendOrder" type="button">Confirmar pedido</button>
+          <div id="orderStatus" class="order-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          <a class="btn btn-primary full" id="orderWhatsapp" target="_blank" rel="noopener noreferrer" hidden>Continuar por WhatsApp (opcional)</a>
+          <button class="btn full" id="newOrder" type="button" hidden>Armar otro pedido</button>
         </aside>
       </div>
     </section>
@@ -219,6 +220,7 @@
     <a href="#inicio">Volver arriba</a>
   </footer>
 
+  <script src="integracion-pedidos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
