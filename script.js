@@ -13,6 +13,7 @@ const WHATSAPP_NUMBER = "5492257416049";
 
 // Google Apps Script se conserva SOLO para consultar stock (GET).
 // Los pedidos se envían exclusivamente a n8n mediante integracion-pedidos.js.
+const STOCK_ENABLED = false;
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOc1IJqm-JVK9URn_1hGxhNBdMnneSGee5peQ_nyylCrxlOoDs_FROY6ZtUl7OjofJ/exec";
 
 // Acceso simple para ver precios.
@@ -3217,7 +3218,14 @@ function ensureStockStyles() {
 }
 
 async function cargarStockDesdeSheets() {
-  if (!APPS_SCRIPT_URL) return;
+    if (!STOCK_ENABLED || !APPS_SCRIPT_URL) {
+    state.stockByCode = {};
+    state.stockLoaded = true;
+    state.stockError = "";
+    renderProducts();
+    renderCart();
+    return;
+  }
 
   try {
     const response = await fetch(`${APPS_SCRIPT_URL}?action=stock&t=${Date.now()}`, {
@@ -3941,7 +3949,7 @@ function init() {
   renderCart();
   bindHeaderScroll();
   cargarStockDesdeSheets();
-  setInterval(cargarStockDesdeSheets, 60000);
+  if (STOCK_ENABLED) setInterval(cargarStockDesdeSheets, 60000);
 }
 
 
