@@ -23,7 +23,7 @@
     } catch { return { pendiente: false, confirmado: false }; }
   }
 
-  async function confirmarPedidoMotoLimited({ nombre, negocio, telefono, items, direccion, email, descripcion = '', notas = '' }) {
+  async function confirmarPedidoMotoLimited({ nombre, negocio, telefono, items, direccion, email, descripcion = '', notas = '', total = 0 }) {
     if (enviando) throw new Error('Ya estamos enviando el pedido.');
     enviando = true;
     try {
@@ -54,12 +54,22 @@
         skus.add(item.sku);
       }
 
+      const precioOk = (v) => { const n = Number(v); return Number.isFinite(n) && n >= 0 ? Math.round(n) : 0; };
+
       const contenido = {
         cliente: { nombre: nombre.trim(), negocio: negocio.trim(), telefono: String(telefono).trim() },
         direccion: direccion.trim(),
         email: email.trim(),
         descripcion: aclaracion.trim(),
-        items: items.map(i => ({ sku: i.sku, cantidad: i.cantidad })).sort((a, b) => a.sku.localeCompare(b.sku)),
+        items: items
+          .map(i => ({
+            sku: i.sku,
+            cantidad: i.cantidad,
+            nombre: String(i.nombre || '').trim().slice(0, 140),
+            precio_unitario: precioOk(i.precio_unitario),
+          }))
+          .sort((a, b) => a.sku.localeCompare(b.sku)),
+        total: precioOk(total),
         confirmado: true, website: '',
       };
       const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(contenido)));
