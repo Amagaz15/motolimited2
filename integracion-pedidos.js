@@ -3,6 +3,7 @@
 (() => {
   const WEBHOOK = 'https://diego-n8n.ztshtc.easypanel.host/webhook/motolimited-pedidos-v1';
   const KEY = 'motolimited-pedido-pendiente-v1';
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   let enviando = false;
 
   function leerEstado() {
@@ -22,7 +23,7 @@
     } catch { return { pendiente: false, confirmado: false }; }
   }
 
-  async function confirmarPedidoMotoLimited({ nombre, negocio, telefono, items, notas = '' }) {
+  async function confirmarPedidoMotoLimited({ nombre, negocio, telefono, items, direccion, email, descripcion = '', notas = '' }) {
     if (enviando) throw new Error('Ya estamos enviando el pedido.');
     enviando = true;
     try {
@@ -33,6 +34,17 @@
         throw new Error('Completá el nombre y el nombre del local (al menos dos caracteres).');
       }
       if (!/^\d{8,15}$/.test(String(telefono).replace(/\D/g, ''))) throw new Error('Ingresá un teléfono válido, incluyendo el código de área.');
+
+      // Aclaración: se acepta 'descripcion' o el alias legado 'notas'.
+      const aclaracion = (typeof descripcion === 'string' && descripcion.trim()) ? descripcion : (typeof notas === 'string' ? notas : '');
+      if (typeof direccion !== 'string' || direccion.trim().length < 2 || direccion.length > 200) {
+        throw new Error('Completá la dirección y ciudad.');
+      }
+      if (typeof email !== 'string' || email.length > 120 || !EMAIL_RE.test(email.trim())) {
+        throw new Error('Ingresá un email de contacto válido.');
+      }
+      if (aclaracion.length > 1000) throw new Error('Acortá la aclaración del pedido.');
+
       if (!Array.isArray(items) || !items.length || items.length > 100) throw new Error('El pedido debe contener entre 1 y 100 productos.');
       const skus = new Set();
       for (const item of items) {
@@ -41,11 +53,14 @@
         }
         skus.add(item.sku);
       }
-      if (typeof notas !== 'string' || notas.length > 1000) throw new Error('Acortá los datos adicionales del pedido.');
+
       const contenido = {
         cliente: { nombre: nombre.trim(), negocio: negocio.trim(), telefono: String(telefono).trim() },
+        direccion: direccion.trim(),
+        email: email.trim(),
+        descripcion: aclaracion.trim(),
         items: items.map(i => ({ sku: i.sku, cantidad: i.cantidad })).sort((a, b) => a.sku.localeCompare(b.sku)),
-        notas, confirmado: true, website: '',
+        confirmado: true, website: '',
       };
       const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(contenido)));
       const hash = Array.from(new Uint8Array(bytes), n => n.toString(16).padStart(2, '0')).join('');

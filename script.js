@@ -3614,12 +3614,9 @@ function buildN8nOrder() {
     nombre: customer.name,
     negocio: customer.store,
     telefono: customer.phone,
-    // El flujo original guarda notas: conservar ahí dirección, email y aclaración.
-    notas: [
-      `Dirección y ciudad: ${customer.address}`,
-      `Email: ${customer.email}`,
-      customer.description ? `Aclaración: ${customer.description}` : ""
-    ].filter(Boolean).join(" | "),
+    direccion: customer.address,
+    email: customer.email,
+    descripcion: customer.description,
     items: state.cart.map(item => ({ sku: getProductCode(item), cantidad: Number(item.qty) }))
   };
 }
@@ -3659,8 +3656,11 @@ async function submitOrder(event) {
     if (problems.length) { showOrderStatus(`Revisá el stock:\n${problems.join("\n")}`, "error"); return; }
   }
   const payload = buildN8nOrder();
-  if (payload.notas.length > 1000) {
-    showOrderStatus("La dirección, el email y la aclaración son demasiado largos. Acortalos para continuar.", "error"); return;
+  if ((payload.direccion || "").length > 200) {
+    showOrderStatus("La dirección es demasiado larga. Acortala para continuar.", "error"); return;
+  }
+  if ((payload.descripcion || "").length > 1000) {
+    showOrderStatus("La aclaración es demasiado larga. Acortala para continuar.", "error"); return;
   }
   const snapshot = {
     customer: getCustomerData(),
