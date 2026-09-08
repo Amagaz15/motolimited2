@@ -3625,7 +3625,16 @@ function buildN8nOrder() {
     direccion: customer.address,
     email: customer.email,
     descripcion: customer.description,
-    items: state.cart.map(item => ({ sku: getProductCode(item), cantidad: Number(item.qty) }))
+    total: getCartTotal(),
+    items: state.cart.map(item => {
+      const product = getCartProduct(item);
+      return {
+        sku: getProductCode(item),
+        cantidad: Number(item.qty),
+        nombre: product.name || item.name || "",
+        precio_unitario: getItemPrice(item)
+      };
+    })
   };
 }
 
